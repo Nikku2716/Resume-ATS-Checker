@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume ATS Checker</title>
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <style>
+      body { background-image: radial-gradient(rgba(0,155,155,0.15) 1.5px, transparent 1.5px); background-size: 28px 28px; }
+    </style>
+  </head>
+  <body class="bg-[#D4F1F9] text-frutiger-black font-body antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

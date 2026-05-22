@@ -1,0 +1,78 @@
+{
+  "overall_score": 73,
+  "summary": "Moderate ATS compatibility (score: 73/100). 62 keywords matched but 38 are missing. Address the suggestions below to improve.",
+  "section_scores": [
+    {
+      "name": "Keyword Match",
+      "score": 62,
+      "weight": 0.3,
+      "details": "62 of 100 job keywords found in resume."
+    },
+    {
+      "name": "Skills Match",
+      "score": 82,
+      "weight": 0.25,
+      "details": "14 of 17 required skills found."
+    },
+    {
+      "name": "Experience Relevance",
+      "score": 45,
+      "weight": 0.2,
+      "details": "Alignment between resume experience and job requirements."
+    },
+    {
+      "name": "Formatting / ATS Readability",
+      "score": 100,
+      "weight": 0.15,
+      "details": "0 formatting issue(s) detected that may affect ATS parsing."
+    },
+    {
+      "name": "Contact & Section Completeness",
+      "score": 100,
+      "weight": 0.1,
+      "details": "Standard sections found: certifications, education, experience, skills, summary. Missing: none."
+    }
+  ],
+  "detected_sections": ["certifications", "education", "experience", "skills", "summary"],
+  "missing_sections": [],
+  "matched_keywords": [
+    {"keyword": "software engineer", "matched": true},
+    {"keyword": "python", "matched": true},
+    {"keyword": "typescript", "matched": true},
+    {"keyword": "fastapi", "matched": true},
+    {"keyword": "postgresql", "matched": true},
+    {"keyword": "docker", "matched": true},
+    {"keyword": "aws", "matched": true},
+    {"keyword": "react", "matched": true},
+    {"keyword": "ci/cd", "matched": true},
+    {"keyword": "redis", "matched": true},
+    {"keyword": "git", "matched": true},
+    {"keyword": "agile", "matched": true},
+    {"keyword": "rest", "matched": true},
+    {"keyword": "graphql", "matched": true},
+    {"keyword": "code reviews", "matched": true}
+  ],
+  "missing_keywords": [
+    {"keyword": "kubernetes", "matched": false},
+    {"keyword": "terraform", "matched": false},
+    {"keyword": "kafka", "matched": false},
+    {"keyword": "lambda", "matched": false},
+    {"keyword": "microservices", "matched": false},
+    {"keyword": "mentor", "matched": false}
+  ],
+  "ats_risks": [],
+  "suggestions": [
+    {
+      "category": "Keywords",
+      "priority": "critical",
+      "suggestion": "Add these missing keywords to your resume: kubernetes, terraform, kafka, lambda, microservices.",
+      "location": "Skills / Experience sections"
+    },
+    {
+      "category": "Skills",
+      "priority": "high",
+      "suggestion": "Add these missing skills to your Skills section: kubernetes, terraform, kafka.",
+      "location": "Skills section"
+    }
+  ]
+}

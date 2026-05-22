@@ -1,0 +1,30 @@
+Senior Software Engineer - Platform Team
+
+We are looking for a Senior Software Engineer with 5+ years of experience to join our Platform team. You will design, build, and maintain the core infrastructure powering our SaaS platform.
+
+Required Qualifications:
+- 5+ years of professional software engineering experience
+- Strong proficiency in Python and TypeScript
+- Experience building RESTful APIs with FastAPI or similar frameworks
+- Deep understanding of PostgreSQL and database design
+- Hands-on experience with Docker and container orchestration (Kubernetes preferred)
+- AWS experience (ECS, S3, Lambda, RDS)
+- Solid understanding of CI/CD pipelines and DevOps practices
+- Experience with React or similar frontend frameworks
+- Familiarity with Agile/Scrum development methodologies
+
+Nice to Have:
+- Experience with Redis, Kafka, or similar message queues
+- Knowledge of GraphQL
+- Experience with monitoring tools (Datadog, New Relic)
+- Contributions to open-source projects
+
+Tech Stack: Python, TypeScript, React, FastAPI, PostgreSQL, Redis, Docker, Kubernetes, AWS, GitHub Actions, Terraform
+
+What You'll Do:
+- Design and implement scalable microservices
+- Optimize database queries and schema design for PostgreSQL
+- Containerize services with Docker and deploy on Kubernetes
+- Collaborate with product and design teams in an Agile environment
+- Mentor junior engineers and conduct code reviews
+- Participate in on-call rotation for production systems

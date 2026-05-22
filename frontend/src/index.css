@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1A1A1A transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bangers", cursive, system-ui;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .comic-card {
+    @apply border-4 border-frutiger-black bg-white p-6 shadow-brutal-lg transition-all duration-200;
+  }
+  .comic-card:hover {
+    @apply shadow-brutal-hover translate-x-0.5 translate-y-0.5;
+  }
+
+  .comic-card-colored {
+    @apply border-4 border-frutiger-black p-6 shadow-brutal-lg transition-all duration-200;
+  }
+
+  .btn-comic {
+    @apply inline-flex items-center justify-center gap-2 border-4 border-frutiger-black px-7 py-3.5 text-lg font-bold text-white shadow-brutal transition-all duration-150 hover:shadow-brutal-hover hover:translate-x-0.5 hover:translate-y-0.5 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-brutal cursor-pointer uppercase tracking-wide;
+  }
+
+  .btn-comic-secondary {
+    @apply inline-flex items-center justify-center gap-2 border-4 border-frutiger-black bg-white px-6 py-3 text-base font-bold text-frutiger-black shadow-brutal transition-all duration-150 hover:shadow-brutal-hover hover:translate-x-0.5 hover:translate-y-0.5 focus:outline-none cursor-pointer uppercase tracking-wide;
+  }
+
+  .input-comic {
+    @apply w-full border-4 border-frutiger-black bg-white px-4 py-3 text-base text-frutiger-black placeholder-gray-400 shadow-[4px_4px_0px_#1A1A1A] transition-all duration-200 focus:shadow-[2px_2px_0px_#1A1A1A] focus:translate-x-0.5 focus:translate-y-0.5 focus:outline-none;
+  }
+
+  .progress-bar-comic {
+    @apply h-4 border-2 border-frutiger-black bg-white overflow-hidden;
+  }
+  .progress-fill-comic {
+    @apply h-full transition-all duration-700 ease-out;
+  }
+
+  .tag-comic {
+    @apply inline-flex items-center gap-1.5 border-2 border-frutiger-black px-3 py-1 text-sm font-bold uppercase tracking-wide transition-all duration-150;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
