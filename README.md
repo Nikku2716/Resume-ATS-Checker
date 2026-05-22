@@ -31,7 +31,7 @@ The scoring engine evaluates 5 dimensions, each weighted by importance:
 ```bash
 # 1. Clone the repository
 git clone https://github.com/Nikku2716/Resume-ATS-Checker.git
-cd resume-ats-checker
+cd Resume-ATS-Checker
 
 # 2. Set up the backend
 cd backend
