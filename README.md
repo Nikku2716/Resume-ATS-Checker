@@ -35,6 +35,7 @@ cd Resume-ATS-Checker
 
 # 2. Set up the backend
 cd backend
+curl -LsSf https://astral.sh/uv/install.sh | sh # Install uv
 uv venv                    # create virtual environment
 source .venv/bin/activate  # activate it (Linux/macOS)
 # On Windows: .venv\Scripts\activate
