@@ -17,7 +17,69 @@ import {
   Shield,
   ChevronRight,
   Swords,
+  ClipboardCopy,
+  Check,
 } from "lucide-react";
+
+function buildMarkdownReport(result) {
+  const {
+    overall_score,
+    section_scores,
+    matched_keywords,
+    missing_keywords,
+    ats_risks,
+    suggestions,
+    detected_sections,
+    missing_sections,
+    summary,
+  } = result;
+
+  const lines = [
+    "# ATS Analysis Report",
+    "",
+    `**Overall Score:** ${overall_score} / 100`,
+    "",
+    `> ${summary}`,
+    "",
+    "## Score Breakdown",
+    "",
+    "| Section | Score | Details |",
+    "|---------|-------|---------|",
+    ...section_scores.map(
+      (s) => `| ${s.name} | ${s.score}/100 | ${s.details} |`
+    ),
+    "",
+    "## Matched Keywords",
+    matched_keywords.length
+      ? matched_keywords.map((k) => `- ✅ ${k.keyword}`).join("\n")
+      : "_None_",
+    "",
+    "## Missing Keywords",
+    missing_keywords.length
+      ? missing_keywords.map((k) => `- ❌ ${k.keyword}`).join("\n")
+      : "_None_",
+    "",
+    "## ATS Risks",
+    ats_risks.length
+      ? ats_risks
+          .map((r) => `- **[${r.severity.toUpperCase()}] ${r.risk}** — ${r.detail}`)
+          .join("\n")
+      : "_No risks detected._",
+    "",
+    "## Suggestions",
+    suggestions.length
+      ? suggestions
+          .map((s) => `- **${s.category}** (${s.priority}): ${s.suggestion}`)
+          .join("\n")
+      : "_No further suggestions._",
+    "",
+    "## Sections",
+    `- Detected: ${detected_sections.length ? detected_sections.join(", ") : "none"}`,
+    `- Missing: ${missing_sections.length ? missing_sections.join(", ") : "none"}`,
+  ];
+
+  return lines.join("\n");
+}
 
 function getScoreLabel(score) {
   if (score >= 80) return "LEGENDARY";
@@ -160,6 +222,26 @@ export default function Results() {
   const location = useLocation();
   const navigate = useNavigate();
   const result = location.state?.result;
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyMarkdown = async () => {
+    if (!result) return;
+    try {
+      await navigator.clipboard.writeText(buildMarkdownReport(result));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API unavailable (insecure context) — fall back to a textarea copy
+      const ta = document.createElement("textarea");
+      ta.value = buildMarkdownReport(result);
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   if (!result) {
     return (
@@ -226,6 +308,10 @@ export default function Results() {
         <button onClick={() => navigate("/")} className="btn-comic-secondary group">
           <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
           NEW FIGHT
+        </button>
+        <button onClick={handleCopyMarkdown} className="btn-comic-secondary group">
+          {copied ? <Check className="h-5 w-5" /> : <ClipboardCopy className="h-5 w-5" />}
+          {copied ? "COPIED!" : "COPY MARKDOWN"}
         </button>
         <button onClick={handleDownload} className="btn-comic-secondary group">
           <Download className="h-5 w-5" />
