@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
   ArrowLeft,
   Download,
+  FileDown,
   CheckCircle2,
   XCircle,
   AlertTriangle,
@@ -302,6 +303,19 @@ export default function Results() {
     URL.revokeObjectURL(url);
   };
 
+  const handleDownloadMarkdown = () => {
+    if (!result) return;
+    const blob = new Blob([buildMarkdownReport(result)], {
+      type: "text/markdown;charset=utf-8",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "ats-report.md";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-8">
       <div className="flex flex-wrap items-center justify-between gap-4 animate-pop">
@@ -316,6 +330,10 @@ export default function Results() {
         <button onClick={handleDownload} className="btn-comic-secondary group">
           <Download className="h-5 w-5" />
           GET REPORT
+        </button>
+        <button onClick={handleDownloadMarkdown} className="btn-comic-secondary group">
+          <FileDown className="h-5 w-5" />
+          GET .MD
         </button>
       </div>
 
