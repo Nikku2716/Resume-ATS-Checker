@@ -30,7 +30,7 @@ The scoring engine evaluates 5 dimensions, each weighted by importance:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Nikku2716/Resume-ATS-Checker.git
+git clone https://github.com/sh4dowbl4d3/Resume-ATS-Checker.git
 curl -LsSf https://astral.sh/uv/install.sh | sh              # Install uv
 cd Resume-ATS-Checker
 
