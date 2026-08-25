@@ -1,4 +1,4 @@
-from typing import List
+from typing import Dict, List
 
 from ..models.schemas import (
     AnalysisResponse,
@@ -11,6 +11,7 @@ from .keyword_matcher import KeywordMatcher
 from .skills_matcher import SkillsMatcher
 from .section_detector import SectionDetector
 from .formatting_checker import FormattingChecker
+from .action_verb_analyzer import ActionVerbAnalyzer
 
 
 class AtsScorer:
@@ -19,6 +20,7 @@ class AtsScorer:
         self.skills_matcher = SkillsMatcher()
         self.section_detector = SectionDetector()
         self.formatting_checker = FormattingChecker()
+        self.action_verb_analyzer = ActionVerbAnalyzer()
 
     def analyze(self, resume_text: str, job_description: str) -> AnalysisResponse:
         resume_keywords = self.keyword_matcher.extract_keywords(resume_text)
@@ -36,6 +38,7 @@ class AtsScorer:
         missing_sections = self.section_detector.get_missing_sections(resume_text)
 
         ats_risks = self.formatting_checker.check_ats_risks(resume_text)
+        action_verb_analysis = self.action_verb_analyzer.analyze(resume_text)
 
         keyword_score = self.keyword_matcher.get_keyword_score(
             matched_keywords, missing_keywords
@@ -92,6 +95,7 @@ class AtsScorer:
             missing_sections,
             ats_risks,
             section_scores,
+            action_verb_analysis,
         )
 
         summary = self._generate_summary(overall_score, len(matched_keywords), len(missing_keywords))
@@ -161,8 +165,11 @@ class AtsScorer:
         missing_sections: List[str],
         ats_risks: List[AtsRisk],
         section_scores: List[SectionScore],
+        action_verb_analysis: Dict,
     ) -> List[ImprovementSuggestion]:
         suggestions: List[ImprovementSuggestion] = []
+
+        suggestions.extend(self.action_verb_analyzer.get_suggestions(action_verb_analysis))
 
         if missing_keywords:
             top_missing = [k.keyword for k in missing_keywords[:5]]
