@@ -1,0 +1,257 @@
+{
+  "id": "strong_experience_relevance",
+  "name": "Strong Experience Relevance",
+  "description": "Resume experience years match or exceed job description requirements with high keyword alignment",
+  "input": {
+    "resume": "Summary\nPrincipal Architect with 8+ years of experience in distributed systems.\n\nSkills\nPython, Go, Kubernetes, AWS, Docker, Microservices, PostgreSQL, Kafka\n\nExperience\nPrincipal Architect | Enterprise Scale | 2016 - Present\n- Architected distributed microservices handling 100K requests per second\n- Managed Kubernetes clusters across multiple AWS regions\n- Led engineering initiatives and automated CI/CD deployment pipelines\n\nEducation\nB.S. in Computer Engineering | State University | 2012 - 2016\n",
+    "job_description": "Senior Backend Architect\nWe need a Senior Backend Architect with 5+ years of experience.\nMust have deep knowledge of Python, Go, Kubernetes, AWS, microservices, Kafka, and PostgreSQL.\n"
+  },
+  "expected_output": {
+    "overall_score": 79,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 62,
+        "weight": 0.3,
+        "details": "20 of 32 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "7 of 7 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 55,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "backend architect",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices kafka",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years experience.",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws microservices",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kafka postgresql.",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect senior",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "knowledge python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "go kubernetes",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect 5+",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python go",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "5+ years",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kafka",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "go",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "senior backend",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience. must",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "deep knowledge",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "must deep",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "backend",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "knowledge",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "must",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "deep",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "5+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: senior backend, experience. must, deep knowledge, must deep, backend.",
+        "location": "Skills / Experience sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Moderate ATS compatibility (score: 79/100). 20 keywords matched but 12 are missing. Address the suggestions below to improve."
+  }
+}

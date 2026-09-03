@@ -1,0 +1,161 @@
+{
+  "id": "duplicate_keywords",
+  "name": "Duplicate Keywords",
+  "description": "Resume with repeated mentions of keywords across multiple sections",
+  "input": {
+    "resume": "Professional Summary\nPython Python Python developer with AWS AWS AWS experience.\n\nSkills\nPython, Python, AWS, AWS, Docker, Docker, React, React\n\nExperience\nPython Engineer | Python Corp | 2021 - Present\n- Used Python and AWS to build Python services\n- Deployed Python with Docker on AWS\n- Python testing with PyTest on AWS\n\nEducation\nB.S. in Python Science | Tech University | 2017 - 2021\n",
+    "job_description": "Python Developer\nRequirements: Python, AWS, Docker, React, PostgreSQL\n"
+  },
+  "expected_output": {
+    "overall_score": 83,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 85,
+        "weight": 0.3,
+        "details": "12 of 14 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 80,
+        "weight": 0.25,
+        "details": "4 of 5 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 65,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "developer requirements",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Action Verbs",
+        "priority": "high",
+        "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+        "location": "Experience section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: requirements, postgresql.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: postgresql.",
+        "location": "Skills section"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Strong ATS compatibility (score: 83/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+  }
+}

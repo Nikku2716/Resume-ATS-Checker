@@ -1,0 +1,256 @@
+{
+  "id": "malformed_resume",
+  "name": "Malformed Resume",
+  "description": "Resume with unusual formatting, tables, icons, and text box artifacts",
+  "input": {
+    "resume": "| Name | John Doe |\n| Role | Developer |\n| Contact | john@example.com |\n\n⚡ Skills ⚡\n⚡ Python ⚡ React ⚡ AWS ⚡ Docker ⚡ PostgreSQL ⚡ Git ⚡\n\n   Summary info\n   Short line 1\n   Short line 2\n   Short line 3\n\nExperience:\nSenior Engineer at Tech Inc (2020 - 2024)\nBuilt REST APIs with Python and Docker\n",
+    "job_description": "Software Engineer\nRequirements: Python, React, AWS, Docker, PostgreSQL, Git\nExperience building REST APIs\n"
+  },
+  "expected_output": {
+    "overall_score": 78,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 88,
+        "weight": 0.3,
+        "details": "22 of 25 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "7 of 7 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 66,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 60,
+        "weight": 0.15,
+        "details": "3 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 50,
+        "weight": 0.1,
+        "details": "Standard sections found: experience, summary. Missing: education, skills."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "engineer requirements",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience building",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql git",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "git experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "building rest",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rest apis",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rest",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "apis",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "git",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "building",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [
+      {
+        "risk": "Tables detected",
+        "severity": "high",
+        "detail": "Tables may not be parsed correctly by ATS. Convert table content into plain text sections."
+      },
+      {
+        "risk": "Icons or symbols detected",
+        "severity": "medium",
+        "detail": "Found roughly 9 icon/symbol characters. Icons may not render in ATS systems. Use plain text bullets instead."
+      },
+      {
+        "risk": "Possible text boxes or floating elements",
+        "severity": "medium",
+        "detail": "Short indented lines detected. Text boxes may not be read by ATS in correct order. Use standard linear text flow."
+      }
+    ],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: requirements, software, building.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Sections",
+        "priority": "high",
+        "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+        "location": "After Summary section"
+      },
+      {
+        "category": "Formatting",
+        "priority": "high",
+        "suggestion": "Tables may not be parsed correctly by ATS. Convert table content into plain text sections.",
+        "location": "Throughout resume"
+      },
+      {
+        "category": "Formatting",
+        "priority": "medium",
+        "suggestion": "Found roughly 9 icon/symbol characters. Icons may not render in ATS systems. Use plain text bullets instead.",
+        "location": "Throughout resume"
+      },
+      {
+        "category": "Formatting",
+        "priority": "medium",
+        "suggestion": "Short indented lines detected. Text boxes may not be read by ATS in correct order. Use standard linear text flow.",
+        "location": "Throughout resume"
+      }
+    ],
+    "detected_sections": [
+      "experience",
+      "summary"
+    ],
+    "missing_sections": [
+      "education",
+      "skills"
+    ],
+    "summary": "Moderate ATS compatibility (score: 78/100). 22 keywords matched but 3 are missing. Address the suggestions below to improve."
+  }
+}

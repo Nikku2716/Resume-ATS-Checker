@@ -1,0 +1,4450 @@
+[
+  {
+    "id": "high_keyword_match",
+    "name": "High Keyword Match",
+    "description": "Resume contains nearly all keywords and skills requested in the job description",
+    "input": {
+      "resume": "Professional Summary\nSenior Software Engineer with 6+ years of experience in Python, TypeScript, React, Docker, and AWS.\nProven track record of designing REST APIs and leading microservice architecture.\n\nTechnical Skills\nLanguages: Python, TypeScript, SQL, HTML, CSS\nFrameworks: React, FastAPI, Node.js\nCloud & DevOps: AWS, Docker, Kubernetes, CI/CD, Git, Terraform\nDatabases: PostgreSQL, Redis, MongoDB\n\nWork Experience\nSenior Software Engineer | CloudTech Inc | 2021 - Present\n- Designed scalable RESTful microservices with FastAPI and PostgreSQL\n- Deployed containerized applications to Kubernetes on AWS ECS\n- Led a team of 5 engineers delivering high-quality web applications using Agile\n\nEducation\nB.S. in Computer Science | Tech University | 2015 - 2019\n",
+      "job_description": "Senior Software Engineer\nWe are seeking a Senior Software Engineer with Python and TypeScript expertise.\nRequirements:\n- 5+ years of experience with Python, FastAPI, and React\n- Experience with Docker, Kubernetes, AWS, and CI/CD pipelines\n- Strong background in PostgreSQL, Redis, and microservices\n- Experience in Agile environments and Git version control\n"
+    },
+    "expected_output": {
+      "overall_score": 81,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 66,
+          "weight": 0.3,
+          "details": "39 of 59 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "13 of 13 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 60,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "software engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "typescript expertise.",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "background postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "redis microservices",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "agile environments",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python typescript",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker kubernetes",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer seeking",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql redis",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience agile",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "environments git",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "ci/cd pipelines",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "seeking senior",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python fastapi",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "git version",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws ci/cd",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "5+ years",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "expertise. requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong background",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pipelines strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements 5+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "version control",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "environments",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "expertise.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "background",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pipelines",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "seeking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "version",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "control",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "ci/cd",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "redis",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "agile",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "git",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "5+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: expertise. requirements, strong background, pipelines strong, requirements 5+, version control.",
+          "location": "Skills / Experience sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 81/100). Your resume is well-optimized for ATS screening. Only 20 missing keywords identified."
+    }
+  },
+  {
+    "id": "low_keyword_match",
+    "name": "Low Keyword Match",
+    "description": "Resume contains minimal keywords from the job description",
+    "input": {
+      "resume": "Professional Summary\nExperienced accountant with 10 years managing corporate tax filings, audits, and financial ledgers.\n\nCore Competencies\nFinancial reporting, tax preparation, QuickBooks, Excel, auditing, payroll\n\nWork Experience\nLead Accountant | Finance Corp | 2018 - Present\n- Prepared quarterly financial statements and tax filings\n- Conducted internal audits and ensured regulatory compliance\n- Managed payroll and expense reporting for 200+ employees\n\nEducation\nB.S. in Accounting | State College | 2010 - 2014\n",
+      "job_description": "Senior Cloud Infrastructure Engineer\nRequirements:\n- Strong experience with Kubernetes, Terraform, AWS, Docker, and Python\n- Experience building CI/CD pipelines with GitHub Actions and GitLab\n- Deep understanding of distributed systems, Kafka, Redis, and PostgreSQL\n- Linux systems administration and network security\n"
+    },
+    "expected_output": {
+      "overall_score": 35,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 8,
+          "weight": 0.3,
+          "details": "5 of 59 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 0,
+          "weight": 0.25,
+          "details": "0 of 12 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 41,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "experience kubernetes",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience building",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "understanding distributed",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "infrastructure engineer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems administration",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "administration network",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud infrastructure",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes terraform",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "distributed systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "deep understanding",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pipelines github",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "redis postgresql",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql linux",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "network security",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "ci/cd pipelines",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "building ci/cd",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "github actions",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "actions gitlab",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "terraform aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker python",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems kafka",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "linux systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior cloud",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "gitlab deep",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kafka redis",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "infrastructure",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "administration",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "understanding",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Action Verbs",
+          "priority": "high",
+          "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+          "location": "Experience section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: understanding distributed, infrastructure engineer, systems administration, administration network, engineer requirements.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: aws, ci/cd, docker, github, gitlab.",
+          "location": "Skills section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "high",
+          "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+          "location": "Experience / Skills sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Low ATS compatibility (score: 35/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+    }
+  },
+  {
+    "id": "missing_keywords",
+    "name": "Missing Keywords",
+    "description": "Resume matches general skills but misses specific tech stack keywords",
+    "input": {
+      "resume": "Professional Summary\nFull stack developer with 4 years of experience building web applications.\n\nSkills\nJavaScript, PHP, Laravel, MySQL, Apache, Linux, CSS, HTML\n\nExperience\nSoftware Developer | WebWorks | 2020 - Present\n- Built custom web applications using PHP and MySQL\n- Maintained web servers and handled database queries\n- Implemented user interfaces with JavaScript and CSS\n\nEducation\nB.S. in Information Systems | City University | 2016 - 2020\n",
+      "job_description": "Full Stack Engineer\nLooking for a developer experienced in:\n- Python, Django, FastAPI\n- React, TypeScript, Tailwind CSS\n- PostgreSQL, Redis\n- Docker, AWS, GraphQL\n"
+    },
+    "expected_output": {
+      "overall_score": 45,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 31,
+          "weight": 0.3,
+          "details": "11 of 35 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 8,
+          "weight": 0.25,
+          "details": "1 of 12 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 48,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "developer experienced",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "stack engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "css postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "tailwind css",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "full stack",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experienced",
+          "matched": true,
+          "context": null,
+          "variants": [
+            "experience"
+          ]
+        },
+        {
+          "keyword": "developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "stack",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "full",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "css",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "typescript tailwind",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experienced python",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react typescript",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql redis",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "django fastapi",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python django",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi react",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "redis docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws graphql",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "typescript",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "tailwind",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "graphql",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "django",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "redis",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: typescript tailwind, experienced python, engineer looking, react typescript, postgresql redis.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: aws, django, docker, fastapi, graphql.",
+          "location": "Skills section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "high",
+          "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+          "location": "Experience / Skills sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Below average ATS compatibility (score: 45/100). Significant keyword gaps (24 missing) and potential formatting issues. Prioritize the critical fixes."
+    }
+  },
+  {
+    "id": "strong_skills_match",
+    "name": "Strong Skills Match",
+    "description": "Resume contains all the technical and soft skills requested",
+    "input": {
+      "resume": "Professional Summary\nStaff Engineer with extensive background in machine learning and data engineering.\n\nSkills\nPython, PyTorch, TensorFlow, Scikit-Learn, Pandas, NumPy, SQL, Docker, AWS, Git, Leadership, Communication, Problem-Solving, Mentoring\n\nExperience\nLead ML Engineer | AI Labs | 2019 - Present\n- Led machine learning projects from concept to deployment\n- Mentored junior engineers and communicated technical roadmaps\n- Designed deep learning models with PyTorch and TensorFlow\n\nEducation\nM.S. in Computer Science | Tech University | 2017 - 2019\n",
+      "job_description": "Senior Machine Learning Engineer\nRequirements:\n- Proficient in Python, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, SQL\n- Experience with Docker and AWS\n- Strong leadership, communication, problem-solving, and mentoring abilities\n"
+    },
+    "expected_output": {
+      "overall_score": 87,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 81,
+          "weight": 0.3,
+          "details": "35 of 43 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "14 of 14 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 65,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "communication problem-solving",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "problem-solving mentoring",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "leadership communication",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "tensorflow scikit-learn",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer requirements",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "scikit-learn pandas",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "mentoring abilities",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pytorch tensorflow",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "learning engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "proficient python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong leadership",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "machine learning",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior machine",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python pytorch",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "sql experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pandas numpy",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws strong",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "numpy sql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "problem-solving",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "communication",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "scikit-learn",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "tensorflow",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "leadership",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "mentoring",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "learning",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "machine",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "requirements proficient",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "proficient",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "abilities",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "sql",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: requirements proficient, requirements, proficient, abilities, senior.",
+          "location": "Skills / Experience sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 87/100). Your resume is well-optimized for ATS screening. Only 8 missing keywords identified."
+    }
+  },
+  {
+    "id": "weak_skills_match",
+    "name": "Weak Skills Match",
+    "description": "Resume contains none of the requested technical skills",
+    "input": {
+      "resume": "Professional Summary\nCreative Graphic Designer with 5 years of experience in branding and print design.\n\nSkills\nPhotoshop, Illustrator, InDesign, Typography, Branding, Print Design\n\nExperience\nGraphic Designer | Creative Studio | 2019 - Present\n- Designed marketing materials and brand identities\n- Collaborated with copywriters and marketing teams\n\nEducation\nB.A. in Graphic Design | Art Institute | 2015 - 2019\n",
+      "job_description": "Embedded Systems Software Engineer\nRequirements:\n- C++, Rust, Linux, Bash, Git, microservices\n- Real-time operating systems (RTOS), kernel debugging\n- Docker, Kubernetes, CI/CD\n"
+    },
+    "expected_output": {
+      "overall_score": 33,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 0,
+          "weight": 0.3,
+          "details": "0 of 38 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 0,
+          "weight": 0.25,
+          "details": "0 of 8 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 40,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [],
+      "missing_keywords": [
+        {
+          "keyword": "microservices real-time",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "real-time operating",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software engineer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "git microservices",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "operating systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker kubernetes",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "embedded systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems software",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements c++",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kernel debugging",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "debugging docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes ci/cd",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems rtos",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rtos kernel",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rust linux",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "linux bash",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "c++ rust",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "bash git",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "real-time",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "operating",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "debugging",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "embedded",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kernel",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: microservices real-time, engineer requirements, real-time operating, software engineer, git microservices.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: bash, ci/cd, docker, git, kubernetes.",
+          "location": "Skills section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "high",
+          "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+          "location": "Experience / Skills sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Low ATS compatibility (score: 33/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+    }
+  },
+  {
+    "id": "strong_experience_relevance",
+    "name": "Strong Experience Relevance",
+    "description": "Resume experience years match or exceed job description requirements with high keyword alignment",
+    "input": {
+      "resume": "Summary\nPrincipal Architect with 8+ years of experience in distributed systems.\n\nSkills\nPython, Go, Kubernetes, AWS, Docker, Microservices, PostgreSQL, Kafka\n\nExperience\nPrincipal Architect | Enterprise Scale | 2016 - Present\n- Architected distributed microservices handling 100K requests per second\n- Managed Kubernetes clusters across multiple AWS regions\n- Led engineering initiatives and automated CI/CD deployment pipelines\n\nEducation\nB.S. in Computer Engineering | State University | 2012 - 2016\n",
+      "job_description": "Senior Backend Architect\nWe need a Senior Backend Architect with 5+ years of experience.\nMust have deep knowledge of Python, Go, Kubernetes, AWS, microservices, Kafka, and PostgreSQL.\n"
+    },
+    "expected_output": {
+      "overall_score": 79,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 62,
+          "weight": 0.3,
+          "details": "20 of 32 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "7 of 7 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 55,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "backend architect",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices kafka",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years experience.",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws microservices",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kafka postgresql.",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect senior",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "knowledge python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "go kubernetes",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect 5+",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python go",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "5+ years",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kafka",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "go",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "senior backend",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience. must",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "deep knowledge",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "must deep",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "backend",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "knowledge",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "must",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "deep",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "5+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: senior backend, experience. must, deep knowledge, must deep, backend.",
+          "location": "Skills / Experience sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Moderate ATS compatibility (score: 79/100). 20 keywords matched but 12 are missing. Address the suggestions below to improve."
+    }
+  },
+  {
+    "id": "weak_experience_relevance",
+    "name": "Weak Experience Relevance",
+    "description": "Resume has minimal experience compared to a senior requirement",
+    "input": {
+      "resume": "Summary\nRecent computer science graduate with internship experience.\n\nSkills\nPython, Java, Git, HTML, CSS\n\nExperience\nSoftware Intern | Tech Startup | 2024 - 2024\n- Assisted in bug fixes and documentation\n\nEducation\nB.S. in Computer Science | City College | 2020 - 2024\n",
+      "job_description": "Staff Software Architect\nRequires 10+ years of experience in cloud infrastructure, Kubernetes, distributed systems, and enterprise architecture.\nProficiency in Python, Go, AWS, Docker, Microservices, and Kafka.\n"
+    },
+    "expected_output": {
+      "overall_score": 38,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 21,
+          "weight": 0.3,
+          "details": "9 of 41 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 14,
+          "weight": 0.25,
+          "details": "1 of 7 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 20,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "software architect",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "proficiency python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience cloud",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "staff software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python go",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "infrastructure kubernetes",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architecture. proficiency",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "enterprise architecture.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes distributed",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud infrastructure",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker microservices",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices kafka.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "distributed systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect requires",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems enterprise",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requires 10+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "10+ years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "go aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "infrastructure",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architecture.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "distributed",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "proficiency",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "enterprise",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requires",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kafka.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "staff",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "10+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Action Verbs",
+          "priority": "medium",
+          "suggestion": "Replace the passive phrase \"assisted in\" (1x) with a strong verb like \"Drove\".",
+          "location": "Experience section bullets"
+        },
+        {
+          "category": "Action Verbs",
+          "priority": "high",
+          "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+          "location": "Experience section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: infrastructure kubernetes, architecture. proficiency, enterprise architecture., kubernetes distributed, cloud infrastructure.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: aws, docker, go, kafka, kubernetes.",
+          "location": "Skills section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "high",
+          "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+          "location": "Experience / Skills sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Low ATS compatibility (score: 38/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+    }
+  },
+  {
+    "id": "missing_sections",
+    "name": "Missing Sections",
+    "description": "Resume is missing standard sections (no Summary, no Education)",
+    "input": {
+      "resume": "John Doe - Software Engineer\nSkills: Python, React, SQL, Docker, AWS\n\nExperience:\nSenior Developer | Acme Corp | 2020 - Present\n- Developed web services in Python and React\n- Deployed applications on AWS with Docker\n",
+      "job_description": "Software Engineer with Python, React, SQL, Docker, AWS.\nLooking for candidates with strong development background.\n"
+    },
+    "expected_output": {
+      "overall_score": 69,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 52,
+          "weight": 0.3,
+          "details": "12 of 23 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "5 of 5 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 58,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 25,
+          "weight": 0.1,
+          "details": "Standard sections found: experience. Missing: education, skills, summary."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "software engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker aws.",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "sql docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react sql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "sql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "development background.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking candidates",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong development",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "candidates strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws. looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "development",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "background.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "candidates",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: development background., looking candidates, strong development, candidates strong, aws. looking.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Sections",
+          "priority": "high",
+          "suggestion": "Add a \"Professional Summary\" section at the top. This is one of the first sections ATS parsers look for.",
+          "location": "Top of resume"
+        },
+        {
+          "category": "Sections",
+          "priority": "high",
+          "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+          "location": "After Summary section"
+        }
+      ],
+      "detected_sections": [
+        "experience"
+      ],
+      "missing_sections": [
+        "education",
+        "skills",
+        "summary"
+      ],
+      "summary": "Moderate ATS compatibility (score: 69/100). 12 keywords matched but 11 are missing. Address the suggestions below to improve."
+    }
+  },
+  {
+    "id": "malformed_resume",
+    "name": "Malformed Resume",
+    "description": "Resume with unusual formatting, tables, icons, and text box artifacts",
+    "input": {
+      "resume": "| Name | John Doe |\n| Role | Developer |\n| Contact | john@example.com |\n\n⚡ Skills ⚡\n⚡ Python ⚡ React ⚡ AWS ⚡ Docker ⚡ PostgreSQL ⚡ Git ⚡\n\n   Summary info\n   Short line 1\n   Short line 2\n   Short line 3\n\nExperience:\nSenior Engineer at Tech Inc (2020 - 2024)\nBuilt REST APIs with Python and Docker\n",
+      "job_description": "Software Engineer\nRequirements: Python, React, AWS, Docker, PostgreSQL, Git\nExperience building REST APIs\n"
+    },
+    "expected_output": {
+      "overall_score": 78,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 88,
+          "weight": 0.3,
+          "details": "22 of 25 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "7 of 7 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 66,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 60,
+          "weight": 0.15,
+          "details": "3 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 50,
+          "weight": 0.1,
+          "details": "Standard sections found: experience, summary. Missing: education, skills."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "engineer requirements",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience building",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql git",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "git experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "building rest",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rest apis",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rest",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "apis",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "git",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "building",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [
+        {
+          "risk": "Tables detected",
+          "severity": "high",
+          "detail": "Tables may not be parsed correctly by ATS. Convert table content into plain text sections."
+        },
+        {
+          "risk": "Icons or symbols detected",
+          "severity": "medium",
+          "detail": "Found roughly 9 icon/symbol characters. Icons may not render in ATS systems. Use plain text bullets instead."
+        },
+        {
+          "risk": "Possible text boxes or floating elements",
+          "severity": "medium",
+          "detail": "Short indented lines detected. Text boxes may not be read by ATS in correct order. Use standard linear text flow."
+        }
+      ],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: requirements, software, building.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Sections",
+          "priority": "high",
+          "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+          "location": "After Summary section"
+        },
+        {
+          "category": "Formatting",
+          "priority": "high",
+          "suggestion": "Tables may not be parsed correctly by ATS. Convert table content into plain text sections.",
+          "location": "Throughout resume"
+        },
+        {
+          "category": "Formatting",
+          "priority": "medium",
+          "suggestion": "Found roughly 9 icon/symbol characters. Icons may not render in ATS systems. Use plain text bullets instead.",
+          "location": "Throughout resume"
+        },
+        {
+          "category": "Formatting",
+          "priority": "medium",
+          "suggestion": "Short indented lines detected. Text boxes may not be read by ATS in correct order. Use standard linear text flow.",
+          "location": "Throughout resume"
+        }
+      ],
+      "detected_sections": [
+        "experience",
+        "summary"
+      ],
+      "missing_sections": [
+        "education",
+        "skills"
+      ],
+      "summary": "Moderate ATS compatibility (score: 78/100). 22 keywords matched but 3 are missing. Address the suggestions below to improve."
+    }
+  },
+  {
+    "id": "empty_resume",
+    "name": "Empty Resume",
+    "description": "Empty resume text analyzed against a standard job description",
+    "input": {
+      "resume": "",
+      "job_description": "Looking for a Python software engineer with AWS and Docker experience."
+    },
+    "expected_output": {
+      "overall_score": 23,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 0,
+          "weight": 0.3,
+          "details": "0 of 13 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 0,
+          "weight": 0.25,
+          "details": "0 of 3 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 40,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 0,
+          "weight": 0.1,
+          "details": "Standard sections found: none. Missing: education, experience, skills, summary."
+        }
+      ],
+      "matched_keywords": [],
+      "missing_keywords": [
+        {
+          "keyword": "docker experience.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software engineer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python software",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking python",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Action Verbs",
+          "priority": "high",
+          "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+          "location": "Experience section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: docker experience., software engineer, python software, looking python, engineer aws.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: aws, docker, python.",
+          "location": "Skills section"
+        },
+        {
+          "category": "Sections",
+          "priority": "high",
+          "suggestion": "Add a \"Professional Summary\" section at the top. This is one of the first sections ATS parsers look for.",
+          "location": "Top of resume"
+        },
+        {
+          "category": "Sections",
+          "priority": "high",
+          "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+          "location": "After Summary section"
+        },
+        {
+          "category": "Sections",
+          "priority": "critical",
+          "suggestion": "Add a \"Work Experience\" section with your employment history, job titles, and dates.",
+          "location": "After Summary section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "high",
+          "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+          "location": "Experience / Skills sections"
+        }
+      ],
+      "detected_sections": [],
+      "missing_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "summary": "Low ATS compatibility (score: 23/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+    }
+  },
+  {
+    "id": "empty_job_description",
+    "name": "Empty Job Description",
+    "description": "Standard resume analyzed against an empty job description",
+    "input": {
+      "resume": "Professional Summary\nSoftware Engineer with 4 years experience in Python and AWS.\n\nSkills\nPython, AWS, Docker, PostgreSQL\n\nExperience\nSoftware Engineer | Tech Corp | 2020 - Present\n- Built cloud applications\n\nEducation\nB.S. in Computer Science | University | 2016 - 2020\n",
+      "job_description": ""
+    },
+    "expected_output": {
+      "overall_score": 88,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 100,
+          "weight": 0.3,
+          "details": "0 of 0 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "0 of 0 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 40,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [],
+      "missing_keywords": [],
+      "ats_risks": [],
+      "suggestions": [],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 0 missing keywords identified."
+    }
+  },
+  {
+    "id": "long_resume",
+    "name": "Long Resume",
+    "description": "Detailed multi-page style resume with extensive job history and bullet points",
+    "input": {
+      "resume": "Professional Summary\nDistinguished Engineering Leader with 12+ years of experience architecting high-scale distributed systems, leading cross-functional teams, and driving engineering excellence across global organizations.\n\nTechnical Skills\nLanguages: Python, Go, Rust, Java, TypeScript, JavaScript, SQL, C++, Bash\nCloud & Platforms: AWS, Azure, GCP, Kubernetes, Docker, Terraform, Ansible, Linux\nDatabases & Storage: PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch, Cassandra, Kafka, DynamoDB\nArchitecture: Microservices, Event-Driven, Serverless, REST, GraphQL, gRPC, Distributed Systems\nDevOps & CI/CD: GitHub Actions, GitLab CI, Jenkins, ArgoCD, Prometheus, Grafana, Datadog\nPractices: Agile, Scrum, Kanban, TDD, Code Reviews, System Design, Mentoring, Technical Strategy\n\nProfessional Experience\n\nVice President of Engineering | GlobalTech Systems | 2022 - Present\n- Led an organization of 65+ engineers across 6 distributed teams building enterprise cloud platform\n- Architected hybrid cloud solution reducing infrastructure spend by $2.4M annually\n- Spearheaded company-wide migration to event-driven microservices architecture on AWS and Kubernetes\n- Implemented robust observability stack with OpenTelemetry, Prometheus, and Grafana\n\nPrincipal Software Architect | CloudScale Networks | 2019 - 2022\n- Designed real-time data ingestion pipeline handling 500M+ events daily using Kafka, Go, and Redis\n- Optimized PostgreSQL database clusters achieving 70% query latency reduction\n- Mentored 15+ senior engineers and established engineering standards and architectural review board\n- Automated deployment workflows using Terraform and GitHub Actions across 40+ microservices\n\nSenior Software Engineer | DataStream Inc | 2015 - 2019\n- Built RESTful and GraphQL APIs using Python, FastAPI, and Django serving 2M active users\n- Implemented automated testing strategy with PyTest and Cypress, achieving 92% test coverage\n- Deployed containerized applications with Docker onto AWS ECS and EKS clusters\n- Collaborated with product managers to deliver 24 major features on schedule\n\nSoftware Engineer | WebPioneer Solutions | 2012 - 2015\n- Developed full-stack web applications using JavaScript, React, Node.js, and MySQL\n- Migrated legacy monolithic PHP applications to modern microservice architecture\n- Implemented OAuth and JWT authentication workflows for enterprise clients\n\nEducation\nM.S. in Computer Science | Stanford University | 2010 - 2012\nB.S. in Software Engineering | University of California, Berkeley | 2006 - 2010\n\nCertifications\nAWS Certified Solutions Architect - Professional\nCertified Kubernetes Administrator (CKA)\nGoogle Cloud Professional Cloud Architect\n\nPublications\n\"Architecting Resilient Distributed Systems at Scale\" - IEEE Software Conference 2021\n\"Event-Driven Patterns for Modern SaaS Platforms\" - Cloud Native Journal 2019\n",
+      "job_description": "VP of Engineering / Principal Architect\nWe are seeking an executive-level engineering leader with 10+ years of experience to lead our Platform Engineering group.\n\nKey Responsibilities:\n- Lead and scale engineering organizations (50+ engineers)\n- Define architectural strategy for distributed cloud platforms\n- Drive cloud infrastructure across AWS, Kubernetes, and Terraform\n- Champion engineering culture, mentoring, and technical excellence\n\nRequired Qualifications:\n- 10+ years of professional software engineering experience\n- 5+ years of technical leadership / people management experience\n- Deep expertise in Python, Go, distributed systems, microservices, and event-driven architecture\n- Mastery of AWS, Docker, Kubernetes, Terraform, PostgreSQL, Redis, and Kafka\n- Track record of scaling systems to millions of users\n- Strong communication, strategic planning, and stakeholder management skills\n"
+    },
+    "expected_output": {
+      "overall_score": 71,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 60,
+          "weight": 0.3,
+          "details": "60 of 100 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 75,
+          "weight": 0.25,
+          "details": "12 of 16 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 49,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: certifications, education, experience, publications, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "kubernetes terraform",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "executive-level engineering",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices event-driven",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering organizations",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "event-driven architecture",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architectural strategy",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering principal",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "infrastructure across",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "professional software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "management experience",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems microservices",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "platform engineering",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "define architectural",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strategy distributed",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud infrastructure",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "champion engineering",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "technical excellence",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software engineering",
+          "matched": true,
+          "context": null,
+          "variants": [
+            "software engineer"
+          ]
+        },
+        {
+          "keyword": "technical leadership",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architecture mastery",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "terraform postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "principal architect",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering culture",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "mentoring technical",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "excellence required",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "distributed systems",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering leader",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineering group.",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "10+ years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "seeking executive-level",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "required qualifications",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "communication strategic",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "stakeholder management",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "responsibilities lead",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "key responsibilities",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strong communication",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "planning stakeholder",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "terraform champion",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "qualifications 10+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "strategic planning",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "organizations 50+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "leadership people",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "people management",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "management skills",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "expertise python",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "platforms drive",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "deep expertise",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "record scaling",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "millions users",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "track record",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "users strong",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "redis kafka",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kafka track",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "group. key",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "lead scale",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python go",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "5+ years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: 10+ years, seeking executive-level, required qualifications, communication strategic, stakeholder management.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: communication, leadership, stakeholder management, strategic planning.",
+          "location": "Skills section"
+        }
+      ],
+      "detected_sections": [
+        "certifications",
+        "education",
+        "experience",
+        "publications",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Moderate ATS compatibility (score: 71/100). 60 keywords matched but 40 are missing. Address the suggestions below to improve."
+    }
+  },
+  {
+    "id": "duplicate_keywords",
+    "name": "Duplicate Keywords",
+    "description": "Resume with repeated mentions of keywords across multiple sections",
+    "input": {
+      "resume": "Professional Summary\nPython Python Python developer with AWS AWS AWS experience.\n\nSkills\nPython, Python, AWS, AWS, Docker, Docker, React, React\n\nExperience\nPython Engineer | Python Corp | 2021 - Present\n- Used Python and AWS to build Python services\n- Deployed Python with Docker on AWS\n- Python testing with PyTest on AWS\n\nEducation\nB.S. in Python Science | Tech University | 2017 - 2021\n",
+      "job_description": "Python Developer\nRequirements: Python, AWS, Docker, React, PostgreSQL\n"
+    },
+    "expected_output": {
+      "overall_score": 83,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 85,
+          "weight": 0.3,
+          "details": "12 of 14 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 80,
+          "weight": 0.25,
+          "details": "4 of 5 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 65,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "developer requirements",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Action Verbs",
+          "priority": "high",
+          "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+          "location": "Experience section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: requirements, postgresql.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: postgresql.",
+          "location": "Skills section"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 83/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+    }
+  },
+  {
+    "id": "capitalization_differences",
+    "name": "Capitalization Differences",
+    "description": "Resume with various capitalization schemes for keywords (UPPERCASE, lowercase, TitleCase, mixed)",
+    "input": {
+      "resume": "PROFESSIONAL SUMMARY\nSENIOR SOFTWARE ENGINEER with expertise in PYTHON, REACT, and DOCKER.\n\nSKILLS\npython, TYPESCRIPT, React, aws, POSTGRESQL, FastApi, KuBerNeTes\n\nEXPERIENCE\nSoftware Engineer | TECH CORP | 2021 - Present\n- Built apps with Python and FastApi\n- Managed POSTGRESQL databases\n\nEDUCATION\nB.S. Computer Science | State University | 2017 - 2021\n",
+      "job_description": "Senior Developer\nLooking for candidates skilled in:\n- Python, TypeScript, React\n- AWS, PostgreSQL, FastAPI, Kubernetes\n"
+    },
+    "expected_output": {
+      "overall_score": 82,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 69,
+          "weight": 0.3,
+          "details": "16 of 23 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "7 of 7 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 60,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "postgresql fastapi",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi kubernetes",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python typescript",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "typescript react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "skilled python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "typescript",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "looking candidates",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "candidates skilled",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "developer looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "candidates",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "developer",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "skilled",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: looking candidates, candidates skilled, developer looking, candidates, developer.",
+          "location": "Skills / Experience sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 82/100). Your resume is well-optimized for ATS screening. Only 7 missing keywords identified."
+    }
+  },
+  {
+    "id": "punctuation_differences",
+    "name": "Punctuation Differences",
+    "description": "Resume with hyphenated, slashed, and dotted keyword variants (CI/CD, Node.js, micro-services)",
+    "input": {
+      "resume": "Professional Summary\nFull-stack engineer specializing in CI/CD, Node.js, and micro-services.\n\nSkills\nNode.js, CI/CD, Micro-services, REST-APIs, Front-End, Back-End, C++, C#, .NET\n\nExperience\nDeveloper | Tech Co | 2021 - Present\n- Built micro-services with Node.js and REST-APIs\n- Automated CI/CD pipelines\n\nEducation\nB.S. in CS | Tech College | 2017 - 2021\n",
+      "job_description": "Software Engineer\nRequirements:\n- CI/CD pipelines\n- Nodejs and REST APIs\n- Microservices architecture\n- Frontend and backend development\n"
+    },
+    "expected_output": {
+      "overall_score": 63,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 52,
+          "weight": 0.3,
+          "details": "13 of 25 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 50,
+          "weight": 0.25,
+          "details": "2 of 4 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 54,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "microservices architecture",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer requirements",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architecture frontend",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "backend development",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements ci/cd",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "apis microservices",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pipelines nodejs",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "frontend backend",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "ci/cd pipelines",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "pipelines",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "ci/cd",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "nodejs rest",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rest apis",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "microservices",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architecture",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "development",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "frontend",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "backend",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "nodejs",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rest",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "apis",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: nodejs rest, rest apis, microservices, requirements, architecture.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: microservices, nodejs.",
+          "location": "Skills section"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Moderate ATS compatibility (score: 63/100). 13 keywords matched but 12 are missing. Address the suggestions below to improve."
+    }
+  },
+  {
+    "id": "unicode_text",
+    "name": "Unicode Text",
+    "description": "Resume containing Unicode characters (smart quotes, em dashes, accents, non-ASCII bullet points)",
+    "input": {
+      "resume": "Professional Summary — Résumé\nSenior Software Engineer • 5+ years building “cloud-native” applications.\n\nSkills\nPython • TypeScript • React • Docker • AWS • PostgreSQL\n\nExperience\nLead Developer — Zürich Tech • 2020 – Present\n• Designed APIs with FastAPI & PostgreSQL\n• Reduced latency by 45% — deployed on AWS\n\nEducation\nB.Sc. in Informatique • Université de Genève • 2016 – 2020\n",
+      "job_description": "Senior Software Engineer\nRequirements:\n- Python, TypeScript, React, Docker, AWS, PostgreSQL\n- FastAPI and cloud architecture\n"
+    },
+    "expected_output": {
+      "overall_score": 89,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 84,
+          "weight": 0.3,
+          "details": "21 of 25 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "7 of 7 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 71,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "engineer requirements",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql fastapi",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python typescript",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "typescript react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi cloud",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "typescript",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "engineer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "fastapi",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "senior",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "cloud architecture",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "requirements",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architecture",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: cloud architecture, requirements, architecture, cloud.",
+          "location": "Skills / Experience sections"
+        }
+      ],
+      "detected_sections": [
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 89/100). Your resume is well-optimized for ATS screening. Only 4 missing keywords identified."
+    }
+  },
+  {
+    "id": "common_resume_headings",
+    "name": "Common Resume Headings",
+    "description": "Resume using various standard heading aliases (Profile, Work History, Academic Background, Core Competencies)",
+    "input": {
+      "resume": "Profile\nExperienced developer building web solutions.\n\nCore Competencies\nPython, React, Docker, PostgreSQL, Git\n\nWork History\nDeveloper | Acme | 2021 - Present\n- Built software applications\n\nAcademic Background\nB.S. in Computing | University | 2017 - 2021\n\nCertificates & Licenses\nAWS Certified Developer\n",
+      "job_description": "Software Developer\nLooking for Python, React, Docker, PostgreSQL, Git.\n"
+    },
+    "expected_output": {
+      "overall_score": 88,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 86,
+          "weight": 0.3,
+          "details": "13 of 15 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 100,
+          "weight": 0.25,
+          "details": "5 of 5 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 64,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 100,
+          "weight": 0.1,
+          "details": "Standard sections found: certifications, education, experience, skills, summary. Missing: none."
+        }
+      ],
+      "matched_keywords": [
+        {
+          "keyword": "software developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "developer looking",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql git.",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "looking python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "postgresql",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "developer",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "software",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "python",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "docker",
+          "matched": true,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "react",
+          "matched": true,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "missing_keywords": [
+        {
+          "keyword": "looking",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "git.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: looking, git..",
+          "location": "Skills / Experience sections"
+        }
+      ],
+      "detected_sections": [
+        "certifications",
+        "education",
+        "experience",
+        "skills",
+        "summary"
+      ],
+      "missing_sections": [],
+      "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+    }
+  },
+  {
+    "id": "boundary_scores",
+    "name": "Boundary Scores",
+    "description": "Minimal content testing edge-case boundary scores",
+    "input": {
+      "resume": "Summary\nJunior developer.\n",
+      "job_description": "Principal Cloud Architect with 15+ years of experience.\nExpert in Rust, C++, Kubernetes, Terraform, AWS, Azure, GCP, distributed systems, high-frequency trading.\n"
+    },
+    "expected_output": {
+      "overall_score": 25,
+      "section_scores": [
+        {
+          "name": "Keyword Match",
+          "score": 0,
+          "weight": 0.3,
+          "details": "0 of 35 job keywords found in resume."
+        },
+        {
+          "name": "Skills Match",
+          "score": 0,
+          "weight": 0.25,
+          "details": "0 of 6 required skills found."
+        },
+        {
+          "name": "Experience Relevance",
+          "score": 40,
+          "weight": 0.2,
+          "details": "Alignment between resume experience and job requirements."
+        },
+        {
+          "name": "Formatting / ATS Readability",
+          "score": 100,
+          "weight": 0.15,
+          "details": "0 formatting issue(s) detected that may affect ATS parsing."
+        },
+        {
+          "name": "Contact & Section Completeness",
+          "score": 25,
+          "weight": 0.1,
+          "details": "Standard sections found: summary. Missing: education, experience, skills."
+        }
+      ],
+      "matched_keywords": [],
+      "missing_keywords": [
+        {
+          "keyword": "high-frequency trading.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems high-frequency",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes terraform",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "distributed systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience. expert",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years experience.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "principal cloud",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud architect",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "gcp distributed",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "c++ kubernetes",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect 15+",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "terraform aws",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "expert rust",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "15+ years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "aws azure",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "azure gcp",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "rust c++",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "high-frequency",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "experience.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "distributed",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "kubernetes",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "principal",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "architect",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "terraform",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "trading.",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "systems",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "expert",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "cloud",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "years",
+          "matched": false,
+          "context": null,
+          "variants": null
+        },
+        {
+          "keyword": "azure",
+          "matched": false,
+          "context": null,
+          "variants": null
+        }
+      ],
+      "ats_risks": [],
+      "suggestions": [
+        {
+          "category": "Action Verbs",
+          "priority": "high",
+          "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+          "location": "Experience section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "critical",
+          "suggestion": "Add these missing keywords to your resume: high-frequency trading., systems high-frequency, kubernetes terraform, distributed systems, experience. expert.",
+          "location": "Skills / Experience sections"
+        },
+        {
+          "category": "Skills",
+          "priority": "high",
+          "suggestion": "Add these missing skills to your Skills section: aws, azure, gcp, kubernetes, rust.",
+          "location": "Skills section"
+        },
+        {
+          "category": "Sections",
+          "priority": "high",
+          "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+          "location": "After Summary section"
+        },
+        {
+          "category": "Sections",
+          "priority": "critical",
+          "suggestion": "Add a \"Work Experience\" section with your employment history, job titles, and dates.",
+          "location": "After Summary section"
+        },
+        {
+          "category": "Keywords",
+          "priority": "high",
+          "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+          "location": "Experience / Skills sections"
+        }
+      ],
+      "detected_sections": [
+        "summary"
+      ],
+      "missing_sections": [
+        "education",
+        "experience",
+        "skills"
+      ],
+      "summary": "Low ATS compatibility (score: 25/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+    }
+  }
+]

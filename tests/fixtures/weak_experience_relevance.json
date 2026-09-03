@@ -1,0 +1,323 @@
+{
+  "id": "weak_experience_relevance",
+  "name": "Weak Experience Relevance",
+  "description": "Resume has minimal experience compared to a senior requirement",
+  "input": {
+    "resume": "Summary\nRecent computer science graduate with internship experience.\n\nSkills\nPython, Java, Git, HTML, CSS\n\nExperience\nSoftware Intern | Tech Startup | 2024 - 2024\n- Assisted in bug fixes and documentation\n\nEducation\nB.S. in Computer Science | City College | 2020 - 2024\n",
+    "job_description": "Staff Software Architect\nRequires 10+ years of experience in cloud infrastructure, Kubernetes, distributed systems, and enterprise architecture.\nProficiency in Python, Go, AWS, Docker, Microservices, and Kafka.\n"
+  },
+  "expected_output": {
+    "overall_score": 38,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 21,
+        "weight": 0.3,
+        "details": "9 of 41 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 14,
+        "weight": 0.25,
+        "details": "1 of 7 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 20,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "software architect",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "proficiency python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience cloud",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "staff software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python go",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "infrastructure kubernetes",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architecture. proficiency",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "enterprise architecture.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes distributed",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "cloud infrastructure",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker microservices",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices kafka.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "distributed systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect requires",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems enterprise",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requires 10+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "10+ years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "go aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "infrastructure",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architecture.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "distributed",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "proficiency",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "enterprise",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requires",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kafka.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "staff",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "cloud",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "10+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Action Verbs",
+        "priority": "medium",
+        "suggestion": "Replace the passive phrase \"assisted in\" (1x) with a strong verb like \"Drove\".",
+        "location": "Experience section bullets"
+      },
+      {
+        "category": "Action Verbs",
+        "priority": "high",
+        "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+        "location": "Experience section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: infrastructure kubernetes, architecture. proficiency, enterprise architecture., kubernetes distributed, cloud infrastructure.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: aws, docker, go, kafka, kubernetes.",
+        "location": "Skills section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "high",
+        "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+        "location": "Experience / Skills sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Low ATS compatibility (score: 38/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+  }
+}

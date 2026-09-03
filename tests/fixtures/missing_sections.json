@@ -1,0 +1,216 @@
+{
+  "id": "missing_sections",
+  "name": "Missing Sections",
+  "description": "Resume is missing standard sections (no Summary, no Education)",
+  "input": {
+    "resume": "John Doe - Software Engineer\nSkills: Python, React, SQL, Docker, AWS\n\nExperience:\nSenior Developer | Acme Corp | 2020 - Present\n- Developed web services in Python and React\n- Deployed applications on AWS with Docker\n",
+    "job_description": "Software Engineer with Python, React, SQL, Docker, AWS.\nLooking for candidates with strong development background.\n"
+  },
+  "expected_output": {
+    "overall_score": 69,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 52,
+        "weight": 0.3,
+        "details": "12 of 23 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "5 of 5 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 58,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 25,
+        "weight": 0.1,
+        "details": "Standard sections found: experience. Missing: education, skills, summary."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "software engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker aws.",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "sql docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react sql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "sql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "development background.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking candidates",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong development",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "candidates strong",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws. looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "development",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "background.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "candidates",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: development background., looking candidates, strong development, candidates strong, aws. looking.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Sections",
+        "priority": "high",
+        "suggestion": "Add a \"Professional Summary\" section at the top. This is one of the first sections ATS parsers look for.",
+        "location": "Top of resume"
+      },
+      {
+        "category": "Sections",
+        "priority": "high",
+        "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+        "location": "After Summary section"
+      }
+    ],
+    "detected_sections": [
+      "experience"
+    ],
+    "missing_sections": [
+      "education",
+      "skills",
+      "summary"
+    ],
+    "summary": "Moderate ATS compatibility (score: 69/100). 12 keywords matched but 11 are missing. Address the suggestions below to improve."
+  }
+}

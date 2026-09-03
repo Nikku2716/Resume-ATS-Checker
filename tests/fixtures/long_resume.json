@@ -1,0 +1,435 @@
+{
+  "id": "long_resume",
+  "name": "Long Resume",
+  "description": "Detailed multi-page style resume with extensive job history and bullet points",
+  "input": {
+    "resume": "Professional Summary\nDistinguished Engineering Leader with 12+ years of experience architecting high-scale distributed systems, leading cross-functional teams, and driving engineering excellence across global organizations.\n\nTechnical Skills\nLanguages: Python, Go, Rust, Java, TypeScript, JavaScript, SQL, C++, Bash\nCloud & Platforms: AWS, Azure, GCP, Kubernetes, Docker, Terraform, Ansible, Linux\nDatabases & Storage: PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch, Cassandra, Kafka, DynamoDB\nArchitecture: Microservices, Event-Driven, Serverless, REST, GraphQL, gRPC, Distributed Systems\nDevOps & CI/CD: GitHub Actions, GitLab CI, Jenkins, ArgoCD, Prometheus, Grafana, Datadog\nPractices: Agile, Scrum, Kanban, TDD, Code Reviews, System Design, Mentoring, Technical Strategy\n\nProfessional Experience\n\nVice President of Engineering | GlobalTech Systems | 2022 - Present\n- Led an organization of 65+ engineers across 6 distributed teams building enterprise cloud platform\n- Architected hybrid cloud solution reducing infrastructure spend by $2.4M annually\n- Spearheaded company-wide migration to event-driven microservices architecture on AWS and Kubernetes\n- Implemented robust observability stack with OpenTelemetry, Prometheus, and Grafana\n\nPrincipal Software Architect | CloudScale Networks | 2019 - 2022\n- Designed real-time data ingestion pipeline handling 500M+ events daily using Kafka, Go, and Redis\n- Optimized PostgreSQL database clusters achieving 70% query latency reduction\n- Mentored 15+ senior engineers and established engineering standards and architectural review board\n- Automated deployment workflows using Terraform and GitHub Actions across 40+ microservices\n\nSenior Software Engineer | DataStream Inc | 2015 - 2019\n- Built RESTful and GraphQL APIs using Python, FastAPI, and Django serving 2M active users\n- Implemented automated testing strategy with PyTest and Cypress, achieving 92% test coverage\n- Deployed containerized applications with Docker onto AWS ECS and EKS clusters\n- Collaborated with product managers to deliver 24 major features on schedule\n\nSoftware Engineer | WebPioneer Solutions | 2012 - 2015\n- Developed full-stack web applications using JavaScript, React, Node.js, and MySQL\n- Migrated legacy monolithic PHP applications to modern microservice architecture\n- Implemented OAuth and JWT authentication workflows for enterprise clients\n\nEducation\nM.S. in Computer Science | Stanford University | 2010 - 2012\nB.S. in Software Engineering | University of California, Berkeley | 2006 - 2010\n\nCertifications\nAWS Certified Solutions Architect - Professional\nCertified Kubernetes Administrator (CKA)\nGoogle Cloud Professional Cloud Architect\n\nPublications\n\"Architecting Resilient Distributed Systems at Scale\" - IEEE Software Conference 2021\n\"Event-Driven Patterns for Modern SaaS Platforms\" - Cloud Native Journal 2019\n",
+    "job_description": "VP of Engineering / Principal Architect\nWe are seeking an executive-level engineering leader with 10+ years of experience to lead our Platform Engineering group.\n\nKey Responsibilities:\n- Lead and scale engineering organizations (50+ engineers)\n- Define architectural strategy for distributed cloud platforms\n- Drive cloud infrastructure across AWS, Kubernetes, and Terraform\n- Champion engineering culture, mentoring, and technical excellence\n\nRequired Qualifications:\n- 10+ years of professional software engineering experience\n- 5+ years of technical leadership / people management experience\n- Deep expertise in Python, Go, distributed systems, microservices, and event-driven architecture\n- Mastery of AWS, Docker, Kubernetes, Terraform, PostgreSQL, Redis, and Kafka\n- Track record of scaling systems to millions of users\n- Strong communication, strategic planning, and stakeholder management skills\n"
+  },
+  "expected_output": {
+    "overall_score": 71,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 60,
+        "weight": 0.3,
+        "details": "60 of 100 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 75,
+        "weight": 0.25,
+        "details": "12 of 16 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 49,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: certifications, education, experience, publications, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "kubernetes terraform",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "executive-level engineering",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices event-driven",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering organizations",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "event-driven architecture",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architectural strategy",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering principal",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "infrastructure across",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "professional software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "management experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems microservices",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "platform engineering",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "define architectural",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strategy distributed",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "cloud infrastructure",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "champion engineering",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "technical excellence",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software engineering",
+        "matched": true,
+        "context": null,
+        "variants": [
+          "software engineer"
+        ]
+      },
+      {
+        "keyword": "technical leadership",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architecture mastery",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "terraform postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "principal architect",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering culture",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "mentoring technical",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "excellence required",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "distributed systems",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering leader",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineering group.",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "10+ years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "seeking executive-level",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "required qualifications",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "communication strategic",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "stakeholder management",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "responsibilities lead",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "key responsibilities",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong communication",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "planning stakeholder",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "terraform champion",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "qualifications 10+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strategic planning",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "organizations 50+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "leadership people",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "people management",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "management skills",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "expertise python",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "platforms drive",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "deep expertise",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "record scaling",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "millions users",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "track record",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "users strong",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "redis kafka",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kafka track",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "group. key",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "lead scale",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python go",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "5+ years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: 10+ years, seeking executive-level, required qualifications, communication strategic, stakeholder management.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: communication, leadership, stakeholder management, strategic planning.",
+        "location": "Skills section"
+      }
+    ],
+    "detected_sections": [
+      "certifications",
+      "education",
+      "experience",
+      "publications",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Moderate ATS compatibility (score: 71/100). 60 keywords matched but 40 are missing. Address the suggestions below to improve."
+  }
+}

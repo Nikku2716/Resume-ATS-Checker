@@ -1,0 +1,178 @@
+{
+  "id": "empty_resume",
+  "name": "Empty Resume",
+  "description": "Empty resume text analyzed against a standard job description",
+  "input": {
+    "resume": "",
+    "job_description": "Looking for a Python software engineer with AWS and Docker experience."
+  },
+  "expected_output": {
+    "overall_score": 23,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 0,
+        "weight": 0.3,
+        "details": "0 of 13 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 0,
+        "weight": 0.25,
+        "details": "0 of 3 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 40,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 0,
+        "weight": 0.1,
+        "details": "Standard sections found: none. Missing: education, experience, skills, summary."
+      }
+    ],
+    "matched_keywords": [],
+    "missing_keywords": [
+      {
+        "keyword": "docker experience.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software engineer",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python software",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking python",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Action Verbs",
+        "priority": "high",
+        "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+        "location": "Experience section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: docker experience., software engineer, python software, looking python, engineer aws.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: aws, docker, python.",
+        "location": "Skills section"
+      },
+      {
+        "category": "Sections",
+        "priority": "high",
+        "suggestion": "Add a \"Professional Summary\" section at the top. This is one of the first sections ATS parsers look for.",
+        "location": "Top of resume"
+      },
+      {
+        "category": "Sections",
+        "priority": "high",
+        "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+        "location": "After Summary section"
+      },
+      {
+        "category": "Sections",
+        "priority": "critical",
+        "suggestion": "Add a \"Work Experience\" section with your employment history, job titles, and dates.",
+        "location": "After Summary section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "high",
+        "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+        "location": "Experience / Skills sections"
+      }
+    ],
+    "detected_sections": [],
+    "missing_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "summary": "Low ATS compatibility (score: 23/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+  }
+}

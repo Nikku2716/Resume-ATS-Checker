@@ -1,0 +1,365 @@
+{
+  "id": "high_keyword_match",
+  "name": "High Keyword Match",
+  "description": "Resume contains nearly all keywords and skills requested in the job description",
+  "input": {
+    "resume": "Professional Summary\nSenior Software Engineer with 6+ years of experience in Python, TypeScript, React, Docker, and AWS.\nProven track record of designing REST APIs and leading microservice architecture.\n\nTechnical Skills\nLanguages: Python, TypeScript, SQL, HTML, CSS\nFrameworks: React, FastAPI, Node.js\nCloud & DevOps: AWS, Docker, Kubernetes, CI/CD, Git, Terraform\nDatabases: PostgreSQL, Redis, MongoDB\n\nWork Experience\nSenior Software Engineer | CloudTech Inc | 2021 - Present\n- Designed scalable RESTful microservices with FastAPI and PostgreSQL\n- Deployed containerized applications to Kubernetes on AWS ECS\n- Led a team of 5 engineers delivering high-quality web applications using Agile\n\nEducation\nB.S. in Computer Science | Tech University | 2015 - 2019\n",
+    "job_description": "Senior Software Engineer\nWe are seeking a Senior Software Engineer with Python and TypeScript expertise.\nRequirements:\n- 5+ years of experience with Python, FastAPI, and React\n- Experience with Docker, Kubernetes, AWS, and CI/CD pipelines\n- Strong background in PostgreSQL, Redis, and microservices\n- Experience in Agile environments and Git version control\n"
+  },
+  "expected_output": {
+    "overall_score": 81,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 66,
+        "weight": 0.3,
+        "details": "39 of 59 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "13 of 13 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 60,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "software engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "typescript expertise.",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "background postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "redis microservices",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "agile environments",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python typescript",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker kubernetes",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer seeking",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql redis",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience agile",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "environments git",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "ci/cd pipelines",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "seeking senior",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python fastapi",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "fastapi react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "git version",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws ci/cd",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "5+ years",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "expertise. requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong background",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "pipelines strong",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements 5+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "version control",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "environments",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "expertise.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "background",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "pipelines",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "seeking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "version",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "control",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "ci/cd",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "redis",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "agile",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "git",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "5+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: expertise. requirements, strong background, pipelines strong, requirements 5+, version control.",
+        "location": "Skills / Experience sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Strong ATS compatibility (score: 81/100). Your resume is well-optimized for ATS screening. Only 20 missing keywords identified."
+  }
+}

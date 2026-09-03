@@ -1,0 +1,293 @@
+{
+  "id": "strong_skills_match",
+  "name": "Strong Skills Match",
+  "description": "Resume contains all the technical and soft skills requested",
+  "input": {
+    "resume": "Professional Summary\nStaff Engineer with extensive background in machine learning and data engineering.\n\nSkills\nPython, PyTorch, TensorFlow, Scikit-Learn, Pandas, NumPy, SQL, Docker, AWS, Git, Leadership, Communication, Problem-Solving, Mentoring\n\nExperience\nLead ML Engineer | AI Labs | 2019 - Present\n- Led machine learning projects from concept to deployment\n- Mentored junior engineers and communicated technical roadmaps\n- Designed deep learning models with PyTorch and TensorFlow\n\nEducation\nM.S. in Computer Science | Tech University | 2017 - 2019\n",
+    "job_description": "Senior Machine Learning Engineer\nRequirements:\n- Proficient in Python, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, SQL\n- Experience with Docker and AWS\n- Strong leadership, communication, problem-solving, and mentoring abilities\n"
+  },
+  "expected_output": {
+    "overall_score": 87,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 81,
+        "weight": 0.3,
+        "details": "35 of 43 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "14 of 14 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 65,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "communication problem-solving",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "problem-solving mentoring",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "leadership communication",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "tensorflow scikit-learn",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer requirements",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "scikit-learn pandas",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "mentoring abilities",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "pytorch tensorflow",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "learning engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "proficient python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong leadership",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "machine learning",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior machine",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python pytorch",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "sql experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "pandas numpy",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws strong",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "numpy sql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "problem-solving",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "communication",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "scikit-learn",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "tensorflow",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "leadership",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "mentoring",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "learning",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "machine",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "requirements proficient",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "proficient",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "abilities",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "strong",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "sql",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: requirements proficient, requirements, proficient, abilities, senior.",
+        "location": "Skills / Experience sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Strong ATS compatibility (score: 87/100). Your resume is well-optimized for ATS screening. Only 8 missing keywords identified."
+  }
+}

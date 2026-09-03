@@ -1,0 +1,56 @@
+{
+  "id": "empty_job_description",
+  "name": "Empty Job Description",
+  "description": "Standard resume analyzed against an empty job description",
+  "input": {
+    "resume": "Professional Summary\nSoftware Engineer with 4 years experience in Python and AWS.\n\nSkills\nPython, AWS, Docker, PostgreSQL\n\nExperience\nSoftware Engineer | Tech Corp | 2020 - Present\n- Built cloud applications\n\nEducation\nB.S. in Computer Science | University | 2016 - 2020\n",
+    "job_description": ""
+  },
+  "expected_output": {
+    "overall_score": 88,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 100,
+        "weight": 0.3,
+        "details": "0 of 0 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "0 of 0 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 40,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [],
+    "missing_keywords": [],
+    "ats_risks": [],
+    "suggestions": [],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 0 missing keywords identified."
+  }
+}

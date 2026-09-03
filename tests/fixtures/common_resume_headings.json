@@ -1,0 +1,156 @@
+{
+  "id": "common_resume_headings",
+  "name": "Common Resume Headings",
+  "description": "Resume using various standard heading aliases (Profile, Work History, Academic Background, Core Competencies)",
+  "input": {
+    "resume": "Profile\nExperienced developer building web solutions.\n\nCore Competencies\nPython, React, Docker, PostgreSQL, Git\n\nWork History\nDeveloper | Acme | 2021 - Present\n- Built software applications\n\nAcademic Background\nB.S. in Computing | University | 2017 - 2021\n\nCertificates & Licenses\nAWS Certified Developer\n",
+    "job_description": "Software Developer\nLooking for Python, React, Docker, PostgreSQL, Git.\n"
+  },
+  "expected_output": {
+    "overall_score": 88,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 86,
+        "weight": 0.3,
+        "details": "13 of 15 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "5 of 5 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 64,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: certifications, education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "software developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "developer looking",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql git.",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "git.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: looking, git..",
+        "location": "Skills / Experience sections"
+      }
+    ],
+    "detected_sections": [
+      "certifications",
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+  }
+}

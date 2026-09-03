@@ -1,0 +1,275 @@
+{
+  "id": "boundary_scores",
+  "name": "Boundary Scores",
+  "description": "Minimal content testing edge-case boundary scores",
+  "input": {
+    "resume": "Summary\nJunior developer.\n",
+    "job_description": "Principal Cloud Architect with 15+ years of experience.\nExpert in Rust, C++, Kubernetes, Terraform, AWS, Azure, GCP, distributed systems, high-frequency trading.\n"
+  },
+  "expected_output": {
+    "overall_score": 25,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 0,
+        "weight": 0.3,
+        "details": "0 of 35 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 0,
+        "weight": 0.25,
+        "details": "0 of 6 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 40,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 25,
+        "weight": 0.1,
+        "details": "Standard sections found: summary. Missing: education, experience, skills."
+      }
+    ],
+    "matched_keywords": [],
+    "missing_keywords": [
+      {
+        "keyword": "high-frequency trading.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems high-frequency",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes terraform",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "distributed systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience. expert",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years experience.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "principal cloud",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "cloud architect",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "gcp distributed",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "c++ kubernetes",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect 15+",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "terraform aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "expert rust",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "15+ years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws azure",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "azure gcp",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rust c++",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "high-frequency",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experience.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "distributed",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "principal",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architect",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "terraform",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "trading.",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "expert",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "cloud",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "years",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "azure",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Action Verbs",
+        "priority": "high",
+        "suggestion": "Resume reads passively. Start each experience bullet with a strong action verb (led, built, shipped, optimized...) and quantify the impact.",
+        "location": "Experience section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: high-frequency trading., systems high-frequency, kubernetes terraform, distributed systems, experience. expert.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: aws, azure, gcp, kubernetes, rust.",
+        "location": "Skills section"
+      },
+      {
+        "category": "Sections",
+        "priority": "high",
+        "suggestion": "Add a dedicated \"Skills\" section with relevant technical and soft skills listed clearly.",
+        "location": "After Summary section"
+      },
+      {
+        "category": "Sections",
+        "priority": "critical",
+        "suggestion": "Add a \"Work Experience\" section with your employment history, job titles, and dates.",
+        "location": "After Summary section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "high",
+        "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+        "location": "Experience / Skills sections"
+      }
+    ],
+    "detected_sections": [
+      "summary"
+    ],
+    "missing_sections": [
+      "education",
+      "experience",
+      "skills"
+    ],
+    "summary": "Low ATS compatibility (score: 25/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+  }
+}

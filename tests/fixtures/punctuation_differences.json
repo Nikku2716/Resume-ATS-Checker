@@ -1,0 +1,221 @@
+{
+  "id": "punctuation_differences",
+  "name": "Punctuation Differences",
+  "description": "Resume with hyphenated, slashed, and dotted keyword variants (CI/CD, Node.js, micro-services)",
+  "input": {
+    "resume": "Professional Summary\nFull-stack engineer specializing in CI/CD, Node.js, and micro-services.\n\nSkills\nNode.js, CI/CD, Micro-services, REST-APIs, Front-End, Back-End, C++, C#, .NET\n\nExperience\nDeveloper | Tech Co | 2021 - Present\n- Built micro-services with Node.js and REST-APIs\n- Automated CI/CD pipelines\n\nEducation\nB.S. in CS | Tech College | 2017 - 2021\n",
+    "job_description": "Software Engineer\nRequirements:\n- CI/CD pipelines\n- Nodejs and REST APIs\n- Microservices architecture\n- Frontend and backend development\n"
+  },
+  "expected_output": {
+    "overall_score": 63,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 52,
+        "weight": 0.3,
+        "details": "13 of 25 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 50,
+        "weight": 0.25,
+        "details": "2 of 4 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 54,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "microservices architecture",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer requirements",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architecture frontend",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "backend development",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements ci/cd",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "apis microservices",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "pipelines nodejs",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "frontend backend",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "ci/cd pipelines",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "pipelines",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "ci/cd",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "nodejs rest",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rest apis",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "architecture",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "development",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "frontend",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "backend",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "nodejs",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rest",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "apis",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: nodejs rest, rest apis, microservices, requirements, architecture.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: microservices, nodejs.",
+        "location": "Skills section"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Moderate ATS compatibility (score: 63/100). 13 keywords matched but 12 are missing. Address the suggestions below to improve."
+  }
+}

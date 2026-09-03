@@ -1,0 +1,289 @@
+{
+  "id": "missing_keywords",
+  "name": "Missing Keywords",
+  "description": "Resume matches general skills but misses specific tech stack keywords",
+  "input": {
+    "resume": "Professional Summary\nFull stack developer with 4 years of experience building web applications.\n\nSkills\nJavaScript, PHP, Laravel, MySQL, Apache, Linux, CSS, HTML\n\nExperience\nSoftware Developer | WebWorks | 2020 - Present\n- Built custom web applications using PHP and MySQL\n- Maintained web servers and handled database queries\n- Implemented user interfaces with JavaScript and CSS\n\nEducation\nB.S. in Information Systems | City University | 2016 - 2020\n",
+    "job_description": "Full Stack Engineer\nLooking for a developer experienced in:\n- Python, Django, FastAPI\n- React, TypeScript, Tailwind CSS\n- PostgreSQL, Redis\n- Docker, AWS, GraphQL\n"
+  },
+  "expected_output": {
+    "overall_score": 45,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 31,
+        "weight": 0.3,
+        "details": "11 of 35 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 8,
+        "weight": 0.25,
+        "details": "1 of 12 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 48,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "developer experienced",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "stack engineer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "css postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "tailwind css",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "full stack",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experienced",
+        "matched": true,
+        "context": null,
+        "variants": [
+          "experience"
+        ]
+      },
+      {
+        "keyword": "developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "stack",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "full",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "css",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "typescript tailwind",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "experienced python",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react typescript",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql redis",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "django fastapi",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python django",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "fastapi react",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "redis docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws graphql",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "typescript",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "tailwind",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "fastapi",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "graphql",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "django",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "redis",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: typescript tailwind, experienced python, engineer looking, react typescript, postgresql redis.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: aws, django, docker, fastapi, graphql.",
+        "location": "Skills section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "high",
+        "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+        "location": "Experience / Skills sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Below average ATS compatibility (score: 45/100). Significant keyword gaps (24 missing) and potential formatting issues. Prioritize the critical fixes."
+  }
+}

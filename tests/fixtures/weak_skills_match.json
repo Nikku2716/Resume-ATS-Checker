@@ -1,0 +1,256 @@
+{
+  "id": "weak_skills_match",
+  "name": "Weak Skills Match",
+  "description": "Resume contains none of the requested technical skills",
+  "input": {
+    "resume": "Professional Summary\nCreative Graphic Designer with 5 years of experience in branding and print design.\n\nSkills\nPhotoshop, Illustrator, InDesign, Typography, Branding, Print Design\n\nExperience\nGraphic Designer | Creative Studio | 2019 - Present\n- Designed marketing materials and brand identities\n- Collaborated with copywriters and marketing teams\n\nEducation\nB.A. in Graphic Design | Art Institute | 2015 - 2019\n",
+    "job_description": "Embedded Systems Software Engineer\nRequirements:\n- C++, Rust, Linux, Bash, Git, microservices\n- Real-time operating systems (RTOS), kernel debugging\n- Docker, Kubernetes, CI/CD\n"
+  },
+  "expected_output": {
+    "overall_score": 33,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 0,
+        "weight": 0.3,
+        "details": "0 of 38 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 0,
+        "weight": 0.25,
+        "details": "0 of 8 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 40,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [],
+    "missing_keywords": [
+      {
+        "keyword": "microservices real-time",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "real-time operating",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software engineer",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "git microservices",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "operating systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "docker kubernetes",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "embedded systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems software",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements c++",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kernel debugging",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "debugging docker",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes ci/cd",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems rtos",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rtos kernel",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "rust linux",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "linux bash",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "c++ rust",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "bash git",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "systems",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "microservices",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "requirements",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "real-time",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "operating",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "debugging",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "embedded",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "software",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "engineer",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kernel",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: microservices real-time, engineer requirements, real-time operating, software engineer, git microservices.",
+        "location": "Skills / Experience sections"
+      },
+      {
+        "category": "Skills",
+        "priority": "high",
+        "suggestion": "Add these missing skills to your Skills section: bash, ci/cd, docker, git, kubernetes.",
+        "location": "Skills section"
+      },
+      {
+        "category": "Keywords",
+        "priority": "high",
+        "suggestion": "Keyword match is low. Study the job description and incorporate its language naturally into your resume.",
+        "location": "Experience / Skills sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Low ATS compatibility (score: 33/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "id": "capitalization_differences",
+  "name": "Capitalization Differences",
+  "description": "Resume with various capitalization schemes for keywords (UPPERCASE, lowercase, TitleCase, mixed)",
+  "input": {
+    "resume": "PROFESSIONAL SUMMARY\nSENIOR SOFTWARE ENGINEER with expertise in PYTHON, REACT, and DOCKER.\n\nSKILLS\npython, TYPESCRIPT, React, aws, POSTGRESQL, FastApi, KuBerNeTes\n\nEXPERIENCE\nSoftware Engineer | TECH CORP | 2021 - Present\n- Built apps with Python and FastApi\n- Managed POSTGRESQL databases\n\nEDUCATION\nB.S. Computer Science | State University | 2017 - 2021\n",
+    "job_description": "Senior Developer\nLooking for candidates skilled in:\n- Python, TypeScript, React\n- AWS, PostgreSQL, FastAPI, Kubernetes\n"
+  },
+  "expected_output": {
+    "overall_score": 82,
+    "section_scores": [
+      {
+        "name": "Keyword Match",
+        "score": 69,
+        "weight": 0.3,
+        "details": "16 of 23 job keywords found in resume."
+      },
+      {
+        "name": "Skills Match",
+        "score": 100,
+        "weight": 0.25,
+        "details": "7 of 7 required skills found."
+      },
+      {
+        "name": "Experience Relevance",
+        "score": 60,
+        "weight": 0.2,
+        "details": "Alignment between resume experience and job requirements."
+      },
+      {
+        "name": "Formatting / ATS Readability",
+        "score": 100,
+        "weight": 0.15,
+        "details": "0 formatting issue(s) detected that may affect ATS parsing."
+      },
+      {
+        "name": "Contact & Section Completeness",
+        "score": 100,
+        "weight": 0.1,
+        "details": "Standard sections found: education, experience, skills, summary. Missing: none."
+      }
+    ],
+    "matched_keywords": [
+      {
+        "keyword": "postgresql fastapi",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "fastapi kubernetes",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python typescript",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior developer",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "typescript react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "skilled python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "typescript",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "postgresql",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "kubernetes",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "fastapi",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "senior",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "python",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "react",
+        "matched": true,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "aws",
+        "matched": true,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "missing_keywords": [
+      {
+        "keyword": "looking candidates",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "candidates skilled",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "developer looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "candidates",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "developer",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "looking",
+        "matched": false,
+        "context": null,
+        "variants": null
+      },
+      {
+        "keyword": "skilled",
+        "matched": false,
+        "context": null,
+        "variants": null
+      }
+    ],
+    "ats_risks": [],
+    "suggestions": [
+      {
+        "category": "Keywords",
+        "priority": "critical",
+        "suggestion": "Add these missing keywords to your resume: looking candidates, candidates skilled, developer looking, candidates, developer.",
+        "location": "Skills / Experience sections"
+      }
+    ],
+    "detected_sections": [
+      "education",
+      "experience",
+      "skills",
+      "summary"
+    ],
+    "missing_sections": [],
+    "summary": "Strong ATS compatibility (score: 82/100). Your resume is well-optimized for ATS screening. Only 7 missing keywords identified."
+  }
+}
