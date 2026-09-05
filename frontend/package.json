@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "build:wasm": "bash ../scripts/build_wasm.sh",
-    "test": "node src/lib/ats-engine/__tests__/engine.test.js",
+    "test": "node src/lib/ats-engine/__tests__/engine.test.js && node src/lib/parsers/__tests__/parsers.test.js",
     "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
+    "mammoth": "^1.12.2",
+    "pdfjs-dist": "^6.3.289",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.18.2"
