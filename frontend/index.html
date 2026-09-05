@@ -3,13 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Title & Meta Tags -->
     <title>ResumeLint — Free Resume ATS Checker &amp; Analyzer | In-Browser WebAssembly</title>
     <meta
-      name="description"
-      content="Lint your resume before recruiters do. 100% private, client-side resume ATS checker and analyzer powered by WebAssembly. Zero server uploads, zero tracking."
+      name="title"
+      content="ResumeLint — Free Resume ATS Checker &amp; Analyzer | In-Browser WebAssembly"
     />
+    <meta
+      name="description"
+      content="Lint your resume before recruiters do. 100% private, client-side resume ATS checker and analyzer powered by WebAssembly. Free, deterministic scoring with zero server uploads."
+    />
+    <meta name="keywords" content="Resume ATS Checker, Resume Linter, ATS Resume Scanner, Free Resume Analyzer, WebAssembly ATS, Privacy-First Resume Tool, Resume Keywords, ATS Pass Rate" />
+    <meta name="author" content="ResumeLint" />
     <meta name="theme-color" content="#059669" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/><path d='m9 15 2 2 4-4'/></svg>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ResumeLint — Free Resume ATS Checker &amp; Analyzer" />
+    <meta
+      property="og:description"
+      content="Lint your resume before recruiters do. 100% private, client-side resume ATS evaluation powered by WebAssembly."
+    />
+    <meta property="og:image" content="./og-image.svg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ResumeLint — Free Resume ATS Checker &amp; Analyzer" />
+    <meta
+      name="twitter:description"
+      content="Lint your resume before recruiters do. 100% private, client-side resume ATS evaluation powered by WebAssembly."
+    />
+    <meta name="twitter:image" content="./og-image.svg" />
+
+    <!-- Favicons & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./logo-icon.svg" />
+    <link rel="manifest" href="./site.webmanifest" />
+
     <script>
       (function () {
         var redirect = sessionStorage.redirect;

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="og-brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <radialGradient id="og-glow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+    <filter id="og-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#og-bg)" />
+  <rect width="1200" height="630" fill="url(#og-glow)" />
+
+  <!-- Grid Decorative Overlay -->
+  <pattern id="og-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+  </pattern>
+  <rect width="1200" height="630" fill="url(#og-grid)" />
+
+  <!-- Container Content -->
+  <g transform="translate(100, 100)">
+    <!-- Brand Icon & Name -->
+    <g transform="translate(0, 0)">
+      <rect width="80" height="80" rx="20" fill="url(#og-brand-grad)" filter="url(#og-shadow)" />
+      <path d="M26 22C26 19.7909 27.7909 18 30 18H45.1716C46.2324 18 47.25 18.4214 48 18.75L57.25 28C57.75 28.5 58 29.25 58 30V56C58 58.2091 56.2091 60 54 60H30C27.7909 60 26 58.2091 26 56V22Z" fill="white" fill-opacity="0.15" stroke="white" stroke-width="3" stroke-linejoin="round" />
+      <path d="M44 18V28C44 29.1046 44.8954 30 46 30H56" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M33 42L38 47L49 34" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+      <text x="104" y="54" font-family="Inter, system-ui, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" letter-spacing="-0.03em">
+        Resume<tspan fill="#34D399">Lint</tspan>
+      </text>
+    </g>
+
+    <!-- Headline -->
+    <text x="0" y="160" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="800" fill="#F8FAFC" letter-spacing="-0.02em">
+      Free Resume ATS Checker &amp; Analyzer
+    </text>
+
+    <!-- Tagline & Subhead -->
+    <text x="0" y="220" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#94A3B8">
+      Lint your resume before recruiters do.
+    </text>
+    <text x="0" y="260" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="400" fill="#64748B">
+      Deterministic in-browser scoring powered by Rust and WebAssembly.
+    </text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(0, 330)">
+      <!-- Pill 1: Privacy -->
+      <rect x="0" y="0" width="280" height="48" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      <circle cx="24" cy="24" r="6" fill="#10B981" />
+      <text x="42" y="30" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#E2E8F0">
+        100% Client-Side Privacy
+      </text>
+
+      <!-- Pill 2: WASM -->
+      <rect x="300" y="0" width="240" height="48" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      <circle cx="324" cy="24" r="6" fill="#38BDF8" />
+      <text x="342" y="30" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#E2E8F0">
+        WebAssembly Core
+      </text>
+
+      <!-- Pill 3: Zero Server Uploads -->
+      <rect x="560" y="0" width="260" height="48" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      <circle cx="584" cy="24" r="6" fill="#A78BFA" />
+      <text x="602" y="30" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#E2E8F0">
+        Zero Server Telemetry
+      </text>
+    </g>
+  </g>
+</svg>

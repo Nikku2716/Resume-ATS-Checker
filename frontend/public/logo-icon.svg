@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0" />
+    </linearGradient>
+    <filter id="icon-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="128" fill="url(#logo-grad)" />
+  <rect width="512" height="512" rx="128" fill="url(#glow-grad)" />
+
+  <!-- Inner Document Shape -->
+  <g filter="url(#icon-shadow)">
+    <!-- Document Body -->
+    <path d="M144 112C144 94.3269 158.327 80 176 80H281.373C289.86 80 298.001 83.3714 304.004 89.3745L358.625 143.996C364.629 150 368 158.14 368 166.627V368C368 385.673 353.673 400 336 400H176C158.327 400 144 385.673 144 368V112Z" fill="white" fill-opacity="0.12" stroke="white" stroke-width="24" stroke-linejoin="round" />
+
+    <!-- Document Corner Fold -->
+    <path d="M280 80V144C280 152.837 287.163 160 296 160H360" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Horizontal Lines Representing Text Sections -->
+    <line x1="200" y1="210" x2="312" y2="210" stroke="white" stroke-width="18" stroke-linecap="round" stroke-opacity="0.4" />
+    <line x1="200" y1="260" x2="270" y2="260" stroke="white" stroke-width="18" stroke-linecap="round" stroke-opacity="0.4" />
+
+    <!-- Linter Validation Checkmark Badge -->
+    <circle cx="340" cy="340" r="64" fill="#10B981" stroke="white" stroke-width="16" />
+    <path d="M312 340L332 360L372 316" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

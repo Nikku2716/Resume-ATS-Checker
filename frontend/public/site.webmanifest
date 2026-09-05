@@ -1,0 +1,23 @@
+{
+  "name": "ResumeLint — Free Resume ATS Checker & Analyzer",
+  "short_name": "ResumeLint",
+  "description": "Lint your resume before recruiters do. 100% private, client-side resume ATS checker and analyzer powered by WebAssembly.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#059669",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./logo-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

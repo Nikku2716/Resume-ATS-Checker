@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 96" width="400" height="96" fill="none">
+  <defs>
+    <linearGradient id="logo-h-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+
+  <!-- Brand Mark Icon (Left) -->
+  <rect x="8" y="12" width="72" height="72" rx="18" fill="url(#logo-h-grad)" />
+  <path d="M28 26C28 23.7909 29.7909 22 32 22H47.1716C48.2324 22 49.25 22.4214 50 23.1716L58.8284 32C59.5786 32.75 60 33.7676 60 34.8284V62C60 64.2091 58.2091 66 56 66H32C29.7909 66 28 64.2091 28 62V26Z" fill="white" fill-opacity="0.15" stroke="white" stroke-width="3" stroke-linejoin="round" />
+  <path d="M46 22V32C46 33.1046 46.8954 34 48 34H58" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M34 48L40 54L52 40" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Typography (Right) -->
+  <text x="96" y="52" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="34" font-weight="800" fill="#0F172A" letter-spacing="-0.03em">
+    Resume<tspan fill="#059669">Lint</tspan>
+  </text>
+  <text x="98" y="72" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" font-weight="500" fill="#64748B" letter-spacing="0.02em">
+    Lint your resume before recruiters do.
+  </text>
+</svg>
