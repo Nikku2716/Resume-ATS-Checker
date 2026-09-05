@@ -12,9 +12,7 @@ import {
   Cpu,
   Target,
   Layers,
-  FileCheck,
   Check,
-  HelpCircle,
   Briefcase,
   Zap,
 } from "lucide-react";
@@ -64,17 +62,17 @@ export default function Home() {
     setError("");
   }, []);
 
+  const handleKeyDownDropzone = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      fileInputRef.current?.click();
+    }
+  };
+
   const handleLoadSample = (sample) => {
     setTab("paste");
     setResumeText(sample.resumeText);
     setJobDescription(sample.jobDescription);
-    setFile(null);
-    setError("");
-  };
-
-  const handleClearAll = () => {
-    setResumeText("");
-    setJobDescription("");
     setFile(null);
     setError("");
   };
@@ -129,13 +127,13 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <section className="text-center space-y-4 pt-4 sm:pt-8 max-w-4xl mx-auto">
+      <section className="text-center space-y-4 pt-4 sm:pt-8 max-w-4xl mx-auto" aria-labelledby="hero-heading">
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/80 px-3.5 py-1 text-xs font-semibold text-emerald-800 shadow-sm">
           <Sparkles className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
           <span>Next-Gen In-Browser ATS Engine</span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+        <h1 id="hero-heading" className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
           Free Resume ATS Checker &amp; Analyzer
         </h1>
 
@@ -145,16 +143,17 @@ export default function Home() {
         </p>
 
         {/* Quick Sample Selector */}
-        <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs">
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs" role="region" aria-label="Sample Profiles">
           <span className="text-slate-500 font-medium">Try a sample role:</span>
           {SAMPLE_DATA.map((sample) => (
             <button
               key={sample.id}
               type="button"
               onClick={() => handleLoadSample(sample)}
-              className="inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-2.5 py-1 text-xs font-medium text-slate-700 shadow-sm transition hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50/30 cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-2.5 py-1 text-xs font-medium text-slate-700 shadow-sm transition hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 cursor-pointer"
+              aria-label={`Load sample profile: ${sample.title}`}
             >
-              <Briefcase className="h-3 w-3 text-slate-400" />
+              <Briefcase className="h-3 w-3 text-slate-400" aria-hidden="true" />
               {sample.title}
             </button>
           ))}
@@ -165,13 +164,13 @@ export default function Home() {
       <PrivacyBanner />
 
       {/* Interactive Input Studio */}
-      <section className="grid gap-6 lg:grid-cols-2" aria-label="Resume and Job Description Input">
+      <section className="grid gap-6 lg:grid-cols-2" aria-label="Resume and Job Description Input Studio">
         {/* Left Column: Resume Input (Upload / Paste) */}
         <div className="card space-y-4 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-mono text-xs font-bold">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-mono text-xs font-bold" aria-hidden="true">
                   1
                 </div>
                 <div>
@@ -181,33 +180,37 @@ export default function Home() {
               </div>
 
               {/* Tab Selector */}
-              <div className="flex rounded-lg border border-slate-200 bg-slate-100 p-0.5 text-xs font-medium" role="tablist">
+              <div className="flex rounded-lg border border-slate-200 bg-slate-100 p-0.5 text-xs font-medium" role="tablist" aria-label="Resume Input Method">
                 <button
                   type="button"
                   role="tab"
+                  id="tab-upload"
+                  aria-controls="panel-upload"
                   aria-selected={tab === "upload"}
                   onClick={() => setTab("upload")}
-                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all cursor-pointer ${
+                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 cursor-pointer ${
                     tab === "upload"
                       ? "bg-white text-slate-900 shadow-sm font-semibold"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  <Upload className="h-3.5 w-3.5" />
+                  <Upload className="h-3.5 w-3.5" aria-hidden="true" />
                   Upload File
                 </button>
                 <button
                   type="button"
                   role="tab"
+                  id="tab-paste"
+                  aria-controls="panel-paste"
                   aria-selected={tab === "paste"}
                   onClick={() => setTab("paste")}
-                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all cursor-pointer ${
+                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 cursor-pointer ${
                     tab === "paste"
                       ? "bg-white text-slate-900 shadow-sm font-semibold"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  <FileText className="h-3.5 w-3.5" />
+                  <FileText className="h-3.5 w-3.5" aria-hidden="true" />
                   Paste Text
                 </button>
               </div>
@@ -215,8 +218,12 @@ export default function Home() {
 
             {/* Tab 1: File Upload Dropzone */}
             {tab === "upload" ? (
-              <div>
+              <div id="panel-upload" role="tabpanel" aria-labelledby="tab-upload">
                 <div
+                  tabIndex={0}
+                  role="button"
+                  aria-label={file ? `Selected file: ${file.name}. Click to choose another file.` : "Dropzone: Click or press Enter to upload your resume (PDF, DOCX, TXT, MD)"}
+                  onKeyDown={handleKeyDownDropzone}
                   onDragOver={(e) => {
                     e.preventDefault();
                     setDragOver(true);
@@ -224,7 +231,7 @@ export default function Home() {
                   onDragLeave={() => setDragOver(false)}
                   onDrop={handleFileDrop}
                   onClick={() => fileInputRef.current?.click()}
-                  className={`flex min-h-[260px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 text-center transition-all ${
+                  className={`flex min-h-[260px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 text-center transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 focus-visible:ring-2 focus-visible:ring-emerald-500 ${
                     dragOver
                       ? "border-emerald-500 bg-emerald-50/40 scale-[0.99]"
                       : file
@@ -235,7 +242,7 @@ export default function Home() {
                   {file ? (
                     <div className="space-y-3">
                       <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 shadow-sm">
-                        <CheckCircle2 className="h-7 w-7" />
+                        <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-slate-900">{file.name}</p>
@@ -249,16 +256,17 @@ export default function Home() {
                           e.stopPropagation();
                           setFile(null);
                         }}
-                        className="inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition cursor-pointer"
+                        className="inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 transition cursor-pointer"
+                        aria-label="Remove selected file"
                       >
-                        <X className="h-3.5 w-3.5 text-slate-500" />
+                        <X className="h-3.5 w-3.5 text-slate-500" aria-hidden="true" />
                         Choose another file
                       </button>
                     </div>
                   ) : (
                     <div className="space-y-3">
                       <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-slate-600 group-hover:text-emerald-600 transition">
-                        <Upload className="h-6 w-6" />
+                        <Upload className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-slate-800">
@@ -282,28 +290,31 @@ export default function Home() {
                     type="file"
                     accept={ACCEPTED_TYPES}
                     className="hidden"
+                    aria-hidden="true"
                     onChange={handleFileDrop}
                   />
                 </div>
               </div>
             ) : (
               /* Tab 2: Paste Resume Text */
-              <div className="space-y-2">
+              <div id="panel-paste" role="tabpanel" aria-labelledby="tab-paste" className="space-y-2">
                 <label htmlFor="resume-text" className="sr-only">Resume text content</label>
                 <textarea
                   id="resume-text"
-                  className="w-full min-h-[260px] rounded-xl border border-slate-300 bg-white p-3.5 font-mono text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none resize-y"
+                  aria-describedby="resume-text-stats"
+                  className="w-full min-h-[260px] rounded-xl border border-slate-300 bg-white p-3.5 font-mono text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-none resize-y"
                   placeholder="Paste your resume content here (e.g. Contact, Summary, Experience, Skills, Education)..."
                   value={resumeText}
                   onChange={(e) => setResumeText(e.target.value)}
                 />
-                <div className="flex items-center justify-between text-xs text-slate-500">
+                <div id="resume-text-stats" className="flex items-center justify-between text-xs text-slate-500">
                   <span>{countWords(resumeText)} words &bull; {resumeText.length} characters</span>
                   {resumeText && (
                     <button
                       type="button"
                       onClick={() => setResumeText("")}
-                      className="text-slate-400 hover:text-slate-600 transition cursor-pointer"
+                      className="text-slate-400 hover:text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded px-1 transition cursor-pointer"
+                      aria-label="Clear resume text"
                     >
                       Clear
                     </button>
@@ -319,7 +330,7 @@ export default function Home() {
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-mono text-xs font-bold">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-mono text-xs font-bold" aria-hidden="true">
                   2
                 </div>
                 <div>
@@ -332,7 +343,8 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setJobDescription("")}
-                  className="text-xs text-slate-400 hover:text-slate-600 transition cursor-pointer"
+                  className="text-xs text-slate-400 hover:text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded px-1 transition cursor-pointer"
+                  aria-label="Clear job description text"
                 >
                   Clear
                 </button>
@@ -343,12 +355,13 @@ export default function Home() {
               <label htmlFor="job-description" className="sr-only">Job description content</label>
               <textarea
                 id="job-description"
-                className="w-full min-h-[260px] rounded-xl border border-slate-300 bg-white p-3.5 font-mono text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none resize-y"
+                aria-describedby="job-description-stats"
+                className="w-full min-h-[260px] rounded-xl border border-slate-300 bg-white p-3.5 font-mono text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-none resize-y"
                 placeholder="Paste the target job description here (responsibilities, required skills, qualifications)..."
                 value={jobDescription}
                 onChange={(e) => setJobDescription(e.target.value)}
               />
-              <div className="flex items-center justify-between text-xs text-slate-500">
+              <div id="job-description-stats" className="flex items-center justify-between text-xs text-slate-500">
                 <span>{countWords(jobDescription)} words &bull; {jobDescription.length} characters</span>
                 <span className="text-[11px] text-slate-400">Higher detail = more accurate keyword scoring</span>
               </div>
@@ -370,6 +383,7 @@ export default function Home() {
       {error && (
         <div
           role="alert"
+          aria-live="assertive"
           className="flex items-start gap-3 rounded-xl border border-rose-200 bg-rose-50 p-4 text-rose-800 shadow-sm animate-fade-in"
         >
           <AlertCircle className="h-5 w-5 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
@@ -380,7 +394,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setError("")}
-            className="text-rose-500 hover:text-rose-700 cursor-pointer"
+            className="text-rose-500 hover:text-rose-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-rose-600 rounded p-1 cursor-pointer"
             aria-label="Dismiss error"
           >
             <X className="h-4 w-4" />
@@ -389,16 +403,16 @@ export default function Home() {
       )}
 
       {/* Action Submit Bar */}
-      <section className="flex flex-col items-center justify-center text-center space-y-3 pt-2">
+      <section className="flex flex-col items-center justify-center text-center space-y-3 pt-2" aria-label="Submit Analysis">
         <button
           type="button"
           onClick={handleSubmit}
           disabled={loading}
-          className="btn-primary text-base px-8 py-3.5 w-full sm:w-auto shadow-md"
+          className="btn-primary text-base px-8 py-3.5 w-full sm:w-auto shadow-md cursor-pointer focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
         >
           {loading ? (
             <>
-              <svg className="h-5 w-5 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+              <svg className="h-5 w-5 animate-spin text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
               </svg>
@@ -414,7 +428,7 @@ export default function Home() {
         </button>
 
         <p className="text-xs text-slate-500 flex items-center gap-1.5">
-          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
           <span>Deterministic analysis &bull; Zero network calls &bull; 100% private</span>
         </p>
       </section>
@@ -432,7 +446,7 @@ export default function Home() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div className="card-hoverable space-y-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100" aria-hidden="true">
               <Target className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-900">
@@ -444,7 +458,7 @@ export default function Home() {
           </div>
 
           <div className="card-hoverable space-y-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100" aria-hidden="true">
               <Layers className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-900">
@@ -456,7 +470,7 @@ export default function Home() {
           </div>
 
           <div className="card-hoverable space-y-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 text-rose-600 border border-rose-100">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 text-rose-600 border border-rose-100" aria-hidden="true">
               <AlertCircle className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-900">
@@ -468,7 +482,7 @@ export default function Home() {
           </div>
 
           <div className="card-hoverable space-y-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-100">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-100" aria-hidden="true">
               <Zap className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-900">
@@ -480,7 +494,7 @@ export default function Home() {
           </div>
 
           <div className="card-hoverable space-y-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100" aria-hidden="true">
               <Cpu className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-900">
@@ -492,7 +506,7 @@ export default function Home() {
           </div>
 
           <div className="card-hoverable space-y-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-50 text-purple-600 border border-purple-100">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-50 text-purple-600 border border-purple-100" aria-hidden="true">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-900">
@@ -518,9 +532,9 @@ export default function Home() {
 
         <div className="grid gap-4 max-w-3xl mx-auto">
           <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded p-0.5">
               <span>What is an ATS (Applicant Tracking System)?</span>
-              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180" aria-hidden="true">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -532,23 +546,23 @@ export default function Home() {
           </details>
 
           <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded p-0.5">
               <span>Why is ResumeLint 100% client-side?</span>
-              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180" aria-hidden="true">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
             </summary>
             <p className="mt-3 text-xs text-slate-600 leading-relaxed">
-              Resumes contain sensitive personal information (full name, phone numbers, home address, employment history, compensation details). By using Rust compiled to WebAssembly, ResumeLint provides enterprise-grade text analysis directly inside your browser with zero data leaving your machine.
+              Resumes contain sensitive personal information. By using Rust compiled to WebAssembly, ResumeLint provides enterprise-grade text analysis directly inside your browser with zero data leaving your machine.
             </p>
           </details>
 
           <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded p-0.5">
               <span>Which resume file format is best for ATS?</span>
-              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180" aria-hidden="true">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -560,9 +574,9 @@ export default function Home() {
           </details>
 
           <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded p-0.5">
               <span>How is the overall score calculated?</span>
-              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180" aria-hidden="true">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
