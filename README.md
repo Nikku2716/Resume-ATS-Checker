@@ -1,150 +1,134 @@
-# Resume ATS Checker
+# ResumeLint
 
-Analyze your resume against any job description and get a real ATS (Applicant Tracking System) compatibility score with actionable fixes.
+> **Lint your resume before recruiters do.**  
+> *100% Private, Client-Side Resume ATS Checker & Analyzer powered by WebAssembly.*
 
-![Python](https://img.shields.io/badge/python-3.14-blue)
-![React](https://img.shields.io/badge/react-18-61DAFB)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![Deploy to GitHub Pages](https://github.com/sh4dowbl4d3/Resume-ATS-Checker/actions/workflows/deploy.yml/badge.svg)](https://github.com/sh4dowbl4d3/Resume-ATS-Checker/actions/workflows/deploy.yml)
+[![WebAssembly](https://img.shields.io/badge/WebAssembly-Rust-purple?logo=webassembly)](https://webassembly.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
+[![License](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-## How ATS Scoring Works
+---
 
-The scoring engine evaluates 5 dimensions, each weighted by importance:
+## 🔒 100% Client-Side Privacy Guarantee
 
-| Dimension | Weight | What it measures |
-|-----------|--------|------------------|
-| **Keyword Match** | 30% | Exact and variant matches between resume terms and job description keywords |
-| **Skills Match** | 25% | Presence of required technical and soft skills from a curated database of 150+ skills |
-| **Experience Relevance** | 20% | Alignment of experience years and role-relevant terminology |
-| **Formatting / ATS Readability** | 15% | Detection of tables, images, icons, multi-column layouts, text boxes |
-| **Section Completeness** | 10% | Presence of standard ATS-parsable sections (Summary, Experience, Education, Skills) |
+Most resume scanners upload your personal contact information, work history, and proprietary job descriptions to cloud servers.
 
-**Overall Score** = weighted sum of all 5 dimensions (0–100).
+**ResumeLint is fundamentally different:**
+- **Zero Backend Required**: No server API endpoints, no external databases, no third-party AI APIs.
+- **In-Browser Document Parsing**: PDF, DOCX, TXT, and Markdown files are unpacked directly in memory using JavaScript and WebAssembly.
+- **Local Rust ATS Engine**: Scored inside a dedicated Web Worker running Rust-compiled WebAssembly.
+- **Zero Data Leakage**: Disconnect your internet connection after loading the page — ResumeLint works completely offline.
 
-## Prerequisites
+---
 
-- **Python 3.14+** and **uv** (recommended) or pip
+## 🎯 How ATS Scoring Works
+
+ResumeLint computes a deterministic score (0–100) across 5 weighted dimensions:
+
+| Dimension | Weight | Evaluation Criteria |
+|:---|:---:|:---|
+| **Keyword Match** | **30%** | Unigram & bigram frequency ratio between resume and job description |
+| **Skills Match** | **25%** | Curated database of 120+ technical, tool, and domain skills with variant matching |
+| **Experience Relevance** | **20%** | Action verb density, chronological indicators, and role terminology |
+| **Formatting / Readability** | **15%** | Detection of parsing traps (tables, multi-columns, text boxes, icon bullets) |
+| **Section Completeness** | **10%** | Presence of standard ATS sections (Summary, Experience, Education, Skills) |
+
+---
+
+## 🚀 Quickstart & Local Development
+
+### Prerequisites
 - **Node.js 18+** and **npm**
-- **Git**
+- **Rust (stable)** and **wasm-pack** (only needed if modifying the Rust WASM engine)
 
-## Installation
-
+### 1. Clone & Install Frontend
 ```bash
-# 1. Clone the repository
 git clone https://github.com/sh4dowbl4d3/Resume-ATS-Checker.git
-curl -LsSf https://astral.sh/uv/install.sh | sh              # Install uv
-cd Resume-ATS-Checker
-
-
-# 2. Set up the backend
-cd backend
-uv venv                    # create virtual environment
-source .venv/bin/activate  # activate it (Linux/macOS)
-# On Windows: .venv\Scripts\activate
-uv pip install -r requirements.txt
-cd ..
-
-# 3. Set up the frontend
-cd frontend
+cd Resume-ATS-Checker/frontend
 npm install
-cd ..
 ```
 
-## Running the App
-
-Open **two terminal windows**.
-
-**Terminal 1 — Backend (port 8000):**
-
+### 2. Start Development Server
 ```bash
-cd backend
-source .venv/bin/activate
-uvicorn app.main:app --reload --port 8000
-```
-
-**Terminal 2 — Frontend (port 5173):**
-
-```bash
-cd frontend
 npm run dev
 ```
-
 Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
-## Running Tests
+---
 
+## 🧪 Testing
+
+ResumeLint features a comprehensive test suite across Rust, WebAssembly, document parsers, worker RPC, and end-to-end fixture parity.
+
+### Run All Frontend & Integration Tests
 ```bash
-cd backend
-source .venv/bin/activate
-python -m pytest tests/ -v
+cd frontend
+npm test
 ```
 
-All **34 tests** should pass.
-
-## API Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/health` | Health check |
-| POST | `/analyze/text` | Analyze pasted resume text against a job description |
-| POST | `/analyze/file` | Analyze uploaded resume file (PDF, DOCX, TXT) |
-
-### Example
-
+### Run Rust WebAssembly Unit & Parity Tests
 ```bash
-curl -X POST http://localhost:8000/analyze/text \
-  -H "Content-Type: application/json" \
-  -d '{
-    "resume_text": "Professional Summary\\nSkills: Python, React, Node.js\\n...",
-    "job_description": "Looking for a Senior Software Engineer with Python, React, AWS..."
-  }'
+cargo test --manifest-path wasm/Cargo.toml
 ```
 
-## Project Structure
+### Build Production WebAssembly Binary
+```bash
+bash scripts/build_wasm.sh
+```
+
+---
+
+## 🏗️ Architecture & Technology Stack
 
 ```
-resume-ats-checker/
-├── backend/
-│   ├── app/
-│   │   ├── main.py                  # FastAPI application & routes
-│   │   ├── models/schemas.py        # Pydantic request/response models
-│   │   ├── parsers/                 # File parsing (PDF, DOCX, TXT)
-│   │   └── analyzers/               # Analysis engine
-│   │       ├── keyword_matcher.py
-│   │       ├── skills_matcher.py
-│   │       ├── section_detector.py
-│   │       ├── formatting_checker.py
-│   │       └── scorer.py
-│   ├── tests/
-│   │   ├── test_parsers.py
-│   │   ├── test_scoring.py
-│   │   └── test_api.py
-│   └── requirements.txt
-├── frontend/
+ResumeLint/
+├── wasm/                     # Core Rust ATS scoring engine (compiled to WebAssembly)
 │   ├── src/
-│   │   ├── pages/Home.jsx           # Upload & input page
-│   │   ├── pages/Results.jsx        # Score results & recommendations
-│   │   ├── api.js                   # API client
-│   │   ├── App.jsx                  # Router & layout
-│   │   └── main.jsx                 # Entry point
-│   ├── public/
-│   │   ├── 404.html                 # SPA redirect for deep links
-│   │   └── fonts/                   # Self-hosted fonts (offline)
-│   ├── package.json
-│   └── tailwind.config.js
-├── sample/
-│   ├── resume.txt
-│   ├── job-description.txt
-│   └── expected-output.json
-├── setup.sh                         # Quick setup script
-└── README.md
+│   │   ├── lib.rs            # WASM bridge & exported functions
+│   │   ├── scorer.rs         # 5-dimension scoring orchestrator
+│   │   ├── keywords.rs       # Tokenization & unigram/bigram keyword extractor
+│   │   ├── skills.rs         # 120+ skill taxonomy & variant matcher
+│   │   ├── sections.rs       # Standard resume section detectors
+│   │   ├── formatting.rs     # ATS parsing hazard and layout checker
+│   │   └── types.rs          # Data models & Serde serialization
+│   └── tests/                # Baseline deterministic parity tests
+├── frontend/                 # React 18 SPA (Vite + Tailwind CSS)
+│   ├── src/
+│   │   ├── components/       # UI components (ScoreGauge, Navbar, Footer, PrivacyBanner)
+│   │   ├── pages/            # Home (Analyzer/Dropzone) and Results (Report & Breakdown)
+│   │   ├── lib/
+│   │   │   ├── ats-engine/   # WebAssembly JS loader & wrapper
+│   │   │   ├── ats-worker/   # Web Worker manager with monotonic sequence tracking
+│   │   │   ├── parsers/      # Geometry-aware PDF, DOCX, and TXT in-browser parsers
+│   │   │   └── capabilities.js # Browser capability detector & input sanitizer
+│   │   └── api.js            # Unified local-first ATS API adapter
+│   └── public/               # Static assets, Web App Manifest, SEO sitemap
+├── docs/                     # System architecture & contract specifications
+│   └── architecture.md
+├── scripts/                  # Build scripts
+│   └── build_wasm.sh
+└── .github/workflows/        # Automated CI/CD for GitHub Pages
+    └── deploy.yml
 ```
 
-## Tech Stack
+- **Core Scoring Engine:** Rust + `wasm-bindgen` + `serde-wasm-bindgen`
+- **Frontend Framework:** React 18, React Router v7
+- **Styling:** Tailwind CSS, Lucide Icons
+- **Document Extractors:** `pdfjs-dist` (PDF geometry text), `mammoth` (DOCX XML), `FileReader` (Text/Markdown)
+- **Deployment:** GitHub Pages (Static hosting with zero backend server dependencies)
 
-- **Backend:** Python FastAPI, PyMuPDF (PDF), python-docx (DOCX), python-pptx (PPTX)
-- **Frontend:** React 18, React Router, Tailwind CSS, Lucide icons
-- **Fonts:** Bangers + Comic Neue (self-hosted, no CDN dependency)
+---
 
-## License
+## 📄 Export Options
 
-MIT
+Generate reports directly from the Results screen:
+- **Markdown Export (`.md`)**: Copy to clipboard or download formatted Markdown report.
+- **JSON Export (`.json`)**: Raw structured ATS telemetry data.
+- **Print / PDF**: Clean printer-friendly stylesheet for saving as PDF.
+
+---
+
+## 📜 License
+
+Distributed under the [MIT License](LICENSE).
