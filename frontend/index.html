@@ -5,42 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Title & Meta Tags -->
-    <title>ResumeLint — Free Resume ATS Checker &amp; Analyzer | In-Browser WebAssembly</title>
+    <title>ResumeLint — Warm, Private ATS Diagnostic Studio | 100% In-Browser WebAssembly</title>
     <meta
       name="title"
-      content="ResumeLint — Free Resume ATS Checker &amp; Analyzer | In-Browser WebAssembly"
+      content="ResumeLint — Warm, Private ATS Diagnostic Studio | 100% In-Browser WebAssembly"
     />
     <meta
       name="description"
-      content="Lint your resume before recruiters do. 100% private, client-side resume ATS checker and analyzer powered by WebAssembly. Free, deterministic scoring with zero server uploads."
+      content="Fund your creative career. Pass every ATS filter. 100% private, client-side resume ATS audit powered by WebAssembly. Zero server uploads."
     />
     <meta
       name="keywords"
       content="Resume ATS Checker, Resume Linter, ATS Resume Scanner, Free Resume Analyzer, WebAssembly ATS, Privacy-First Resume Tool, Resume Keywords, ATS Pass Rate, Job Description Matcher"
     />
     <meta name="author" content="ResumeLint" />
-    <meta name="theme-color" content="#059669" />
+    <meta name="theme-color" content="#faf8f0" />
     <link rel="canonical" href="https://nikku2716.github.io/Resume-ATS-Checker/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nikku2716.github.io/Resume-ATS-Checker/" />
-    <meta property="og:title" content="ResumeLint — Free Resume ATS Checker &amp; Analyzer" />
+    <meta property="og:title" content="ResumeLint — Warm, Private ATS Diagnostic Studio" />
     <meta
       property="og:description"
-      content="Lint your resume before recruiters do. 100% private, client-side resume ATS evaluation powered by WebAssembly."
+      content="Audit your resume before recruiters do. 100% private, client-side resume ATS evaluation powered by WebAssembly."
     />
     <meta property="og:image" content="./og-image.svg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://nikku2716.github.io/Resume-ATS-Checker/" />
-    <meta name="twitter:title" content="ResumeLint — Free Resume ATS Checker &amp; Analyzer" />
+    <meta name="twitter:title" content="ResumeLint — Warm, Private ATS Diagnostic Studio" />
     <meta
       name="twitter:description"
-      content="Lint your resume before recruiters do. 100% private, client-side resume ATS evaluation powered by WebAssembly."
+      content="Audit your resume before recruiters do. 100% private, client-side resume ATS evaluation powered by WebAssembly."
     />
     <meta name="twitter:image" content="./og-image.svg" />
+
+    <!-- Web Fonts: Plus Jakarta Sans (Circular substitute) + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Favicons & Manifest -->
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -74,48 +82,6 @@
       }
     </script>
 
-    <!-- Schema.org JSON-LD Structured Data: FAQPage -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is an ATS (Applicant Tracking System)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "An Applicant Tracking System (ATS) is software used by employers to collect, sort, scan, and rank job applications. Before a human recruiter reads your resume, the ATS parses the document into database fields and calculates a keyword match score against the job description."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is ResumeLint 100% client-side?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Resumes contain sensitive personal information. By using Rust compiled to WebAssembly, ResumeLint provides enterprise-grade text analysis directly inside your browser with zero data leaving your machine."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which resume file format is best for ATS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Both PDF and DOCX are widely supported. However, clean single-column PDF or DOCX files without tables, floating text boxes, or graphics ensure 100% parse accuracy across older and newer ATS platforms alike."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is the overall score calculated?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The overall score (0–100) is a weighted composite: Keyword Match (35%), Skills Match (25%), Experience Relevance (20%), Formatting & Readability (10%), and Section Completeness (10%)."
-            }
-          }
-        ]
-      }
-    </script>
-
     <!-- Single Page Application Redirect Support for GitHub Pages -->
     <script>
       (function () {
@@ -127,7 +93,7 @@
       })();
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+  <body class="antialiased bg-[#faf8f0] text-[#222222] selection:bg-[#ffdd00] selection:text-[#000000]">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

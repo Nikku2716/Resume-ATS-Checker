@@ -1,54 +1,52 @@
 import { useEffect, useState } from "react";
+import { Coffee } from "lucide-react";
 
 export function getScoreRating(score) {
   if (score >= 80) {
     return {
       label: "Optimal Match",
       level: "optimal",
-      color: "emerald",
-      badgeClass: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      strokeClass: "stroke-emerald-500",
-      textClass: "text-emerald-600",
-      bgLight: "bg-emerald-500/10",
-      description: "Strong alignment with target role. High likelihood of passing ATS screening filters.",
+      color: "#15803d",
+      badgeClass: "badge badge-mint",
+      strokeColor: "#22c55e",
+      description: "Strong alignment with target role. High likelihood of passing automated ATS filters.",
     };
   }
   if (score >= 60) {
     return {
-      label: "Competitive",
+      label: "Competitive Fit",
       level: "competitive",
-      color: "blue",
-      badgeClass: "bg-blue-50 text-blue-700 border-blue-200",
-      strokeClass: "stroke-blue-500",
-      textClass: "text-blue-600",
-      bgLight: "bg-blue-500/10",
+      color: "#d8573f",
+      badgeClass: "badge badge-terracotta",
+      strokeColor: "#d8573f",
       description: "Solid foundation, but targeted keyword and section enhancements will improve ranking.",
     };
   }
   if (score >= 40) {
     return {
-      label: "Needs Improvement",
+      label: "Calibration Required",
       level: "moderate",
-      color: "amber",
-      badgeClass: "bg-amber-50 text-amber-800 border-amber-200",
-      strokeClass: "stroke-amber-500",
-      textClass: "text-amber-600",
-      bgLight: "bg-amber-500/10",
-      description: "Missing several key competencies and experience requirements. Review suggestions below.",
+      color: "#b45309",
+      badgeClass: "badge badge-honey",
+      strokeColor: "#f59e0b",
+      description: "Missing several core competencies and experience requirements. Review suggestions below.",
     };
   }
   return {
-    label: "High ATS Risk",
+    label: "High Parser Risk",
     level: "risk",
-    color: "rose",
-    badgeClass: "bg-rose-50 text-rose-700 border-rose-200",
-    strokeClass: "stroke-rose-500",
-    textClass: "text-rose-600",
-    bgLight: "bg-rose-500/10",
-    description: "Low match rate and/or significant structural formatting issues detected.",
+    color: "#b91c1c",
+    badgeClass: "badge badge-coral",
+    strokeColor: "#ef4444",
+    description: "Low keyword match rate or significant structural formatting traps detected.",
   };
 }
 
+/**
+ * Buy Me a Coffee Theme — Warm Score Gauge
+ * Circular meter on cream/white card with #e5e7eb track,
+ * Marigold / Terracotta / Green arc stroke, Circular Bold center score, and pill status badge.
+ */
 export default function ScoreGauge({ score, size = 160 }) {
   const [animatedScore, setAnimatedScore] = useState(0);
   const rating = getScoreRating(score);
@@ -56,11 +54,11 @@ export default function ScoreGauge({ score, size = 160 }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimatedScore(score);
-    }, 150);
+    }, 120);
     return () => clearTimeout(timer);
   }, [score]);
 
-  const strokeWidth = 12;
+  const strokeWidth = 10;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (animatedScore / 100) * circumference;
@@ -79,14 +77,15 @@ export default function ScoreGauge({ score, size = 160 }) {
         <svg
           width={size}
           height={size}
-          className="rotate-[-90deg] transition-all duration-1000 ease-out"
+          className="rotate-[-90deg] transition-all duration-700 ease-out"
         >
-          {/* Background Track */}
+          {/* Background Hairline Track */}
           <circle
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            className="stroke-slate-100 fill-none"
+            fill="none"
+            stroke="#e5e7eb"
             strokeWidth={strokeWidth}
           />
           {/* Animated Value Arc */}
@@ -94,29 +93,35 @@ export default function ScoreGauge({ score, size = 160 }) {
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            className={`${rating.strokeClass} fill-none transition-all duration-1000 ease-out`}
+            fill="none"
+            stroke={rating.strokeColor}
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
+            className="transition-all duration-700 ease-out"
           />
         </svg>
 
-        {/* Center Text Score */}
+        {/* Center Score in Circular Bold */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="font-mono text-4xl font-bold tracking-tight text-slate-900">
+          <span
+            className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#000000]"
+            style={{
+              fontFamily: "var(--font-circular)",
+              lineHeight: 1,
+            }}
+          >
             {animatedScore}
           </span>
-          <span className="text-[11px] font-medium uppercase tracking-wider text-slate-400">
+          <span className="text-xs font-semibold text-[#717171] mt-0.5">
             out of 100
           </span>
         </div>
       </div>
 
       <div className="mt-3">
-        <span
-          className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${rating.badgeClass}`}
-        >
+        <span className={`${rating.badgeClass} px-3 py-1 font-bold text-xs`}>
           {rating.label}
         </span>
       </div>

@@ -1,0 +1,27 @@
+{
+  "theme": "family",
+  "name": "Family",
+  "genre": "storybook-parchment",
+  "canvas": "#fbfaf9",
+  "stoneSurface": "#f2f0ed",
+  "inkBlack": "#121212",
+  "headingCharcoal": "#343433",
+  "bodyBrown": "#474645",
+  "emberOrange": "#ff3e00",
+  "linkBlue": "#0086fc",
+  "skyBlue": "#64c6ff",
+  "mint": "#00ca48",
+  "sunYellow": "#ffcd6c",
+  "coralPink": "#ff58ae",
+  "plumViolet": "#9f4fff",
+  "typography": {
+    "display": "Plus Jakarta Sans / Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "macrostructures": {
+    "home": "Storybook Spread Workbench",
+    "results": "Storybook Spread Diagnostic Ledger"
+  },
+  "updatedAt": "2026-09-05T00:00:00.000Z"
+}

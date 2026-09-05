@@ -1,68 +1,131 @@
 import { Link, useLocation } from "react-router-dom";
-import { ShieldCheck, FileCheck2, Cpu, Sparkles, Github, RotateCcw } from "lucide-react";
+import { Coffee, Github, RotateCcw, ArrowRight, ShieldCheck } from "lucide-react";
+import { useScrollProgress } from "../hooks/useScrollReveal";
 
+/**
+ * Buy Me a Coffee Theme — Global Navigation Bar
+ * Cream paper background (#faf8f0), coffee cup emblem,
+ * Circular Bold typography, search/nav pills, scroll progress indicator, and Marigold (#ffdd00) pill CTA.
+ */
 export default function Navbar() {
   const location = useLocation();
   const isResultsPage = location.pathname === "/results";
+  const scrollProgress = useScrollProgress();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-md transition-all">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Brand Logo & Tagline */}
-        <div className="flex items-center gap-6">
+    <header className="sticky top-0 z-50 w-full bg-[#faf8f0]/95 backdrop-blur-md border-b border-[#e5e7eb] transition-all">
+      {/* Dynamic Scroll Progress Bar */}
+      <div
+        className="absolute bottom-0 left-0 h-[2.5px] bg-[#ffdd00] transition-all duration-150 ease-out z-10"
+        style={{ width: `${scrollProgress}%` }}
+        role="progressbar"
+        aria-valuenow={Math.round(scrollProgress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Page scroll progress"
+      />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <nav
+          className="flex h-16 items-center justify-between gap-4"
+          aria-label="Primary Navigation"
+        >
+          {/* Logo with Coffee Cup Icon */}
           <Link
             to="/"
-            className="group flex items-center gap-3 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 rounded-lg p-1"
+            className="flex items-center gap-3 no-underline shrink-0 group"
             aria-label="ResumeLint Home"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white shadow-md shadow-emerald-500/20 transition-transform duration-200 group-hover:scale-105">
-              <FileCheck2 className="h-5 w-5" aria-hidden="true" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm transition-transform group-hover:scale-105">
+              <Coffee className="h-5 w-5" aria-hidden="true" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-bold tracking-tight text-slate-900">
-                  Resume<span className="text-emerald-600">Lint</span>
-                </span>
-                <span className="hidden rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-700 border border-emerald-200 sm:inline-flex items-center gap-1">
-                  <Cpu className="h-3 w-3" /> WASM Core
-                </span>
-              </div>
-              <p className="hidden text-xs text-slate-500 md:block">
-                Lint your resume before recruiters do.
-              </p>
+            <div className="flex items-center gap-2">
+              <span
+                className="text-lg sm:text-xl font-bold tracking-tight text-[#000000]"
+                style={{ fontFamily: "var(--font-circular)" }}
+              >
+                ResumeLint
+              </span>
+              <span className="badge badge-neutral text-[10px] hidden sm:inline-flex py-0.5 px-2">
+                100% WASM
+              </span>
             </div>
           </Link>
-        </div>
 
-        {/* Privacy Pill & Action Links */}
-        <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
-            <span>100% In-Browser &bull; Zero Data Uploaded</span>
+          {/* Center Navigation Links in Small Caps */}
+          <div className="hidden md:flex items-center gap-6">
+            {isResultsPage ? (
+              <Link
+                to="/"
+                className="btn-ghost text-xs py-1.5 px-4"
+                aria-label="Return to Workbench"
+              >
+                <RotateCcw className="h-3.5 w-3.5 mr-1" aria-hidden="true" />
+                <span>Return to Studio</span>
+              </Link>
+            ) : (
+              <>
+                <a
+                  href="#workbench"
+                  className="small-caps-label text-[#222222] hover:text-[#000000] transition-colors py-1 hover:underline underline-offset-4"
+                >
+                  Studio
+                </a>
+                <a
+                  href="#specs"
+                  className="small-caps-label text-[#717171] hover:text-[#000000] transition-colors py-1 hover:underline underline-offset-4"
+                >
+                  Specifications
+                </a>
+                <a
+                  href="#privacy"
+                  className="small-caps-label text-[#717171] hover:text-[#000000] transition-colors py-1 hover:underline underline-offset-4"
+                >
+                  Zero Retention
+                </a>
+                <a
+                  href="#faq"
+                  className="small-caps-label text-[#717171] hover:text-[#000000] transition-colors py-1 hover:underline underline-offset-4"
+                >
+                  FAQ
+                </a>
+              </>
+            )}
           </div>
 
-          {isResultsPage ? (
-            <Link
-              to="/"
-              className="btn-primary py-2 text-xs sm:text-sm"
-              aria-label="Start a new resume analysis"
-            >
-              <RotateCcw className="h-4 w-4" aria-hidden="true" />
-              <span>New Analysis</span>
-            </Link>
-          ) : (
+          {/* Right Action Stack */}
+          <div className="flex items-center gap-3">
             <a
               href="https://github.com/Nikku2716/Resume-ATS-Checker"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary py-2 text-xs sm:text-sm"
-              aria-label="View ResumeLint Source Code on GitHub"
+              className="btn-ghost text-xs py-2 px-3.5 hidden sm:inline-flex"
+              aria-label="View Source on GitHub"
             >
-              <Github className="h-4 w-4" aria-hidden="true" />
-              <span className="hidden sm:inline">GitHub</span>
+              <Github className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>GitHub</span>
             </a>
-          )}
-        </div>
+
+            {isResultsPage ? (
+              <Link
+                to="/"
+                className="btn-marigold text-xs sm:text-sm py-2 px-4 sm:px-5"
+                aria-label="Start New Analysis"
+              >
+                <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>New Evaluation</span>
+              </Link>
+            ) : (
+              <a
+                href="#workbench"
+                className="btn-marigold text-xs sm:text-sm py-2 px-4 sm:px-5"
+                aria-label="Jump to Workbench"
+              >
+                <span>Start Evaluation</span>
+                <ArrowRight className="h-3.5 w-3.5 ml-1" aria-hidden="true" />
+              </a>
+            )}
+          </div>
+        </nav>
       </div>
     </header>
   );

@@ -5,11 +5,51 @@
 @layer base {
   :root {
     color-scheme: light;
+
+    /* Buy Me a Coffee Design Tokens */
+    --color-cream-paper:   #faf8f0;
+    --color-card-white:    #ffffff;
+    --color-hairline-gray: #e5e7eb;
+    --color-ink-black:     #000000;
+    --color-charcoal:      #222222;
+    --color-fog-gray:      #717171;
+    --color-marigold:      #ffdd00;
+    --color-buttercup:     #f7d046;
+    --color-terracotta:    #d8573f;
+    --color-blush-border:  #f5d5cf;
+    --color-trust-green:   #22c55e;
+
+    /* Typography */
+    --font-circular:       "Plus Jakarta Sans", "Circular", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display:        "Plus Jakarta Sans", "Circular", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-sans:           "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono:           "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* Geometry & Radii */
+    --radius-tags:         9999px;
+    --radius-buttons:      9999px;
+    --radius-cards:        24px;
+    --radius-modals:       32px;
+    --radius-hero:         40px;
+    --radius-small:        8px;
+
+    /* Elevation */
+    --shadow-scrapbook:    0 0 2px rgba(0, 0, 0, 0.15), 0 8px 40px rgba(0, 0, 0, 0.04), 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    overflow-x: clip;
+    background-color: var(--color-cream-paper);
+    color: var(--color-charcoal);
   }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #CBD5E1 transparent;
+    scrollbar-color: #d1d5db var(--color-cream-paper);
   }
 
   *::-webkit-scrollbar {
@@ -18,78 +58,277 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--color-cream-paper);
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #CBD5E1;
+    background-color: #d1d5db;
     border-radius: 9999px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background-color: #94A3B8;
+    background-color: #9ca3af;
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased selection:bg-brand-500/20 selection:text-brand-900;
+    font-family: var(--font-sans);
+    background-color: var(--color-cream-paper);
+    color: var(--color-charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background-color: var(--color-marigold);
+    color: var(--color-ink-black);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-semibold text-slate-900;
+    font-family: var(--font-circular);
+    font-weight: 700;
+    color: var(--color-ink-black);
+    letter-spacing: -0.03em;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-emerald-500 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-emerald-600 disabled:hover:shadow-none;
+  /* Marigold Primary Action Pill Button */
+  .btn-marigold, .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm sm:text-base font-bold transition-all duration-200 cursor-pointer text-[#000000];
+    background-color: var(--color-marigold);
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(255, 221, 0, 0.35);
+  }
+  .btn-marigold:hover, .btn-primary:hover {
+    background-color: #f5d400;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 221, 0, 0.45);
+  }
+  .btn-marigold:active, .btn-primary:active {
+    background-color: #ebca00;
+    transform: translateY(0);
+  }
+  .btn-marigold:focus-visible, .btn-primary:focus-visible {
+    outline: 2px solid var(--color-ink-black);
+    outline-offset: 2px;
+  }
+  .btn-marigold:disabled, .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
   }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-all duration-150 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  /* Terracotta Supporter / Secondary Action Pill Button */
+  .btn-terracotta {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm sm:text-base font-bold transition-all duration-200 cursor-pointer text-[#ffffff];
+    background-color: var(--color-terracotta);
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(216, 87, 63, 0.3);
+  }
+  .btn-terracotta:hover {
+    background-color: #c74b34;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(216, 87, 63, 0.4);
+  }
+  .btn-terracotta:active {
+    background-color: #b8422d;
+    transform: translateY(0);
+  }
+  .btn-terracotta:focus-visible {
+    outline: 2px solid var(--color-ink-black);
+    outline-offset: 2px;
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500;
+  /* Ghost Outline Pill Button */
+  .btn-ghost, .btn-secondary, .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer text-[#000000];
+    background-color: #ffffff;
+    border: 1px solid var(--color-hairline-gray);
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  .btn-ghost:hover, .btn-secondary:hover, .btn-outline:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+    transform: translateY(-0.5px);
+  }
+  .btn-ghost:active, .btn-secondary:active, .btn-outline:active {
+    background-color: #f3f4f6;
+    transform: translateY(0);
+  }
+  .btn-ghost:focus-visible, .btn-secondary:focus-visible, .btn-outline:focus-visible {
+    outline: 2px solid var(--color-ink-black);
+    outline-offset: 2px;
+  }
+  .btn-ghost:disabled, .btn-secondary:disabled, .btn-outline:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 
-  .card {
-    @apply rounded-xl border border-slate-200 bg-white p-6 shadow-card transition-all duration-200;
+  /* Floating Card White Surfaces with Three-Layer Shadow */
+  .card, .card-paper {
+    @apply p-6 transition-all duration-200;
+    background-color: var(--color-card-white);
+    border: 1px solid var(--color-hairline-gray);
+    border-radius: 24px;
+    box-shadow: var(--shadow-scrapbook);
   }
 
-  .card-hoverable {
-    @apply rounded-xl border border-slate-200 bg-white p-6 shadow-card transition-all duration-200 hover:border-slate-300 hover:shadow-card-hover;
+  /* Modal / Larger Workbench Decks (32px radius) */
+  .card-modal {
+    @apply p-8 transition-all duration-200;
+    background-color: var(--color-card-white);
+    border: 1px solid var(--color-hairline-gray);
+    border-radius: 32px;
+    box-shadow: var(--shadow-scrapbook);
   }
 
+  /* Floating Polaroid Testimonial / Diagnostic Cards */
+  .floating-card {
+    @apply p-5 transition-all duration-300;
+    background-color: var(--color-card-white);
+    border: 1px solid var(--color-hairline-gray);
+    border-radius: 24px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), 0 12px 36px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+  .floating-card:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), 0 16px 44px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Small Caps Section Label */
+  .small-caps-label {
+    @apply font-bold text-xs uppercase;
+    font-family: var(--font-circular);
+    letter-spacing: 0.125em; /* 1.5px tracking */
+    color: var(--color-fog-gray);
+  }
+
+  /* Pill Badges */
   .badge {
-    @apply inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold;
+    border-radius: 9999px;
+    border: 1px solid var(--color-hairline-gray);
+    background-color: #ffffff;
+    color: var(--color-charcoal);
+  }
+  .badge-active, .badge-marigold {
+    background-color: var(--color-marigold);
+    border-color: #f0ce00;
+    color: var(--color-ink-black);
+  }
+  .badge-terracotta {
+    background-color: #fdf2f0;
+    border-color: var(--color-blush-border);
+    color: var(--color-terracotta);
+  }
+  .badge-mint, .badge-success {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+  }
+  .badge-honey, .badge-warning {
+    background-color: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
+  }
+  .badge-coral, .badge-danger {
+    background-color: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+  }
+  .badge-muted, .badge-neutral {
+    background-color: #f9fafb;
+    border-color: var(--color-hairline-gray);
+    color: var(--color-fog-gray);
   }
 
-  .badge-emerald {
-    @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
+  /* Pill Progress Bar */
+  .progress-track {
+    @apply h-2.5 w-full overflow-hidden;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
   }
 
-  .badge-blue {
-    @apply bg-blue-50 text-blue-700 border border-blue-200;
+  .progress-fill {
+    @apply h-full transition-all duration-300 ease-out;
+    background-color: var(--color-terracotta);
+    border-radius: 9999px;
   }
 
-  .badge-amber {
-    @apply bg-amber-50 text-amber-800 border border-amber-200;
+  .progress-fill-marigold {
+    @apply h-full transition-all duration-300 ease-out;
+    background-color: var(--color-marigold);
+    border-radius: 9999px;
   }
 
-  .badge-rose {
-    @apply bg-rose-50 text-rose-700 border border-rose-200;
+  /* Conversational Link */
+  .link-demo, .link-cafe {
+    @apply inline-flex items-center gap-1 text-xs font-bold transition-colors cursor-pointer text-[#000000];
+  }
+  .link-demo:hover, .link-cafe:hover {
+    color: var(--color-terracotta);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
-  .badge-slate {
-    @apply bg-slate-100 text-slate-700 border border-slate-200;
+  /* Specification Interactive Animated Cards */
+  .spec-card {
+    @apply relative p-6 transition-all duration-300 ease-out cursor-pointer overflow-hidden;
+    background-color: var(--color-card-white);
+    border: 1px solid var(--color-hairline-gray);
+    border-radius: 24px;
+    box-shadow: var(--shadow-scrapbook);
   }
-}
+  .spec-card:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: #f7d046;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 20px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+  .spec-card:focus-visible {
+    outline: 2px solid var(--color-ink-black);
+    outline-offset: 2px;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  /* Spec Icon Badge Animated Transition */
+  .spec-icon-badge {
+    @apply transition-all duration-300 ease-out;
+  }
+  .spec-card:hover .spec-icon-badge {
+    transform: scale(1.15) rotate(6deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Spec Arrow Action Link Slide Transition */
+  .spec-arrow {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .spec-card:hover .spec-arrow {
+    transform: translateX(5px);
+    color: var(--color-terracotta);
+  }
+
+  /* Scroll Reveal State Classes */
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Continuous Marquee Ribbon Container */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
   }
 }

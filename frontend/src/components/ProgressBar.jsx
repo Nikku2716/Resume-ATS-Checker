@@ -1,11 +1,16 @@
-import { Cpu, FileText, CheckCircle, Sparkles } from "lucide-react";
+import { Cpu, FileText, CheckCircle2, Coffee, Sparkles } from "lucide-react";
 
+/**
+ * Buy Me a Coffee Theme — Progress Bar Card
+ * White card surface (#ffffff) with 24px radius, three-layer shadow,
+ * pill-shaped progress track with Marigold/Terracotta fill, and friendly stage tags.
+ */
 export default function ProgressBar({ stage, progress, message }) {
   const steps = [
-    { id: "parsing", label: "Extracting Document", icon: FileText },
-    { id: "loading", label: "Loading WASM Core", icon: Cpu },
-    { id: "analyzing", label: "Scoring ATS Algorithms", icon: Sparkles },
-    { id: "finalizing", label: "Generating Report", icon: CheckCircle },
+    { id: "parsing", label: "Parse Document", icon: FileText },
+    { id: "loading", label: "Load WASM Engine", icon: Cpu },
+    { id: "analyzing", label: "Score Keywords", icon: Coffee },
+    { id: "finalizing", label: "Compose Ledger", icon: CheckCircle2 },
   ];
 
   const getStepStatus = (stepId) => {
@@ -21,31 +26,35 @@ export default function ProgressBar({ stage, progress, message }) {
   const pct = Math.min(Math.max(Math.round((progress || 0.1) * 100), 10), 100);
 
   return (
-    <div className="w-full rounded-xl border border-slate-200 bg-white p-6 shadow-card space-y-5 animate-fade-in" role="status" aria-live="polite">
-      <div className="flex items-center justify-between text-sm">
-        <div className="flex items-center gap-2">
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 animate-pulse">
-            <Cpu className="h-3.5 w-3.5" />
+    <div
+      className="w-full card space-y-4 animate-fade-in border border-[#e5e7eb]"
+      role="status"
+      aria-live="polite"
+    >
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm animate-spin">
+            <Coffee className="h-4 w-4" />
           </div>
-          <span className="font-semibold text-slate-800">
-            {message || "Processing resume in WebAssembly engine..."}
+          <span className="text-xs sm:text-sm font-bold text-[#000000]">
+            {message || "Evaluating resume locally via WebAssembly..."}
           </span>
         </div>
-        <span className="font-mono text-xs font-semibold text-slate-500">
+        <span className="badge badge-marigold text-xs font-bold px-3 py-0.5">
           {pct}%
         </span>
       </div>
 
-      {/* Progress Bar Track */}
-      <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
+      {/* Pill Progress Bar Track */}
+      <div className="progress-track h-3 bg-[#f3f4f6] rounded-full overflow-hidden">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400 transition-all duration-300 ease-out"
+          className="progress-fill bg-[#ffdd00] h-full transition-all duration-300 rounded-full"
           style={{ width: `${pct}%` }}
         />
       </div>
 
-      {/* Stepper Dots */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-100 text-xs">
+      {/* Stepper Modules */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-[#e5e7eb] text-xs">
         {steps.map((step) => {
           const status = getStepStatus(step.id);
           const Icon = step.icon;
@@ -53,23 +62,15 @@ export default function ProgressBar({ stage, progress, message }) {
           return (
             <div
               key={step.id}
-              className={`flex items-center gap-1.5 p-1.5 rounded-lg transition-colors ${
+              className={`flex items-center gap-2 p-2 rounded-full transition-colors border ${
                 status === "active"
-                  ? "bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/60"
+                  ? "bg-[#ffdd00]/20 border-[#ffdd00] text-[#000000] font-bold"
                   : status === "completed"
-                  ? "text-slate-600"
-                  : "text-slate-400"
+                  ? "bg-[#f0fdf4] border-[#bbf7d0] text-[#15803d] font-semibold"
+                  : "bg-transparent border-transparent text-[#717171]"
               }`}
             >
-              <Icon
-                className={`h-3.5 w-3.5 shrink-0 ${
-                  status === "active"
-                    ? "text-emerald-600 animate-pulse"
-                    : status === "completed"
-                    ? "text-emerald-600"
-                    : "text-slate-300"
-                }`}
-              />
+              <Icon className="h-3.5 w-3.5 shrink-0" />
               <span className="truncate">{step.label}</span>
             </div>
           );
