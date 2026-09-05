@@ -7,7 +7,7 @@ Resume ATS Checker is a two-process application: a Python/FastAPI backend that p
 ## Directory Structure
 
 ```
-Resume-ATS-Checker/
+ResumeLint/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py                  # FastAPI application, CORS, routes

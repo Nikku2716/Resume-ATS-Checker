@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* Right Action Stack */}
           <div className="flex items-center gap-3">
             <a
-              href="https://github.com/Nikku2716/Resume-ATS-Checker"
+              href="https://github.com/sh4dowbl4d3/ResumeLint"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost text-xs py-2 px-3.5 hidden sm:inline-flex"

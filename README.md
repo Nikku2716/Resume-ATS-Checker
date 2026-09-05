@@ -3,14 +3,14 @@
 > **Lint your resume before recruiters do.**  
 > *100% Private, Client-Side Resume ATS Checker & Analyzer powered by WebAssembly.*
 
-[![Deploy to GitHub Pages](https://github.com/sh4dowbl4d3/Resume-ATS-Checker/actions/workflows/deploy.yml/badge.svg)](https://github.com/sh4dowbl4d3/Resume-ATS-Checker/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/sh4dowbl4d3/ResumeLint/actions/workflows/deploy.yml/badge.svg)](https://github.com/sh4dowbl4d3/ResumeLint/actions/workflows/deploy.yml)
 [![WebAssembly](https://img.shields.io/badge/WebAssembly-Rust-purple?logo=webassembly)](https://webassembly.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
 [![License](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
 ---
 
-## 🔒 100% Client-Side Privacy Guarantee
+## 100% Client-Side Privacy Guarantee
 
 Most resume scanners upload your personal contact information, work history, and proprietary job descriptions to cloud servers.
 
@@ -22,7 +22,7 @@ Most resume scanners upload your personal contact information, work history, and
 
 ---
 
-## 🎯 How ATS Scoring Works
+## How ATS Scoring Works
 
 ResumeLint computes a deterministic score (0–100) across 5 weighted dimensions:
 
@@ -36,7 +36,7 @@ ResumeLint computes a deterministic score (0–100) across 5 weighted dimensions
 
 ---
 
-## 🚀 Quickstart & Local Development
+## Quickstart & Local Development
 
 ### Prerequisites
 - **Node.js 18+** and **npm**
@@ -44,8 +44,8 @@ ResumeLint computes a deterministic score (0–100) across 5 weighted dimensions
 
 ### 1. Clone & Install Frontend
 ```bash
-git clone https://github.com/sh4dowbl4d3/Resume-ATS-Checker.git
-cd Resume-ATS-Checker/frontend
+git clone https://github.com/sh4dowbl4d3/ResumeLint.git
+cd ResumeLint/frontend
 npm install
 ```
 
@@ -57,7 +57,7 @@ Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ResumeLint features a comprehensive test suite across Rust, WebAssembly, document parsers, worker RPC, and end-to-end fixture parity.
 
@@ -79,7 +79,7 @@ bash scripts/build_wasm.sh
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+## Architecture & Technology Stack
 
 ```
 ResumeLint/
@@ -120,7 +120,7 @@ ResumeLint/
 
 ---
 
-## 📄 Export Options
+## Export Options
 
 Generate reports directly from the Results screen:
 - **Markdown Export (`.md`)**: Copy to clipboard or download formatted Markdown report.
@@ -129,6 +129,6 @@ Generate reports directly from the Results screen:
 
 ---
 
-## 📜 License
+## License
 
 Distributed under the [MIT License](LICENSE).

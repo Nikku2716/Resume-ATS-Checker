@@ -49,7 +49,7 @@ export default function Footer() {
             Studio
           </Link>
           <a
-            href="https://github.com/Nikku2716/Resume-ATS-Checker"
+            href="https://github.com/sh4dowbl4d3/ResumeLint"
             target="_blank"
             rel="noopener noreferrer"
             className="small-caps-label text-[#717171] hover:text-[#000000] transition-colors inline-flex items-center gap-1.5"

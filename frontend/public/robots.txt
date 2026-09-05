@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://nikku2716.github.io/Resume-ATS-Checker/sitemap.xml
+Sitemap: https://sh4dowbl4d3.github.io/ResumeLint/sitemap.xml
