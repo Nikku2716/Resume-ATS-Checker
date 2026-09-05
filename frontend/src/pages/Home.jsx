@@ -8,323 +8,572 @@ import {
   X,
   Sparkles,
   ArrowRight,
-  Swords,
-  Waves,
+  ShieldCheck,
+  Cpu,
+  Target,
+  Layers,
+  FileCheck,
+  Check,
+  HelpCircle,
+  Briefcase,
   Zap,
 } from "lucide-react";
-import { analyzeText, analyzeFile } from "../api";
+import { analyzeTextWithProgress, analyzeFileWithProgress } from "../api";
+import { SAMPLE_DATA } from "../data/samples";
+import PrivacyBanner from "../components/PrivacyBanner";
+import ProgressBar from "../components/ProgressBar";
 
-const ACCEPTED_TYPES = ".pdf,.docx,.txt";
-
-const features = [
-  {
-    icon: Swords,
-    title: "Keyword BATTLE",
-    desc: "Matches your words against the JD with ruthless variant detection",
-    color: "bg-frutiger-sky",
-    textColor: "text-white",
-  },
-  {
-    icon: Waves,
-    title: "ATS TRAPS",
-    desc: "Detects tables, icons, layouts that DESTROY your parser score",
-    color: "bg-frutiger-coral",
-    textColor: "text-frutiger-black",
-  },
-  {
-    icon: Zap,
-    title: "BOOST MODE",
-    desc: "Get CRUSHABLE prioritized fixes to SMASH that ATS score",
-    color: "bg-frutiger-lavender",
-    textColor: "text-white",
-  },
-];
-
-function ComicBurst({ className }) {
-  return (
-    <svg viewBox="0 0 100 100" className={className} fill="currentColor">
-      <polygon points="50 5 61 35 95 35 68 57 79 91 50 70 21 91 32 57 5 35 39 35" />
-    </svg>
-  );
-}
+const ACCEPTED_EXTENSIONS = [".pdf", ".docx", ".txt", ".md"];
+const ACCEPTED_TYPES = ACCEPTED_EXTENSIONS.join(",");
 
 export default function Home() {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
-  const [tab, setTab] = useState("paste");
+
+  const [tab, setTab] = useState("upload"); // 'upload' | 'paste'
   const [resumeText, setResumeText] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [progressState, setProgressState] = useState({
+    stage: "parsing",
+    progress: 0.1,
+    message: "",
+  });
   const [error, setError] = useState("");
   const [dragOver, setDragOver] = useState(false);
 
   const handleFileDrop = useCallback((e) => {
     e.preventDefault();
     setDragOver(false);
-    const f = e.dataTransfer?.files?.[0] || e.target.files?.[0];
-    if (!f) return;
-    const ext = "." + f.name.split(".").pop().toLowerCase();
-    if (!ACCEPTED_TYPES.includes(ext)) {
-      setError("Unsupported file type! Only PDF, DOCX, or TXT files allowed.");
+    const selectedFile = e.dataTransfer?.files?.[0] || e.target.files?.[0];
+    if (!selectedFile) return;
+
+    const ext = "." + selectedFile.name.split(".").pop().toLowerCase();
+    if (!ACCEPTED_EXTENSIONS.includes(ext)) {
+      setError(`Unsupported file format (${ext}). Please upload a PDF, DOCX, TXT, or Markdown file.`);
       return;
     }
-    setFile(f);
+
+    if (selectedFile.size > 20 * 1024 * 1024) {
+      setError("File exceeds 20MB limit. Please upload a smaller document.");
+      return;
+    }
+
+    setFile(selectedFile);
     setError("");
   }, []);
 
-  const handleSubmit = async () => {
+  const handleLoadSample = (sample) => {
+    setTab("paste");
+    setResumeText(sample.resumeText);
+    setJobDescription(sample.jobDescription);
+    setFile(null);
+    setError("");
+  };
+
+  const handleClearAll = () => {
+    setResumeText("");
+    setJobDescription("");
+    setFile(null);
+    setError("");
+  };
+
+  const countWords = (str) => {
+    if (!str || !str.trim()) return 0;
+    return str.trim().split(/\s+/).length;
+  };
+
+  const handleSubmit = async (e) => {
+    if (e) e.preventDefault();
     setError("");
 
     if (tab === "paste") {
       if (!resumeText.trim()) {
-        setError("Hey! Paste your resume text first!");
+        setError("Please paste your resume text before running analysis.");
         return;
       }
     } else if (!file) {
-      setError("Whoa! Upload a resume file first!");
+      setError("Please select or drop a resume file (PDF, DOCX, TXT, MD) to continue.");
       return;
     }
 
     if (!jobDescription.trim()) {
-      setError("Cmon! Paste a job description!");
+      setError("Please provide a target job description so ResumeLint can benchmark keyword alignment.");
       return;
     }
 
     setLoading(true);
+    setProgressState({
+      stage: "parsing",
+      progress: 0.1,
+      message: tab === "upload" ? `Extracting text from ${file.name}...` : "Preparing resume text...",
+    });
+
     try {
       const data =
         tab === "paste"
-          ? await analyzeText(resumeText, jobDescription)
-          : await analyzeFile(file, jobDescription);
+          ? await analyzeTextWithProgress(resumeText, jobDescription, (p) => setProgressState(p))
+          : await analyzeFileWithProgress(file, jobDescription, (p) => setProgressState(p));
+
+      // Navigate to results page with analysis response
       navigate("/results", { state: { result: data } });
     } catch (err) {
-      setError(err.message);
+      console.error("Analysis error:", err);
+      setError(err.message || "An error occurred during resume analysis. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-4 relative">
-        <div className="relative inline-block">
-          <ComicBurst className="absolute -top-4 -right-6 h-10 w-10 text-frutiger-coral animate-float drop-shadow-[2px_2px_0px_#1A1A1A]" />
-          <ComicBurst className="absolute -bottom-2 -left-6 h-8 w-8 text-frutiger-mint rotate-45 animate-float drop-shadow-[2px_2px_0px_#1A1A1A]" style={{ animationDelay: "1.5s" }} />
-          <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center border-4 border-frutiger-black bg-frutiger-teal shadow-brutal-lg -rotate-6 hover:rotate-0 transition-transform">
-            <Swords className="h-10 w-10 text-white drop-shadow-[2px_2px_0px_#1A1A1A]" />
-          </div>
+    <div className="space-y-12">
+      {/* Hero Section */}
+      <section className="text-center space-y-4 pt-4 sm:pt-8 max-w-4xl mx-auto">
+        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/80 px-3.5 py-1 text-xs font-semibold text-emerald-800 shadow-sm">
+          <Sparkles className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+          <span>Next-Gen In-Browser ATS Engine</span>
         </div>
 
-        <h1 className="text-5xl sm:text-7xl font-bold text-frutiger-black uppercase leading-tight font-heading drop-shadow-[3px_3px_0px_rgba(0,0,0,0.12)]">
-          ATS SLAYER
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Free Resume ATS Checker &amp; Analyzer
         </h1>
-        <p className="mx-auto max-w-xl text-lg text-frutiger-black font-bold uppercase tracking-wide">
-          PUNCH your resume past the robots. Get a{" "}
-          <span className="text-frutiger-sky underline decoration-4 decoration-frutiger-black underline-offset-4">
-            REAL ATS score
-          </span>{" "}
-          with KO fixes.
+
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <strong className="font-semibold text-slate-800">Lint your resume before recruiters do.</strong>{" "}
+          Identify formatting risks, uncover missing critical keywords, and verify ATS section compatibility 100% locally in your browser.
         </p>
 
-        <div className="flex justify-center gap-2 flex-wrap">
-          <span className="inline-flex items-center gap-1 border-2 border-frutiger-black bg-frutiger-mint px-3 py-1 text-sm font-bold uppercase text-frutiger-black shadow-[3px_3px_0px_#1A1A1A]">
-            PDF
-          </span>
-          <span className="inline-flex items-center gap-1 border-2 border-frutiger-black bg-frutiger-sky px-3 py-1 text-sm font-bold uppercase text-white shadow-[3px_3px_0px_#1A1A1A]">
-            DOCX
-          </span>
-          <span className="inline-flex items-center gap-1 border-2 border-frutiger-black bg-frutiger-peach px-3 py-1 text-sm font-bold uppercase text-frutiger-black shadow-[3px_3px_0px_#1A1A1A]">
-            TXT
-          </span>
+        {/* Quick Sample Selector */}
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs">
+          <span className="text-slate-500 font-medium">Try a sample role:</span>
+          {SAMPLE_DATA.map((sample) => (
+            <button
+              key={sample.id}
+              type="button"
+              onClick={() => handleLoadSample(sample)}
+              className="inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-2.5 py-1 text-xs font-medium text-slate-700 shadow-sm transition hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50/30 cursor-pointer"
+            >
+              <Briefcase className="h-3 w-3 text-slate-400" />
+              {sample.title}
+            </button>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="comic-card space-y-5 animate-bounce2">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center border-2 border-frutiger-black bg-frutiger-lavender text-white font-heading text-lg shadow-[3px_3px_0px_#1A1A1A] -rotate-3">
-              1
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-frutiger-black font-heading uppercase">Your Resume</h2>
-              <p className="text-sm text-frutiger-black opacity-70 font-bold">Paste or upload — let&apos;s go!</p>
-            </div>
-          </div>
+      {/* Privacy Guarantee Card */}
+      <PrivacyBanner />
 
-          <div className="flex gap-1 border-2 border-frutiger-black bg-frutiger-black p-1">
-            <button
-              className={`flex-1 px-3 py-2 text-sm font-bold uppercase tracking-wide transition-all duration-150 cursor-pointer ${
-                tab === "paste"
-                  ? "bg-frutiger-mint text-frutiger-black"
-                  : "bg-white text-frutiger-black hover:bg-gray-100"
-              }`}
-              onClick={() => setTab("paste")}
-            >
-              <FileText className="inline-block mr-1.5 h-4 w-4" />
-              Paste
-            </button>
-            <button
-              className={`flex-1 px-3 py-2 text-sm font-bold uppercase tracking-wide transition-all duration-150 cursor-pointer ${
-                tab === "upload"
-                  ? "bg-frutiger-mint text-frutiger-black"
-                  : "bg-white text-frutiger-black hover:bg-gray-100"
-              }`}
-              onClick={() => setTab("upload")}
-            >
-              <Upload className="inline-block mr-1.5 h-4 w-4" />
-              File
-            </button>
-          </div>
-
-          {tab === "paste" ? (
-            <div>
-              <label htmlFor="resume-text" className="sr-only">Resume text</label>
-              <textarea
-                id="resume-text"
-                className="input-comic min-h-[200px] resize-y font-body"
-                placeholder="Past your resume text here... GO!"
-                value={resumeText}
-                onChange={(e) => setResumeText(e.target.value)}
-              />
-            </div>
-          ) : (
-            <div
-              onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-              onDragLeave={() => setDragOver(false)}
-              onDrop={handleFileDrop}
-              onClick={() => fileInputRef.current?.click()}
-              className={`flex min-h-[200px] cursor-pointer flex-col items-center justify-center border-4 border-frutiger-black p-8 text-center transition-all duration-200 ${
-                dragOver
-                  ? "bg-frutiger-mint/30 -translate-x-0.5 -translate-y-0.5 shadow-brutal-hover"
-                  : file
-                  ? "bg-frutiger-mint/10 shadow-brutal"
-                  : "bg-white hover:bg-frutiger-mint/10 shadow-brutal hover:shadow-brutal-hover hover:translate-x-0.5 hover:translate-y-0.5"
-              }`}
-            >
-              {file ? (
-                <div className="space-y-3 animate-pop">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center border-2 border-frutiger-black bg-frutiger-mint">
-                    <CheckCircle2 className="h-8 w-8 text-frutiger-black" />
-                  </div>
-                  <div>
-                    <p className="text-lg font-bold text-frutiger-black uppercase font-heading">{file.name}</p>
-                    <p className="text-sm text-frutiger-black opacity-60 font-bold">{(file.size / 1024).toFixed(1)} KB</p>
-                  </div>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); setFile(null); }}
-                    className="inline-flex items-center gap-1.5 border-2 border-frutiger-black bg-white px-3 py-1.5 text-sm font-bold text-frutiger-black shadow-[3px_3px_0px_#1A1A1A] hover:shadow-[1px_1px_0px_#1A1A1A] hover:translate-x-0.5 hover:translate-y-0.5 transition-all cursor-pointer uppercase"
-                  >
-                    <X className="h-4 w-4" />
-                    Remove
-                  </button>
+      {/* Interactive Input Studio */}
+      <section className="grid gap-6 lg:grid-cols-2" aria-label="Resume and Job Description Input">
+        {/* Left Column: Resume Input (Upload / Paste) */}
+        <div className="card space-y-4 flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-mono text-xs font-bold">
+                  1
                 </div>
-              ) : (
-                <>
-                  <div className="mb-3 flex h-16 w-16 items-center justify-center border-2 border-frutiger-black bg-frutiger-sky shadow-[4px_4px_0px_#1A1A1A] -rotate-6 hover:rotate-0 transition-transform">
-                    <Upload className="h-7 w-7 text-white" />
-                  </div>
-                  <p className="text-xl font-bold text-frutiger-black uppercase font-heading">
-                    DROP IT HERE!
-                  </p>
-                  <p className="mt-1 text-sm font-bold text-frutiger-black opacity-60">
-                    or click to BROWSE
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <span className="border-2 border-frutiger-black bg-frutiger-mint px-2 py-0.5 text-xs font-bold text-frutiger-black">PDF</span>
-                    <span className="border-2 border-frutiger-black bg-frutiger-sky px-2 py-0.5 text-xs font-bold text-white">DOCX</span>
-                    <span className="border-2 border-frutiger-black bg-frutiger-peach px-2 py-0.5 text-xs font-bold text-frutiger-black">TXT</span>
-                  </div>
-                </>
+                <div>
+                  <h2 className="text-base font-semibold text-slate-900">Your Resume</h2>
+                  <p className="text-xs text-slate-500">Upload PDF, DOCX, TXT or paste plain text</p>
+                </div>
+              </div>
+
+              {/* Tab Selector */}
+              <div className="flex rounded-lg border border-slate-200 bg-slate-100 p-0.5 text-xs font-medium" role="tablist">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={tab === "upload"}
+                  onClick={() => setTab("upload")}
+                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all cursor-pointer ${
+                    tab === "upload"
+                      ? "bg-white text-slate-900 shadow-sm font-semibold"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  <Upload className="h-3.5 w-3.5" />
+                  Upload File
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={tab === "paste"}
+                  onClick={() => setTab("paste")}
+                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all cursor-pointer ${
+                    tab === "paste"
+                      ? "bg-white text-slate-900 shadow-sm font-semibold"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  <FileText className="h-3.5 w-3.5" />
+                  Paste Text
+                </button>
+              </div>
+            </div>
+
+            {/* Tab 1: File Upload Dropzone */}
+            {tab === "upload" ? (
+              <div>
+                <div
+                  onDragOver={(e) => {
+                    e.preventDefault();
+                    setDragOver(true);
+                  }}
+                  onDragLeave={() => setDragOver(false)}
+                  onDrop={handleFileDrop}
+                  onClick={() => fileInputRef.current?.click()}
+                  className={`flex min-h-[260px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 text-center transition-all ${
+                    dragOver
+                      ? "border-emerald-500 bg-emerald-50/40 scale-[0.99]"
+                      : file
+                      ? "border-emerald-400 bg-emerald-50/20"
+                      : "border-slate-300 bg-slate-50/50 hover:border-emerald-400 hover:bg-slate-50"
+                  }`}
+                >
+                  {file ? (
+                    <div className="space-y-3">
+                      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 shadow-sm">
+                        <CheckCircle2 className="h-7 w-7" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">{file.name}</p>
+                        <p className="text-xs text-slate-500 mt-0.5">
+                          {(file.size / 1024).toFixed(1)} KB &bull; Ready for in-browser analysis
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFile(null);
+                        }}
+                        className="inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition cursor-pointer"
+                      >
+                        <X className="h-3.5 w-3.5 text-slate-500" />
+                        Choose another file
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-slate-600 group-hover:text-emerald-600 transition">
+                        <Upload className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-800">
+                          Click to upload or drag &amp; drop
+                        </p>
+                        <p className="text-xs text-slate-500 mt-1">
+                          Supported formats: PDF, DOCX, TXT, Markdown (Max 20MB)
+                        </p>
+                      </div>
+                      <div className="flex justify-center gap-1.5 pt-1">
+                        <span className="rounded bg-slate-200/70 px-2 py-0.5 text-[11px] font-mono text-slate-700">PDF</span>
+                        <span className="rounded bg-slate-200/70 px-2 py-0.5 text-[11px] font-mono text-slate-700">DOCX</span>
+                        <span className="rounded bg-slate-200/70 px-2 py-0.5 text-[11px] font-mono text-slate-700">TXT</span>
+                        <span className="rounded bg-slate-200/70 px-2 py-0.5 text-[11px] font-mono text-slate-700">MD</span>
+                      </div>
+                    </div>
+                  )}
+
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept={ACCEPTED_TYPES}
+                    className="hidden"
+                    onChange={handleFileDrop}
+                  />
+                </div>
+              </div>
+            ) : (
+              /* Tab 2: Paste Resume Text */
+              <div className="space-y-2">
+                <label htmlFor="resume-text" className="sr-only">Resume text content</label>
+                <textarea
+                  id="resume-text"
+                  className="w-full min-h-[260px] rounded-xl border border-slate-300 bg-white p-3.5 font-mono text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none resize-y"
+                  placeholder="Paste your resume content here (e.g. Contact, Summary, Experience, Skills, Education)..."
+                  value={resumeText}
+                  onChange={(e) => setResumeText(e.target.value)}
+                />
+                <div className="flex items-center justify-between text-xs text-slate-500">
+                  <span>{countWords(resumeText)} words &bull; {resumeText.length} characters</span>
+                  {resumeText && (
+                    <button
+                      type="button"
+                      onClick={() => setResumeText("")}
+                      className="text-slate-400 hover:text-slate-600 transition cursor-pointer"
+                    >
+                      Clear
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Right Column: Job Description Input */}
+        <div className="card space-y-4 flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-mono text-xs font-bold">
+                  2
+                </div>
+                <div>
+                  <h2 className="text-base font-semibold text-slate-900">Target Job Description</h2>
+                  <p className="text-xs text-slate-500">Paste the job posting to benchmark keyword &amp; skill fit</p>
+                </div>
+              </div>
+
+              {jobDescription && (
+                <button
+                  type="button"
+                  onClick={() => setJobDescription("")}
+                  className="text-xs text-slate-400 hover:text-slate-600 transition cursor-pointer"
+                >
+                  Clear
+                </button>
               )}
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept={ACCEPTED_TYPES}
-                className="hidden"
-                onChange={handleFileDrop}
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="job-description" className="sr-only">Job description content</label>
+              <textarea
+                id="job-description"
+                className="w-full min-h-[260px] rounded-xl border border-slate-300 bg-white p-3.5 font-mono text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none resize-y"
+                placeholder="Paste the target job description here (responsibilities, required skills, qualifications)..."
+                value={jobDescription}
+                onChange={(e) => setJobDescription(e.target.value)}
               />
-            </div>
-          )}
-        </div>
-
-        <div className="comic-card space-y-5 animate-bounce2" style={{ animationDelay: "0.15s" }}>
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center border-2 border-frutiger-black bg-frutiger-coral text-white font-heading text-lg shadow-[3px_3px_0px_#1A1A1A] rotate-3">
-              2
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-frutiger-black font-heading uppercase">Job Description</h2>
-              <p className="text-sm text-frutiger-black opacity-70 font-bold">Paste the gig you want to CRUSH</p>
+              <div className="flex items-center justify-between text-xs text-slate-500">
+                <span>{countWords(jobDescription)} words &bull; {jobDescription.length} characters</span>
+                <span className="text-[11px] text-slate-400">Higher detail = more accurate keyword scoring</span>
+              </div>
             </div>
           </div>
-          <div>
-            <label htmlFor="job-description" className="sr-only">Job description</label>
-            <textarea
-              id="job-description"
-              className="input-comic min-h-[200px] resize-y font-body"
-              placeholder="Paste job description here... LET'S RUMBLE!"
-              value={jobDescription}
-              onChange={(e) => setJobDescription(e.target.value)}
-            />
-          </div>
         </div>
-      </div>
+      </section>
 
+      {/* Progress Telemetry / Worker Active State */}
+      {loading && (
+        <ProgressBar
+          stage={progressState.stage}
+          progress={progressState.progress}
+          message={progressState.message}
+        />
+      )}
+
+      {/* Error Alert */}
       {error && (
-        <div className="animate-pop flex items-start gap-3 border-4 border-frutiger-black bg-frutiger-coral p-4 shadow-brutal">
-          <div className="flex h-9 w-9 items-center justify-center border-2 border-frutiger-black bg-white shrink-0">
-            <AlertCircle className="h-5 w-5 text-frutiger-coral" />
+        <div
+          role="alert"
+          className="flex items-start gap-3 rounded-xl border border-rose-200 bg-rose-50 p-4 text-rose-800 shadow-sm animate-fade-in"
+        >
+          <AlertCircle className="h-5 w-5 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
+          <div className="flex-1 text-sm">
+            <p className="font-semibold text-rose-900">Analysis Error</p>
+            <p className="mt-0.5 text-rose-700">{error}</p>
           </div>
-          <div className="flex-1">
-            <p className="text-base font-bold text-white uppercase font-heading tracking-wide drop-shadow-[1px_1px_0px_#1A1A1A]">{error}</p>
-          </div>
+          <button
+            type="button"
+            onClick={() => setError("")}
+            className="text-rose-500 hover:text-rose-700 cursor-pointer"
+            aria-label="Dismiss error"
+          >
+            <X className="h-4 w-4" />
+          </button>
         </div>
       )}
 
-      <div className="text-center animate-bounce2" style={{ animationDelay: "0.3s" }}>
+      {/* Action Submit Bar */}
+      <section className="flex flex-col items-center justify-center text-center space-y-3 pt-2">
         <button
+          type="button"
           onClick={handleSubmit}
           disabled={loading}
-          className="btn-comic bg-gradient-to-r from-frutiger-sky to-frutiger-teal text-xl sm:text-2xl px-10 py-4"
+          className="btn-primary text-base px-8 py-3.5 w-full sm:w-auto shadow-md"
         >
           {loading ? (
             <>
-              <svg className="h-6 w-6 animate-spin" viewBox="0 0 24 24" fill="none">
+              <svg className="h-5 w-5 animate-spin text-white" viewBox="0 0 24 24" fill="none">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
               </svg>
-              ANALYZING...
+              <span>Analyzing Resume in WASM...</span>
             </>
           ) : (
             <>
-              SMASH IT!
-              <ArrowRight className="h-6 w-6" />
+              <Sparkles className="h-5 w-5 text-emerald-200" aria-hidden="true" />
+              <span>Lint &amp; Analyze Resume</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </>
           )}
         </button>
-        <p className="mt-3 text-sm font-bold text-frutiger-black opacity-50 uppercase tracking-wide">
-          Files processed locally — ZERO storage
-        </p>
-      </div>
 
-      <div className="grid gap-5 sm:grid-cols-3">
-        {features.map(({ icon: Icon, title, desc, color, textColor }, i) => (
-          <div
-            key={title}
-            className="comic-card flex items-start gap-4 p-5 cursor-default animate-pop"
-            style={{ animationDelay: `${0.4 + i * 0.1}s` }}
-          >
-            <div className={`flex h-14 w-14 shrink-0 items-center justify-center border-2 border-frutiger-black ${color} shadow-[4px_4px_0px_#1A1A1A] -rotate-3 hover:rotate-0 transition-transform`}>
-              <Icon className={`h-7 w-7 ${textColor}`} />
+        <p className="text-xs text-slate-500 flex items-center gap-1.5">
+          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+          <span>Deterministic analysis &bull; Zero network calls &bull; 100% private</span>
+        </p>
+      </section>
+
+      {/* Feature Highlights Section */}
+      <section id="how-it-works" className="pt-8 border-t border-slate-200 space-y-8" aria-labelledby="features-heading">
+        <div className="text-center space-y-2 max-w-2xl mx-auto">
+          <h2 id="features-heading" className="text-2xl font-bold tracking-tight text-slate-900">
+            How ResumeLint Evaluates Your Resume
+          </h2>
+          <p className="text-sm text-slate-600">
+            Engineered to replicate how enterprise Applicant Tracking Systems (Workday, Greenhouse, Taleo, Lever) parse and rank candidates.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="card-hoverable space-y-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
+              <Target className="h-5 w-5" />
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-frutiger-black font-heading uppercase tracking-wide">{title}</h3>
-              <p className="mt-1 text-sm font-bold text-frutiger-black opacity-70">{desc}</p>
-            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Keyword &amp; Morphological Matching
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Extracts high-value unigrams and bigrams from the job posting, automatically checking hyphenated, slashed, and morphological variations (e.g. CI/CD vs continuous integration).
+            </p>
           </div>
-        ))}
-      </div>
+
+          <div className="card-hoverable space-y-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100">
+              <Layers className="h-5 w-5" />
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Section Completeness Audit
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Scans for 10 standard resume sections (Contact Info, Work History, Education, Skills, Summary, etc.) ensuring ATS parsers correctly index your experience chronologically.
+            </p>
+          </div>
+
+          <div className="card-hoverable space-y-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 text-rose-600 border border-rose-100">
+              <AlertCircle className="h-5 w-5" />
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Formatting &amp; Parser Trap Detection
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Flags tables, multi-column layouts, text boxes, images, and special characters that cause commercial ATS parsers to scramble or drop text.
+            </p>
+          </div>
+
+          <div className="card-hoverable space-y-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-100">
+              <Zap className="h-5 w-5" />
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Action Verbs &amp; Impact Analysis
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Detects strong power verbs and quantified impact metrics while alerting you to passive voice, clichés, and overused buzzwords.
+            </p>
+          </div>
+
+          <div className="card-hoverable space-y-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
+              <Cpu className="h-5 w-5" />
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Client-Side WebAssembly Core
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Compiled from Rust to WebAssembly, running high-performance algorithms locally with sub-100ms execution times and zero latency.
+            </p>
+          </div>
+
+          <div className="card-hoverable space-y-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-50 text-purple-600 border border-purple-100">
+              <ShieldCheck className="h-5 w-5" />
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Zero Server Telemetry
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              No accounts, no database, no LLM API calls, and no data tracking. Your resume stays completely confidential on your machine.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="pt-8 border-t border-slate-200 space-y-6" aria-labelledby="faq-heading">
+        <div className="text-center space-y-2 max-w-2xl mx-auto">
+          <h2 id="faq-heading" className="text-2xl font-bold tracking-tight text-slate-900">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-sm text-slate-600">
+            Everything you need to know about ATS scoring and how ResumeLint works.
+          </p>
+        </div>
+
+        <div className="grid gap-4 max-w-3xl mx-auto">
+          <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+              <span>What is an ATS (Applicant Tracking System)?</span>
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p className="mt-3 text-xs text-slate-600 leading-relaxed">
+              An Applicant Tracking System (ATS) is software used by employers to collect, sort, scan, and rank job applications. Before a human recruiter reads your resume, the ATS parses the document into database fields and calculates a keyword match score against the job description.
+            </p>
+          </details>
+
+          <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+              <span>Why is ResumeLint 100% client-side?</span>
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p className="mt-3 text-xs text-slate-600 leading-relaxed">
+              Resumes contain sensitive personal information (full name, phone numbers, home address, employment history, compensation details). By using Rust compiled to WebAssembly, ResumeLint provides enterprise-grade text analysis directly inside your browser with zero data leaving your machine.
+            </p>
+          </details>
+
+          <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+              <span>Which resume file format is best for ATS?</span>
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p className="mt-3 text-xs text-slate-600 leading-relaxed">
+              Both PDF and DOCX are widely supported. However, clean single-column PDF or DOCX files without tables, floating text boxes, or graphics ensure 100% parse accuracy across older and newer ATS platforms alike.
+            </p>
+          </details>
+
+          <details className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-900 text-sm">
+              <span>How is the overall score calculated?</span>
+              <span className="ml-4 shrink-0 transition group-open:-rotate-180">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p className="mt-3 text-xs text-slate-600 leading-relaxed">
+              The overall score (0–100) is a weighted composite: Keyword Match (35%), Skills Match (25%), Experience Relevance (20%), Formatting &amp; Readability (10%), and Section Completeness (10%).
+            </p>
+          </details>
+        </div>
+      </section>
     </div>
   );
 }
