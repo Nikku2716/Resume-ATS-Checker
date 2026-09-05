@@ -43,3 +43,9 @@ def test_all_baseline_fixtures_parity(scorer, fixtures_data):
         assert result_dict["missing_sections"] == expected["missing_sections"], (
             f"Fixture {fid} missing_sections mismatch"
         )
+        assert result_dict["engine_version"] == "1.0.0", (
+            f"Fixture {fid} engine_version mismatch"
+        )
+        assert result_dict["contract_version"] == "1.0.0", (
+            f"Fixture {fid} contract_version mismatch"
+        )

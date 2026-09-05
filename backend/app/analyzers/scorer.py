@@ -1,7 +1,9 @@
+import time
 from typing import Dict, List
 
 from ..models.schemas import (
     AnalysisResponse,
+    AnalysisMetadata,
     SectionScore,
     KeywordMatch,
     AtsRisk,
@@ -23,6 +25,7 @@ class AtsScorer:
         self.action_verb_analyzer = ActionVerbAnalyzer()
 
     def analyze(self, resume_text: str, job_description: str) -> AnalysisResponse:
+        t0 = time.monotonic()
         resume_keywords = self.keyword_matcher.extract_keywords(resume_text)
         jd_keywords = self.keyword_matcher.extract_keywords(job_description)
 
@@ -100,6 +103,8 @@ class AtsScorer:
 
         summary = self._generate_summary(overall_score, len(matched_keywords), len(missing_keywords))
 
+        duration_ms = int((time.monotonic() - t0) * 1000)
+
         return AnalysisResponse(
             overall_score=overall_score,
             section_scores=section_scores,
@@ -110,6 +115,14 @@ class AtsScorer:
             detected_sections=detected_sections,
             missing_sections=missing_sections,
             summary=summary,
+            engine_version="1.0.0",
+            contract_version="1.0.0",
+            metadata=AnalysisMetadata(
+                engine="python-reference",
+                duration_ms=duration_ms,
+                resume_length=len(resume_text),
+                job_description_length=len(job_description),
+            ),
         )
 
     def _compute_experience_relevance(

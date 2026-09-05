@@ -361,7 +361,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 81/100). Your resume is well-optimized for ATS screening. Only 20 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 81/100). Your resume is well-optimized for ATS screening. Only 20 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 761,
+      "job_description_length": 358
     }
   },
   {
@@ -654,7 +661,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Low ATS compatibility (score: 35/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+      "summary": "Low ATS compatibility (score: 35/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 519,
+      "job_description_length": 318
     }
   },
   {
@@ -943,7 +957,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Below average ATS compatibility (score: 45/100). Significant keyword gaps (24 missing) and potential formatting issues. Prioritize the critical fixes."
+      "summary": "Below average ATS compatibility (score: 45/100). Significant keyword gaps (24 missing) and potential formatting issues. Prioritize the critical fixes.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 452,
+      "job_description_length": 163
     }
   },
   {
@@ -1236,7 +1257,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 87/100). Your resume is well-optimized for ATS screening. Only 8 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 87/100). Your resume is well-optimized for ATS screening. Only 8 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 554,
+      "job_description_length": 235
     }
   },
   {
@@ -1492,7 +1520,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Low ATS compatibility (score: 33/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+      "summary": "Low ATS compatibility (score: 33/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 413,
+      "job_description_length": 177
     }
   },
   {
@@ -1749,7 +1784,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Moderate ATS compatibility (score: 79/100). 20 keywords matched but 12 are missing. Address the suggestions below to improve."
+      "summary": "Moderate ATS compatibility (score: 79/100). 20 keywords matched but 12 are missing. Address the suggestions below to improve.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 502,
+      "job_description_length": 184
     }
   },
   {
@@ -2072,7 +2114,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Low ATS compatibility (score: 38/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+      "summary": "Low ATS compatibility (score: 38/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 270,
+      "job_description_length": 211
     }
   },
   {
@@ -2288,7 +2337,14 @@
         "skills",
         "summary"
       ],
-      "summary": "Moderate ATS compatibility (score: 69/100). 12 keywords matched but 11 are missing. Address the suggestions below to improve."
+      "summary": "Moderate ATS compatibility (score: 69/100). 12 keywords matched but 11 are missing. Address the suggestions below to improve.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 216,
+      "job_description_length": 115
     }
   },
   {
@@ -2544,7 +2600,14 @@
         "education",
         "skills"
       ],
-      "summary": "Moderate ATS compatibility (score: 78/100). 22 keywords matched but 3 are missing. Address the suggestions below to improve."
+      "summary": "Moderate ATS compatibility (score: 78/100). 22 keywords matched but 3 are missing. Address the suggestions below to improve.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 296,
+      "job_description_length": 106
     }
   },
   {
@@ -2722,7 +2785,14 @@
         "skills",
         "summary"
       ],
-      "summary": "Low ATS compatibility (score: 23/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+      "summary": "Low ATS compatibility (score: 23/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 0,
+      "job_description_length": 70
     }
   },
   {
@@ -2778,7 +2848,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 0 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 0 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 271,
+      "job_description_length": 0
     }
   },
   {
@@ -3213,7 +3290,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Moderate ATS compatibility (score: 71/100). 60 keywords matched but 40 are missing. Address the suggestions below to improve."
+      "summary": "Moderate ATS compatibility (score: 71/100). 60 keywords matched but 40 are missing. Address the suggestions below to improve.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 2859,
+      "job_description_length": 904
     }
   },
   {
@@ -3374,7 +3458,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 83/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 83/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 389,
+      "job_description_length": 70
     }
   },
   {
@@ -3577,7 +3668,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 82/100). Your resume is well-optimized for ATS screening. Only 7 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 82/100). Your resume is well-optimized for ATS screening. Only 7 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 356,
+      "job_description_length": 119
     }
   },
   {
@@ -3798,7 +3896,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Moderate ATS compatibility (score: 63/100). 13 keywords matched but 12 are missing. Address the suggestions below to improve."
+      "summary": "Moderate ATS compatibility (score: 63/100). 13 keywords matched but 12 are missing. Address the suggestions below to improve.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 357,
+      "job_description_length": 137
     }
   },
   {
@@ -4013,7 +4118,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 89/100). Your resume is well-optimized for ATS screening. Only 4 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 89/100). Your resume is well-optimized for ATS screening. Only 4 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 381,
+      "job_description_length": 125
     }
   },
   {
@@ -4169,7 +4281,14 @@
         "summary"
       ],
       "missing_sections": [],
-      "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+      "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 305,
+      "job_description_length": 71
     }
   },
   {
@@ -4444,7 +4563,14 @@
         "experience",
         "skills"
       ],
-      "summary": "Low ATS compatibility (score: 25/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+      "summary": "Low ATS compatibility (score: 25/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords.",
+      "engine_version": "1.0.0",
+      "contract_version": "1.0.0"
+    },
+    "expected_metadata": {
+      "engine": "python-reference",
+      "resume_length": 26,
+      "job_description_length": 162
     }
   }
 ]

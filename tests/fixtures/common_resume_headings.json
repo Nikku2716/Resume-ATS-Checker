@@ -151,6 +151,13 @@
       "summary"
     ],
     "missing_sections": [],
-    "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified."
+    "summary": "Strong ATS compatibility (score: 88/100). Your resume is well-optimized for ATS screening. Only 2 missing keywords identified.",
+    "engine_version": "1.0.0",
+    "contract_version": "1.0.0"
+  },
+  "expected_metadata": {
+    "engine": "python-reference",
+    "resume_length": 305,
+    "job_description_length": 71
   }
 }

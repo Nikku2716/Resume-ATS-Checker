@@ -252,6 +252,13 @@
       "summary"
     ],
     "missing_sections": [],
-    "summary": "Moderate ATS compatibility (score: 79/100). 20 keywords matched but 12 are missing. Address the suggestions below to improve."
+    "summary": "Moderate ATS compatibility (score: 79/100). 20 keywords matched but 12 are missing. Address the suggestions below to improve.",
+    "engine_version": "1.0.0",
+    "contract_version": "1.0.0"
+  },
+  "expected_metadata": {
+    "engine": "python-reference",
+    "resume_length": 502,
+    "job_description_length": 184
   }
 }

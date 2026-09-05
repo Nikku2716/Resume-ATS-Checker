@@ -284,6 +284,13 @@
       "summary"
     ],
     "missing_sections": [],
-    "summary": "Below average ATS compatibility (score: 45/100). Significant keyword gaps (24 missing) and potential formatting issues. Prioritize the critical fixes."
+    "summary": "Below average ATS compatibility (score: 45/100). Significant keyword gaps (24 missing) and potential formatting issues. Prioritize the critical fixes.",
+    "engine_version": "1.0.0",
+    "contract_version": "1.0.0"
+  },
+  "expected_metadata": {
+    "engine": "python-reference",
+    "resume_length": 452,
+    "job_description_length": 163
   }
 }

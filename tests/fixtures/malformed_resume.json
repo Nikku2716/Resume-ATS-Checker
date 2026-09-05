@@ -251,6 +251,13 @@
       "education",
       "skills"
     ],
-    "summary": "Moderate ATS compatibility (score: 78/100). 22 keywords matched but 3 are missing. Address the suggestions below to improve."
+    "summary": "Moderate ATS compatibility (score: 78/100). 22 keywords matched but 3 are missing. Address the suggestions below to improve.",
+    "engine_version": "1.0.0",
+    "contract_version": "1.0.0"
+  },
+  "expected_metadata": {
+    "engine": "python-reference",
+    "resume_length": 296,
+    "job_description_length": 106
   }
 }

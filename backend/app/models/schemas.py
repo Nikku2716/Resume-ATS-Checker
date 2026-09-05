@@ -29,6 +29,13 @@ class ImprovementSuggestion(BaseModel):
     location: Optional[str] = None
 
 
+class AnalysisMetadata(BaseModel):
+    engine: str = "python-reference"
+    duration_ms: int = 0
+    resume_length: int = 0
+    job_description_length: int = 0
+
+
 class AnalysisRequest(BaseModel):
     resume_text: str
     job_description: str
@@ -44,3 +51,6 @@ class AnalysisResponse(BaseModel):
     detected_sections: List[str]
     missing_sections: List[str]
     summary: str
+    engine_version: str = "1.0.0"
+    contract_version: str = "1.0.0"
+    metadata: AnalysisMetadata = AnalysisMetadata()

@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 # Add backend to path
-backend_dir = Path(__file__).parent / "backend"
+backend_dir = Path(__file__).parent.parent / "backend"
 sys.path.insert(0, str(backend_dir))
 
 from app.analyzers.scorer import AtsScorer
@@ -469,7 +469,7 @@ Expert in Rust, C++, Kubernetes, Terraform, AWS, Azure, GCP, distributed systems
 
 
 def generate():
-    fixtures_dir = Path(__file__).parent / "tests" / "fixtures"
+    fixtures_dir = Path(__file__).parent.parent / "tests" / "fixtures"
     fixtures_dir.mkdir(parents=True, exist_ok=True)
 
     summary_records = []
@@ -486,7 +486,14 @@ def generate():
                 "resume": f["resume"],
                 "job_description": f["job_description"],
             },
-            "expected_output": result_dict,
+            "expected_output": {
+                k: v for k, v in result_dict.items() if k != "metadata"
+            },
+            "expected_metadata": {
+                "engine": "python-reference",
+                "resume_length": len(f["resume"]),
+                "job_description_length": len(f["job_description"]),
+            },
         }
 
         # Save individual fixture file

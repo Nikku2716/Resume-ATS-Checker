@@ -270,6 +270,13 @@
       "experience",
       "skills"
     ],
-    "summary": "Low ATS compatibility (score: 25/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords."
+    "summary": "Low ATS compatibility (score: 25/100). Major improvements needed. Focus on adding standard sections and incorporating job-specific keywords.",
+    "engine_version": "1.0.0",
+    "contract_version": "1.0.0"
+  },
+  "expected_metadata": {
+    "engine": "python-reference",
+    "resume_length": 26,
+    "job_description_length": 162
   }
 }
