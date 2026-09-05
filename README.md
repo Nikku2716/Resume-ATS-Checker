@@ -3,10 +3,23 @@
 > **Lint your resume before recruiters do.**  
 > *100% Private, Client-Side Resume ATS Checker & Analyzer powered by WebAssembly.*
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen)](https://sh4dowbl4d3.github.io/ResumeLint/)
 [![Deploy to GitHub Pages](https://github.com/sh4dowbl4d3/ResumeLint/actions/workflows/deploy.yml/badge.svg)](https://github.com/sh4dowbl4d3/ResumeLint/actions/workflows/deploy.yml)
 [![WebAssembly](https://img.shields.io/badge/WebAssembly-Rust-purple?logo=webassembly)](https://webassembly.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
 [![License](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
+
+![ResumeLint Interface](screenshots/screenshot1.png)
+
+---
+
+## Live Web Application
+
+ResumeLint is hosted and accessible directly in your browser:
+
+**[https://sh4dowbl4d3.github.io/ResumeLint/](https://sh4dowbl4d3.github.io/ResumeLint/)**
+
+No installation, backend setup, or local environment required. Everything runs 100% client-side in your browser via WebAssembly.
 
 ---
 
@@ -33,49 +46,6 @@ ResumeLint computes a deterministic score (0–100) across 5 weighted dimensions
 | **Experience Relevance** | **20%** | Action verb density, chronological indicators, and role terminology |
 | **Formatting / Readability** | **15%** | Detection of parsing traps (tables, multi-columns, text boxes, icon bullets) |
 | **Section Completeness** | **10%** | Presence of standard ATS sections (Summary, Experience, Education, Skills) |
-
----
-
-## Quickstart & Local Development
-
-### Prerequisites
-- **Node.js 18+** and **npm**
-- **Rust (stable)** and **wasm-pack** (only needed if modifying the Rust WASM engine)
-
-### 1. Clone & Install Frontend
-```bash
-git clone https://github.com/sh4dowbl4d3/ResumeLint.git
-cd ResumeLint/frontend
-npm install
-```
-
-### 2. Start Development Server
-```bash
-npm run dev
-```
-Open **[http://localhost:5173](http://localhost:5173)** in your browser.
-
----
-
-## Testing
-
-ResumeLint features a comprehensive test suite across Rust, WebAssembly, document parsers, worker RPC, and end-to-end fixture parity.
-
-### Run All Frontend & Integration Tests
-```bash
-cd frontend
-npm test
-```
-
-### Run Rust WebAssembly Unit & Parity Tests
-```bash
-cargo test --manifest-path wasm/Cargo.toml
-```
-
-### Build Production WebAssembly Binary
-```bash
-bash scripts/build_wasm.sh
-```
 
 ---
 
@@ -117,6 +87,16 @@ ResumeLint/
 - **Styling:** Tailwind CSS, Lucide Icons
 - **Document Extractors:** `pdfjs-dist` (PDF geometry text), `mammoth` (DOCX XML), `FileReader` (Text/Markdown)
 - **Deployment:** GitHub Pages (Static hosting with zero backend server dependencies)
+
+---
+
+## Testing
+
+ResumeLint features a comprehensive test suite across Rust, WebAssembly, document parsers, worker RPC, and end-to-end fixture parity.
+
+- **Rust Unit & Parity Tests**: `cargo test --manifest-path wasm/Cargo.toml`
+- **Frontend & Integration Tests**: `npm test` (inside `frontend/`)
+- **WebAssembly Build**: `bash scripts/build_wasm.sh`
 
 ---
 
