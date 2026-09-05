@@ -1,29 +1,42 @@
-const API_BASE = import.meta.env.VITE_API_URL || "/api";
+/**
+ * ResumeLint Local-First API Adapter
+ * Drop-in replacement for the backend-dependent api.js.
+ * All processing runs in-browser via Rust/WASM — no network calls.
+ */
 
+import { initAtsEngine, analyzeResume, isEngineReady } from './lib/ats-engine/engine.js';
+import { parseDocument } from './lib/parsers/index.js';
+
+/**
+ * Analyze raw resume text against a job description.
+ * Equivalent to the old POST /api/analyze/text backend call.
+ *
+ * @param {string} resumeText - Raw resume text
+ * @param {string} jobDescription - Target job description
+ * @returns {Promise<import('./lib/ats-engine/types.js').AnalysisResponse>}
+ */
 export async function analyzeText(resumeText, jobDescription) {
-  const res = await fetch(`${API_BASE}/analyze/text`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ resume_text: resumeText, job_description: jobDescription }),
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({ detail: res.statusText }));
-    throw new Error(err.detail || "Analysis failed");
+  if (!isEngineReady()) {
+    await initAtsEngine();
   }
-  return res.json();
+
+  return analyzeResume(resumeText, jobDescription);
 }
 
+/**
+ * Analyze a resume file against a job description.
+ * Equivalent to the old POST /api/analyze/file backend call.
+ * Parses the file in-browser, then runs WASM ATS scoring.
+ *
+ * @param {File} file - Resume file (PDF, DOCX, TXT)
+ * @param {string} jobDescription - Target job description
+ * @returns {Promise<import('./lib/ats-engine/types.js').AnalysisResponse>}
+ */
 export async function analyzeFile(file, jobDescription) {
-  const form = new FormData();
-  form.append("file", file);
-  form.append("job_description", jobDescription);
-  const res = await fetch(`${API_BASE}/analyze/file`, {
-    method: "POST",
-    body: form,
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({ detail: res.statusText }));
-    throw new Error(err.detail || "Analysis failed");
+  if (!isEngineReady()) {
+    await initAtsEngine();
   }
-  return res.json();
+
+  const parsed = await parseDocument(file);
+  return analyzeResume(parsed.text, jobDescription);
 }
