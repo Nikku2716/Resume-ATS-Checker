@@ -14,12 +14,17 @@
       name="description"
       content="Lint your resume before recruiters do. 100% private, client-side resume ATS checker and analyzer powered by WebAssembly. Free, deterministic scoring with zero server uploads."
     />
-    <meta name="keywords" content="Resume ATS Checker, Resume Linter, ATS Resume Scanner, Free Resume Analyzer, WebAssembly ATS, Privacy-First Resume Tool, Resume Keywords, ATS Pass Rate" />
+    <meta
+      name="keywords"
+      content="Resume ATS Checker, Resume Linter, ATS Resume Scanner, Free Resume Analyzer, WebAssembly ATS, Privacy-First Resume Tool, Resume Keywords, ATS Pass Rate, Job Description Matcher"
+    />
     <meta name="author" content="ResumeLint" />
     <meta name="theme-color" content="#059669" />
+    <link rel="canonical" href="https://nikku2716.github.io/Resume-ATS-Checker/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nikku2716.github.io/Resume-ATS-Checker/" />
     <meta property="og:title" content="ResumeLint — Free Resume ATS Checker &amp; Analyzer" />
     <meta
       property="og:description"
@@ -29,6 +34,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nikku2716.github.io/Resume-ATS-Checker/" />
     <meta name="twitter:title" content="ResumeLint — Free Resume ATS Checker &amp; Analyzer" />
     <meta
       name="twitter:description"
@@ -41,6 +47,76 @@
     <link rel="apple-touch-icon" href="./logo-icon.svg" />
     <link rel="manifest" href="./site.webmanifest" />
 
+    <!-- Schema.org JSON-LD Structured Data: WebApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ResumeLint",
+        "url": "https://nikku2716.github.io/Resume-ATS-Checker/",
+        "description": "Free, 100% client-side resume ATS checker and linter running WebAssembly in the browser. Zero data uploaded to servers.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any (Web Browser with WebAssembly support)",
+        "browserRequirements": "Requires WebAssembly and Web Worker support (Chrome, Firefox, Safari, Edge)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "100% In-Browser Document Parsing (PDF, DOCX, TXT, MD)",
+          "Rust WebAssembly Deterministic Scoring Engine",
+          "Unigram & Bigram Keyword Matching with Morphological Variant Detection",
+          "ATS Structural Trap & Formatting Risk Detection",
+          "10 Standard Resume Section Completeness Checks",
+          "Zero Server Uploads & 100% Privacy Guarantee"
+        ]
+      }
+    </script>
+
+    <!-- Schema.org JSON-LD Structured Data: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an ATS (Applicant Tracking System)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An Applicant Tracking System (ATS) is software used by employers to collect, sort, scan, and rank job applications. Before a human recruiter reads your resume, the ATS parses the document into database fields and calculates a keyword match score against the job description."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is ResumeLint 100% client-side?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Resumes contain sensitive personal information. By using Rust compiled to WebAssembly, ResumeLint provides enterprise-grade text analysis directly inside your browser with zero data leaving your machine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which resume file format is best for ATS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Both PDF and DOCX are widely supported. However, clean single-column PDF or DOCX files without tables, floating text boxes, or graphics ensure 100% parse accuracy across older and newer ATS platforms alike."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the overall score calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The overall score (0–100) is a weighted composite: Keyword Match (35%), Skills Match (25%), Experience Relevance (20%), Formatting & Readability (10%), and Section Completeness (10%)."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Single Page Application Redirect Support for GitHub Pages -->
     <script>
       (function () {
         var redirect = sessionStorage.redirect;

@@ -1,0 +1,6 @@
+# Robots.txt for ResumeLint
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nikku2716.github.io/Resume-ATS-Checker/sitemap.xml
