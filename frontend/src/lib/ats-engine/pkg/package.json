@@ -1,0 +1,20 @@
+{
+  "name": "resumelint-ats",
+  "type": "module",
+  "collaborators": [
+    "ResumeLint Team"
+  ],
+  "description": "ResumeLint deterministic ATS analysis engine compiled to WebAssembly",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "resumelint_ats_bg.wasm",
+    "resumelint_ats.js",
+    "resumelint_ats.d.ts"
+  ],
+  "main": "resumelint_ats.js",
+  "types": "resumelint_ats.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

@@ -2,12 +2,34 @@
 name = "resumelint-ats"
 version = "1.0.0"
 edition = "2021"
+description = "ResumeLint deterministic ATS analysis engine compiled to WebAssembly"
+authors = ["ResumeLint Team"]
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 regex = "1"
 unicode-segmentation = "1"
+wasm-bindgen = "=0.2.126"
+serde-wasm-bindgen = "0.6"
+console_error_panic_hook = { version = "0.1", optional = true }
 
 [dev-dependencies]
 serde_json = "1"
+
+[features]
+default = ["console_error_panic_hook"]
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
