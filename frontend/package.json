@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:wasm": "bash ../scripts/build_wasm.sh",
+    "test": "node src/lib/ats-engine/__tests__/engine.test.js",
     "preview": "vite preview"
   },
   "dependencies": {
