@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:wasm": "bash ../scripts/build_wasm.sh",
-    "test": "node src/lib/ats-engine/__tests__/engine.test.js && node src/lib/parsers/__tests__/parsers.test.js && node src/lib/ats-worker/__tests__/manager.test.js && node src/__tests__/e2e.test.js",
+    "test": "node src/lib/__tests__/capabilities.test.js && node src/lib/ats-engine/__tests__/engine.test.js && node src/lib/parsers/__tests__/parsers.test.js && node src/lib/ats-worker/__tests__/manager.test.js && node src/__tests__/e2e.test.js",
     "preview": "vite preview"
   },
   "dependencies": {

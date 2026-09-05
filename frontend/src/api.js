@@ -1,12 +1,16 @@
 /**
  * ResumeLint Local-First API Adapter
  * Drop-in replacement for the backend-dependent api.js.
- * All processing runs in-browser via Rust/WASM — no network calls.
+ * All processing runs in-browser via Rust/WASM — zero external network requests.
+ * Includes capability detection, input sanitization, and file safety validation.
  */
 
 import { initAtsEngine, analyzeResume, isEngineReady } from './lib/ats-engine/engine.js';
 import { parseDocument } from './lib/parsers/index.js';
 import { analyzeSafely } from './lib/ats-worker/manager.js';
+import { sanitizeTextInput, validateFileSafety, getBrowserCapabilities } from './lib/capabilities.js';
+
+export { getBrowserCapabilities, sanitizeTextInput, validateFileSafety };
 
 /**
  * Analyze raw resume text against a job description.
@@ -20,7 +24,10 @@ export async function analyzeText(resumeText, jobDescription) {
     await initAtsEngine();
   }
 
-  return analyzeResume(resumeText, jobDescription);
+  const cleanResume = sanitizeTextInput(resumeText);
+  const cleanJd = sanitizeTextInput(jobDescription);
+
+  return analyzeResume(cleanResume, cleanJd);
 }
 
 /**
@@ -32,12 +39,20 @@ export async function analyzeText(resumeText, jobDescription) {
  * @returns {Promise<import('./lib/ats-engine/types.js').AnalysisResponse>}
  */
 export async function analyzeFile(file, jobDescription) {
+  const safety = validateFileSafety(file);
+  if (!safety.valid) {
+    throw new Error(safety.error);
+  }
+
   if (!isEngineReady()) {
     await initAtsEngine();
   }
 
   const parsed = await parseDocument(file);
-  return analyzeResume(parsed.text, jobDescription);
+  const cleanResume = sanitizeTextInput(parsed.text);
+  const cleanJd = sanitizeTextInput(jobDescription);
+
+  return analyzeResume(cleanResume, cleanJd);
 }
 
 /**
@@ -49,11 +64,14 @@ export async function analyzeFile(file, jobDescription) {
  * @returns {Promise<import('./lib/ats-engine/types.js').AnalysisResponse>}
  */
 export async function analyzeTextWithProgress(resumeText, jobDescription, onProgress) {
+  const cleanResume = sanitizeTextInput(resumeText);
+  const cleanJd = sanitizeTextInput(jobDescription);
+
   if (typeof window !== 'undefined' && typeof Worker !== 'undefined') {
     return new Promise((resolve, reject) => {
       analyzeSafely(
-        resumeText,
-        jobDescription,
+        cleanResume,
+        cleanJd,
         onProgress,
         (response) => resolve(response),
         (error) => reject(error)
@@ -66,7 +84,7 @@ export async function analyzeTextWithProgress(resumeText, jobDescription, onProg
     await initAtsEngine();
   }
   if (onProgress) onProgress({ stage: 'analyzing', progress: 0.6, message: 'Analyzing keywords and sections...' });
-  const result = analyzeResume(resumeText, jobDescription);
+  const result = analyzeResume(cleanResume, cleanJd);
   if (onProgress) onProgress({ stage: 'finalizing', progress: 1.0, message: 'Analysis complete' });
   return result;
 }
@@ -80,6 +98,11 @@ export async function analyzeTextWithProgress(resumeText, jobDescription, onProg
  * @returns {Promise<import('./lib/ats-engine/types.js').AnalysisResponse>}
  */
 export async function analyzeFileWithProgress(file, jobDescription, onProgress) {
+  const safety = validateFileSafety(file);
+  if (!safety.valid) {
+    throw new Error(safety.error);
+  }
+
   if (onProgress) {
     onProgress({ stage: 'loading', progress: 0.1, message: `Extracting text from ${file.name}...` });
   }
