@@ -38,17 +38,12 @@ export default function Navbar() {
             <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm transition-transform group-hover:scale-105">
               <Coffee className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" aria-hidden="true" />
             </div>
-            <div className="flex items-center gap-2">
-              <span
-                className="text-lg sm:text-xl font-bold tracking-tight text-[#000000] leading-none"
-                style={{ fontFamily: "var(--font-circular)" }}
-              >
-                ResumeLint
-              </span>
-              <span className="badge badge-neutral text-[10px] font-bold tracking-wide uppercase leading-none hidden sm:inline-flex items-center justify-center px-2 py-0.5 self-center">
-                100% WASM
-              </span>
-            </div>
+            <span
+              className="text-lg sm:text-xl font-bold tracking-tight text-[#000000] leading-none"
+              style={{ fontFamily: "var(--font-circular)" }}
+            >
+              ResumeLint
+            </span>
           </Link>
 
           {/* Center Navigation Links in Small Caps */}
