@@ -18,11 +18,11 @@ export default function Footer() {
         {/* Left: Brand Identifier */}
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm">
-            <Coffee className="h-4 w-4" aria-hidden="true" />
+            <Coffee className="h-4 w-4 shrink-0" aria-hidden="true" />
           </div>
           <div className="flex items-center gap-2">
             <span
-              className="text-sm font-bold text-[#000000]"
+              className="text-sm font-bold text-[#000000] leading-none"
               style={{ fontFamily: "var(--font-circular)" }}
             >
               ResumeLint

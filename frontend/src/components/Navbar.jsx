@@ -32,20 +32,20 @@ export default function Navbar() {
           {/* Logo with Coffee Cup Icon */}
           <Link
             to="/"
-            className="flex items-center gap-3 no-underline shrink-0 group"
+            className="flex items-center gap-2.5 sm:gap-3 no-underline shrink-0 group"
             aria-label="ResumeLint Home"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm transition-transform group-hover:scale-105">
-              <Coffee className="h-5 w-5" aria-hidden="true" />
+            <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm transition-transform group-hover:scale-105">
+              <Coffee className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" aria-hidden="true" />
             </div>
             <div className="flex items-center gap-2">
               <span
-                className="text-lg sm:text-xl font-bold tracking-tight text-[#000000]"
+                className="text-lg sm:text-xl font-bold tracking-tight text-[#000000] leading-none"
                 style={{ fontFamily: "var(--font-circular)" }}
               >
                 ResumeLint
               </span>
-              <span className="badge badge-neutral text-[10px] hidden sm:inline-flex py-0.5 px-2">
+              <span className="badge badge-neutral text-[10px] font-bold tracking-wide uppercase leading-none hidden sm:inline-flex items-center justify-center px-2 py-0.5 self-center">
                 100% WASM
               </span>
             </div>

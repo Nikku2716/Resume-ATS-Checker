@@ -332,7 +332,7 @@ export default function Results() {
           <div className="md:col-span-8 space-y-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2 small-caps-label text-[#d8573f]">
-                <Coffee className="h-3.5 w-3.5" />
+                <Coffee className="h-3.5 w-3.5 shrink-0" />
                 <span>Audit Ledger</span>
                 <span className="text-[#e5e7eb]">&bull;</span>
                 <span>Local Evaluation</span>

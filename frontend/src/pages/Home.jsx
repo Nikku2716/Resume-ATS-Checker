@@ -272,7 +272,7 @@ export default function Home() {
         <div className="hidden lg:block absolute -right-4 top-16 w-64 z-10 animate-float-reverse">
           <div className="floating-card rotate-[3deg] border border-[#f5d5cf]">
             <div className="flex items-center gap-2 text-xs font-bold text-[#d8573f]">
-              <Coffee className="h-4 w-4" />
+              <Coffee className="h-4 w-4 shrink-0" />
               <span>Diagnostic Pass</span>
             </div>
             <p className="mt-2 text-xs text-[#222222] font-medium leading-snug">
@@ -390,7 +390,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-[#e5e7eb]">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] font-bold shadow-sm">
-              <Coffee className="h-5 w-5" />
+              <Coffee className="h-5 w-5 shrink-0" aria-hidden="true" />
             </div>
             <div>
               <h2
@@ -627,20 +627,16 @@ export default function Home() {
             type="button"
             onClick={handleSubmit}
             disabled={loading}
-            className="btn-marigold w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-10 py-3.5 sm:py-4 cursor-pointer font-bold shadow-md hover:scale-[1.02] active:scale-100 transition-all inline-flex items-center justify-center gap-3"
+            className="btn-marigold w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-10 py-3.5 sm:py-4 cursor-pointer font-bold shadow-md hover:scale-[1.02] active:scale-100 transition-all inline-flex items-center justify-center gap-2.5 sm:gap-3"
           >
             {loading ? (
               <>
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#000000] text-[#ffdd00] shadow-xs">
-                  <Coffee className="h-4 w-4 animate-spin" />
-                </div>
+                <Coffee className="h-5 w-5 shrink-0 animate-spin" aria-hidden="true" />
                 <span>Executing WASM Core...</span>
               </>
             ) : (
               <>
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#000000] text-[#ffdd00] shadow-xs">
-                  <Coffee className="h-4 w-4" />
-                </div>
+                <Coffee className="h-5 w-5 shrink-0" aria-hidden="true" />
                 <span>Run Deterministic ATS Evaluation</span>
                 <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
               </>

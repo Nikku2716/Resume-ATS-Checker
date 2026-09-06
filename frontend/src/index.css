@@ -208,7 +208,7 @@
 
   /* Pill Badges */
   .badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold;
+    @apply inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-semibold leading-none;
     border-radius: 9999px;
     border: 1px solid var(--color-hairline-gray);
     background-color: #ffffff;
