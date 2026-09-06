@@ -33,7 +33,7 @@ export default function ProgressBar({ stage, progress, message }) {
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm animate-spin">
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm animate-spin">
             <Coffee className="h-4 w-4" />
           </div>
           <span className="text-xs sm:text-sm font-bold text-[#000000]">

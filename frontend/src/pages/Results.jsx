@@ -131,7 +131,7 @@ export default function Results() {
   if (!result) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center max-w-lg mx-auto space-y-6">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#ffdd00] border border-[#ffffff] text-[#000000] shadow-sm">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] border border-[#ffffff] text-[#000000] shadow-sm">
           <Coffee className="h-6 w-6" aria-hidden="true" />
         </div>
         <div className="space-y-2">

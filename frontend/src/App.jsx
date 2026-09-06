@@ -16,7 +16,7 @@ function PageFallback() {
       role="status"
       aria-live="polite"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm animate-bounce">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm animate-bounce">
         <Coffee className="h-6 w-6" aria-hidden="true" />
       </div>
       <p className="text-sm font-semibold text-[#717171]">

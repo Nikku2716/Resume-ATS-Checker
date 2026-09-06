@@ -360,13 +360,13 @@ export default function Home() {
       {/* 2. Scrolling Marquee Ribbon */}
       <section
         ref={tickerRef}
-        className={`w-full overflow-hidden py-3 bg-[#ffffff] border-y border-[#e5e7eb] shadow-sm rounded-full reveal-init ${
+        className={`w-full overflow-hidden py-3 bg-[#ffffff] border-y border-[#e5e7eb] shadow-sm reveal-init ${
           tickerVisible ? "reveal-visible" : ""
         }`}
         aria-label="Features and Guarantees Ticker"
       >
-        <div className="marquee-track flex items-center gap-8 text-xs font-semibold text-[#222222]">
-          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
+        <div className="marquee-track items-center gap-8 text-xs font-semibold text-[#222222]">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
             <div key={idx} className="flex items-center gap-3 shrink-0">
               <span>{item}</span>
               <span className="text-[#e5e7eb] font-bold">&bull;</span>
@@ -389,7 +389,7 @@ export default function Home() {
       >
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-[#e5e7eb]">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] font-bold shadow-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] font-bold shadow-sm">
               <Coffee className="h-5 w-5" />
             </div>
             <div>
@@ -627,26 +627,34 @@ export default function Home() {
             type="button"
             onClick={handleSubmit}
             disabled={loading}
-            className="btn-marigold text-base sm:text-lg px-10 py-4 cursor-pointer font-bold shadow-md hover:scale-[1.02] active:scale-100 transition-all"
+            className="btn-marigold w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-10 py-3.5 sm:py-4 cursor-pointer font-bold shadow-md hover:scale-[1.02] active:scale-100 transition-all inline-flex items-center justify-center gap-3"
           >
             {loading ? (
               <>
-                <Coffee className="h-5 w-5 animate-spin mr-1" />
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#000000] text-[#ffdd00] shadow-xs">
+                  <Coffee className="h-4 w-4 animate-spin" />
+                </div>
                 <span>Executing WASM Core...</span>
               </>
             ) : (
               <>
-                <Coffee className="h-5 w-5 mr-1" />
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#000000] text-[#ffdd00] shadow-xs">
+                  <Coffee className="h-4 w-4" />
+                </div>
                 <span>Run Deterministic ATS Evaluation</span>
-                <ArrowRight className="h-5 w-5 ml-1" aria-hidden="true" />
+                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
               </>
             )}
           </button>
 
-          <p className="text-xs text-[#717171] flex items-center gap-1.5">
-            <ShieldCheck className="h-4 w-4 text-[#22c55e]" aria-hidden="true" />
-            <span>Compiled Rust Core &bull; Sub-100ms In-Browser Evaluation</span>
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-xs text-[#717171] text-center pt-1">
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-[#22c55e]" aria-hidden="true" />
+              <span className="font-medium text-[#222222]">Compiled Rust Core</span>
+            </div>
+            <span className="hidden sm:inline text-[#e5e7eb] font-bold">&bull;</span>
+            <span>Sub-100ms In-Browser Evaluation</span>
+          </div>
         </div>
       </section>
 

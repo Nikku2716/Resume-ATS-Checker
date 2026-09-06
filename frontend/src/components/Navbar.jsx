@@ -35,7 +35,7 @@ export default function Navbar() {
             className="flex items-center gap-3 no-underline shrink-0 group"
             aria-label="ResumeLint Home"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm transition-transform group-hover:scale-105">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdd00] text-[#000000] shadow-sm transition-transform group-hover:scale-105">
               <Coffee className="h-5 w-5" aria-hidden="true" />
             </div>
             <div className="flex items-center gap-2">
